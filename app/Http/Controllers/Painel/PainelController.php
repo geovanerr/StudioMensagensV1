@@ -15,7 +15,7 @@ class PainelController extends Controller
      *
      * @ return void
      */
-
+        
      public $request;
      public $usuarios;
 
@@ -37,7 +37,7 @@ class PainelController extends Controller
         return view('Painel.index', compact('user'));
     }
 
-    public function viewUsuarios()
+  /*  public function viewUsuarios()
     {
         //Controla a rota do usuário.
         $user = Auth()->User();
@@ -49,7 +49,7 @@ class PainelController extends Controller
         $usuarios = $this->usuarios->all();
 
         return view('Painel.Usuarios.index', compact('user', 'urlAtual', 'usuarios'));
-    }
+    }*/
 
     public function viewServicos()
     {
@@ -61,5 +61,6 @@ class PainelController extends Controller
 
         return view('Painel.Servicos.index', compact('user', 'urlAtual'));
     }
+    
 
 }

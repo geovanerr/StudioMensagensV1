@@ -67,6 +67,8 @@
 
               <div class="box-header">
                 <h3 class="box-title"> Usuários </h3>
+
+                <p> Novo Usuário <a href="{{ route('Painel.Usuarios.viewCadastro')}}" class="btn btn-success"><i class="fa fa-plus"></i></a> @if(session('success'))| <span class="alert alert-success"> {{ session('success')}} @endif</span> </p>
               </div>
             <!-- /.box-header -->
             <div class="box-body">
