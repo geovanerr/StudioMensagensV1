@@ -24,19 +24,88 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MENU</li>
-        <li class="active treeview">
+        <li class="header" style="text-align:center">STUDIO MENSAGENS</li>
+        <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span> Painel </span>
+            <i class="fa fa-users"></i> <span> Usuários </span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="{{ route('Painel.index') }}"><i class="fa fa-home"></i> Página Principal </a></li>
-            <li class="active"><a href="{{ route('Painel.Usuarios.index') }}"><i class="fa fa-user"></i> Usuários </a></li>
-            <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-book"></i> Serviços </a></li>
-            <!--li><a href="index2.html"><i class="fa fa-circle-o"></i> Painel 2 </a></li-->
+          <li class="active"><a href="{{ route('Painel.Usuarios.index') }}"><i class="fa fa-user-o"></i> Gerenciar Usuários </a></li>
+            <li class="active"><a href="{{ route('Painel.Usuarios.viewCadastro') }}"><i class="fa fa-user-plus"></i> Funcionários </a></li>
+            <li class="active"><a href="{{ route('Painel.Usuarios.viewCliente') }}"><i class="fa fa-user-plus"></i> Clientes </a></li>
+          </ul>
+        </li>
+        
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-book"></i> <span> Serviços </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+    
+            <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-plus-square"></i> Cadasto</a></li>
+            <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-file-text-o"></i> Ordem de Serviço </a></li>
+       
+
+          
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-users"></i> <span> Cobrança </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+           <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-money"></i> Cobrança </a></li>
+        
+          </ul>
+
+          <li class="treeview">
+          <a href="#">
+            <i class="fa fa-line-chart"></i> <span> Relatórios </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+           <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-user"></i> Clientes </a></li>
+           <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-book"></i> Serviços </a></li>
+           <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-calendar"></i> Aniversariantes </a></li>
+        
+          </ul>
+
+
+          <li class="treeview">
+          <a href="#">
+            <i class="fa fa-floppy-o"></i> <span> Backup </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+           <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-book"></i> Cobrança </a></li>
+        
+          </ul>
+
+          <li class="treeview">
+          <a href="#">
+            <i class="fa fa-desktop"></i> <span> Sistema </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+           <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-info"></i> Sobre </a></li>
+        
           </ul>
         </li>
       </ul>

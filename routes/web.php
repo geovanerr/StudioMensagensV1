@@ -26,7 +26,8 @@ Auth::routes();
 
 Route::get('/painel', [App\Http\Controllers\Painel\PainelController::class, 'index'])->name('Painel.index');
 Route::get('/painel/usuarios', [App\Http\Controllers\Painel\Usuarios\UsuariosController::class, 'index'])->name('Painel.Usuarios.index');
-Route::get('/painel/usuarios/cadastro', [App\Http\Controllers\Painel\Usuarios\UsuariosController::class, 'viewCadastro'])->name('Painel.Usuarios.viewCadastro');
+Route::get('/painel/usuarios/cadastrofuncionario', [App\Http\Controllers\Painel\Usuarios\UsuariosController::class, 'viewCadastro'])->name('Painel.Usuarios.viewCadastro');
+Route::get('/painel/usuarios/cadastrocliente', [App\Http\Controllers\Painel\Usuarios\UsuariosController::class, 'viewCliente'])->name('Painel.Usuarios.viewCliente');
 Route::post('/painel/usuarios/store', [App\Http\Controllers\Painel\Usuarios\UsuariosController::class, 'store'])->name('Painel.Usuarios.store');
 
 

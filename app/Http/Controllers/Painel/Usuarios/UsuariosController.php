@@ -65,5 +65,19 @@ class UsuariosController extends Controller
         return redirect()->back()->with('error', 'Houve um erro ao cadastrar o usuário.');
     }
 
+    public function viewCliente()
+    {
+        //Controla a rota do usuário.
+        $user = Auth()->User();
+        $uri = $this->request->route()->uri();
+        $exploder = explode('/', $uri);
+        $urlAtual = $exploder[2];
+        
+        $title = 'Painel de Cadastro';
+      //  $roles = Roles::all();
+        return view('Painel.Usuarios.viewCliente', compact('user','urlAtual'));
+
+    }
+
 
 }
