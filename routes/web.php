@@ -28,8 +28,12 @@ Route::get('/painel', [App\Http\Controllers\Painel\PainelController::class, 'ind
 Route::get('/painel/usuarios', [App\Http\Controllers\Painel\Usuarios\UsuariosController::class, 'index'])->name('Painel.Usuarios.index');
 Route::get('/painel/usuarios/cadastrofuncionario', [App\Http\Controllers\Painel\Usuarios\UsuariosController::class, 'viewCadastro'])->name('Painel.Usuarios.viewCadastro');
 Route::get('/painel/usuarios/cadastrocliente', [App\Http\Controllers\Painel\Usuarios\UsuariosController::class, 'viewCliente'])->name('Painel.Usuarios.viewCliente');
-Route::post('/painel/usuarios/store', [App\Http\Controllers\Painel\Usuarios\UsuariosController::class, 'store'])->name('Painel.Usuarios.store');
 
+
+
+Route::get('/painel/servicos/tiposServicos', [App\Http\Controllers\Painel\Servicos\ServicosController::class, 'tipoServicos'])->name('Painel.Servicos.tipoServicos');
+
+Route::get('/painel/servicos/cadastrotipos', [App\Http\Controllers\Painel\Servicos\ServicosController::class, 'cadastrotipoS'])->name('Painel.Servicos.cadastrotipoS');
 
 
 Route::get('/painel/servicos', [App\Http\Controllers\Painel\PainelController::class, 'viewServicos'])->name('Painel.Servicos.index');
