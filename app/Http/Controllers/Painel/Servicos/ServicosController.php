@@ -16,6 +16,7 @@ class ServicosController extends Controller
     protected $model;
     public $request;
     public $usuarios;
+    public $servicos;
 
     public function __construct(Request $request, User $usuarios, User $model)
     {
@@ -34,11 +35,13 @@ class ServicosController extends Controller
         $exploder = explode('/', $uri);
         $urlAtual = $exploder[1];
 
+     
 
         $title = 'Painel de Usuário';
         $usuarios = $this->model->where('id', '!=', 0)->get();
         return view('Painel.Servicos.tipoServicos', compact('user', 'urlAtual', 'title','usuarios' ));
     }
+
 
     public function cadastrotipoS ()
     {
@@ -47,13 +50,13 @@ class ServicosController extends Controller
         $uri = $this->request->route()->uri();
         $exploder = explode('/', $uri);
         $urlAtual = $exploder[2];
+
         
         $title = 'Cadastro Serviço';
-      //  $roles = Roles::all();
+     
         return view('Painel.Servicos.cadastrotipoS', compact('user','urlAtual'));
 
     }
-
 
     
  
