@@ -17,15 +17,18 @@
             </div>
 
             
+            <form action="/Painel/Servicos/cadastrotipoS" method="post">
             <div class="box-body">
                    
 
                     
-                        <div class="row">                          
-                              <div class="col-xs-8">                       
+                        <div class="row">           
+                        <div class="col-xs-3">
+                        </div>               
+                              <div class="col-xs-4">                       
                               <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-handshake-o"></i></span>
-                                <div><input type="text" class="form-control" placeholder="Nome do Servico: exemplo Mensagem ao Vivo"> </div>
+                                <div><input type="text" class="form-control" placeholder="Nome do Servico: Mensagem ao Vivo"> </div>
                               </div>
                               </div>
 
@@ -50,6 +53,7 @@
 
             
             </div>
+            </form>
             
    
       

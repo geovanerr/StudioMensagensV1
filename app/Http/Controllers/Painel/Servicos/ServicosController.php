@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Models\Roles\Roles;
 
 
 class ServicosController extends Controller
@@ -68,6 +67,7 @@ class ServicosController extends Controller
         
         return redirect()->back()->with('error', 'Houve um erro ao cadastrar o usuário.');
     }
+
 
 
 

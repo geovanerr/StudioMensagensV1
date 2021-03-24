@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Painel\PainelController;
 use App\Http\Controllers\UsuariosController;
-
+use App\Http\Controllers\ServicosController;
 
 Route::get('/', function () {
   return view('Home.index');
@@ -34,6 +34,7 @@ Route::get('/painel/usuarios/cadastrocliente', [App\Http\Controllers\Painel\Usua
 Route::get('/painel/servicos/tiposServicos', [App\Http\Controllers\Painel\Servicos\ServicosController::class, 'tipoServicos'])->name('Painel.Servicos.tipoServicos');
 
 Route::get('/painel/servicos/cadastrotipos', [App\Http\Controllers\Painel\Servicos\ServicosController::class, 'cadastrotipoS'])->name('Painel.Servicos.cadastrotipoS');
+Route::post('/painel/servicos/cadastrotipos', [App\Http\Controllers\Painel\Servicos\ServicosController::class, 'store'])->name('Painel.Servicos.cadastrotipoS');
 
 
 Route::get('/painel/servicos', [App\Http\Controllers\Painel\PainelController::class, 'viewServicos'])->name('Painel.Servicos.index');
