@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Servico;
 
 
 class ServicosController extends Controller
@@ -29,16 +30,8 @@ class ServicosController extends Controller
     public function tipoServicos()
     {
 
-        $user = Auth()->User();
-        $uri = $this->request->route()->uri();
-        $exploder = explode('/', $uri);
-        $urlAtual = $exploder[1];
-
-     
-
-        $title = 'Painel de Usuário';
-        $usuarios = $this->model->where('id', '!=', 0)->get();
-        return view('Painel.Servicos.tipoServicos', compact('user', 'urlAtual', 'title','usuarios' ));
+        $servicos = Servico::all();
+        return view('Painel.Servicos.tipoServicos', [ 'servicos' => $servicos]);
     }
 
 
@@ -54,6 +47,20 @@ class ServicosController extends Controller
         $title = 'Cadastro Serviço';
      
         return view('Painel.Servicos.cadastrotipoS', compact('user','urlAtual'));
+
+    }
+
+    public function cadastrotipostore (Request $request)
+
+    {
+        $servico = new Servico;
+
+        $servico->servico = $request->servico;
+        $servico->preco = $request->preco;
+
+        $servico->save();
+  
+        return redirect ('/painel/servicos/tiposServicos')->with('msg', 'Serviço criado com sucesso.');
 
     }
 

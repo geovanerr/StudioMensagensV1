@@ -7,7 +7,7 @@
           <img src="{{ asset('AdminLTE/dist/img/usuario.png') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p> {{ $user->name }} </p>
+          <p>  </p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -34,8 +34,8 @@
           </a>
           <ul class="treeview-menu">
           <li class="active"><a href="{{ route('Painel.Usuarios.index') }}"><i class="fa fa-user-o"></i> Gerenciar Usuários </a></li>
-            <li class="active"><a href="{{ route('Painel.Usuarios.viewCadastro') }}"><i class="fa fa-user-plus"></i> Funcionários </a></li>
-            <li class="active"><a href="{{ route('Painel.Usuarios.viewCliente') }}"><i class="fa fa-user-plus"></i> Clientes </a></li>
+            <li class="active"><a href="{{ route('Painel.Usuarios.viewCadastro') }}"><i class="fa fa-user-plus"></i>Painel de Funcionários </a></li>
+            <li class="active"><a href="{{ route('Painel.Usuarios.listaclientes') }}"><i class="fa fa-user-plus"></i> Painel de Clientes </a></li>
           </ul>
         </li>
         

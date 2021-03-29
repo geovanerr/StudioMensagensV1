@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 
 use App\Models\User;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 use App\Models\Roles\Roles;
 
@@ -56,14 +57,14 @@ class UsuariosController extends Controller
 
     }
 
-    public function store (Request $request)
+  /*  public function store (Request $request)
     {
         $store = User::create ($request->all());
         if($store)
             return redirect()->route('Painel.Usuarios.index')->with('success', 'Usuário Cadastrado com sucesso!');
         
         return redirect()->back()->with('error', 'Houve um erro ao cadastrar o usuário.');
-    }
+    }*/
 
     public function viewCliente()
     {
@@ -78,6 +79,36 @@ class UsuariosController extends Controller
         return view('Painel.Usuarios.viewCliente', compact('user','urlAtual'));
 
     }
+
+    public function listaclientes()
+    {
+
+        $clientes = Cliente::all();
+        return view('Painel.Usuarios.listaclientes', [ 'clientes' => $clientes]);
+    }
+
+    public function clientestore (Request $request)
+
+    {
+        $cliente = new Cliente;
+
+        $cliente->nome = $request->nome;
+        $cliente->logradouro = $request->logradouro;
+        $cliente->numero = $request->numero;
+        $cliente->bairro = $request->bairro;
+        $cliente->referencia = $request->referencia;
+        $cliente->phone = $request->phone;
+        $cliente->celular = $request->celular;
+        $cliente->nascimento = $request->nascimento;
+        $cliente->genero = $request->genero;
+        $cliente->obs = $request->obs;
+
+        $cliente->save();
+    
+        return redirect ('/painel/usuarios/listaclientes')->with('msg', 'Cliente cadastrado com sucesso.');
+
+    }
+
 
 
 }

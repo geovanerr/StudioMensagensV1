@@ -98,3 +98,14 @@
 .select2-container .select2-selection--single .select2-selection__rendered {
   padding-right: 10px;
 }
+
+.msg {
+
+  background-color:#b3b7bb;
+  color: #1d643b;
+  border: 1px solid #b3b7bb;
+  width: 100%;
+  margin-bottom: 0;
+  text-align: center;
+  padding: 10px;
+}

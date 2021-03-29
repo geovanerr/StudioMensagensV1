@@ -17,7 +17,8 @@
             </div>
 
             
-            <form action="/Painel/Servicos/cadastrotipoS" method="post">
+            <form action="/servicos" method="POST">
+            @csrf
             <div class="box-body">
                    
 
@@ -28,14 +29,14 @@
                               <div class="col-xs-4">                       
                               <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-handshake-o"></i></span>
-                                <div><input type="text" class="form-control" placeholder="Nome do Servico: Mensagem ao Vivo"> </div>
+                                <div><input type="text" class="form-control" id="servico" name="servico" placeholder="Nome do Servico: Mensagem ao Vivo"> </div>
                               </div>
                               </div>
 
                               <div class="col-xs-2">
                               <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                                <div><input type="number" class="form-control" id="valor" name ="valor" placeholder="Valor" step="0.01" min="0"> </div>
+                                <div><input type="number" class="form-control" id="preco" name ="preco" placeholder="preco" step="0.01" min="0"> </div>
                                                        
                               </div>
                               </div>                      
@@ -46,7 +47,7 @@
                     
                             <div class="box-footer with-footer">
                               <h3 class="text-center">                               
-                              <button type="submit" class="btn btn-success">Cadastrar</button>
+                              <input type="submit" class="btn btn-success" value="Cadastrar" >
                               <button type="submit" class="btn btn-danger">Cancelar</button>
                             </h3>
                             </div>       

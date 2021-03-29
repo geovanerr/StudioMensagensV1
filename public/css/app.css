@@ -52,6 +52,17 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.msg {
+
+  background-color:#b3b7bb;
+  color: #1d643b;
+  border: 1px solid #b3b7bb;
+  width: 100%;
+  margin-bottom: 0;
+  text-align: center;
+  padding: 10px;
+}
+
 article,
 aside,
 figcaption,

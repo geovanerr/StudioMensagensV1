@@ -19,7 +19,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{ asset('AdminLTE/dist/img/usuario.png') }}" class="user-image" alt="User Image"-->
-              <span class="hidden-xs"> {{ $user->name }} </span>
+              <span class="hidden-xs">  Usuario </span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -27,8 +27,8 @@
                 <img src="{{ asset('AdminLTE/dist/img/usuario.png') }}" class="img-circle" alt="User Image"-->
 
                 <p>
-                  {{ $user->name }} - Usuário
-                  <small> Usuário há: {{ $user->created_at->diffForHumans() }}</small>
+                  
+                  <small> Usuário há:  }}</small>
                 </p>
               </li>
               <!-- Menu Body -->
