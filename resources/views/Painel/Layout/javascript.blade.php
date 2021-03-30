@@ -6,7 +6,7 @@
   $.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.7 -->
-<script src="{{ asset('AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('/template/bootstrap.min.js') }}"></script>
 <!-- Morris.js charts -->
 <script src="{{ asset('AdminLTE/bower_components/raphael/raphael.min.js') }}"></script>
 <script src="{{ asset('AdminLTE/bower_components/morris.js/morris.min.js') }}"></script>
@@ -59,15 +59,11 @@
 
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- FastClick -->
+
 <script src="../../bower_components/fastclick/lib/fastclick.js"></script>
 
 
 <script src="{{ asset('AdminLTE/bower_components/jquery/dist/jquery.min.js')}}"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="{{ asset('AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-<!-- iCheck -->
 <script src="{{ asset('AdminLTE/plugins/iCheck/icheck.min.js')}}"></script>
 <script>
   $(function () {
