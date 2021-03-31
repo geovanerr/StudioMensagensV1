@@ -42,8 +42,16 @@
                     
                      
                        <td> 
-                           <a class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                           <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                          <button class="btn btn-warning"><i class="fa fa-edit"></i> </button>
+                          <button type="submit" display="inline-block" class="btn btn-danger"> <i class="fa fa-trash"></i> </button>
+
+                          <form action="/servicos/{{ $servico->id }}"  method="POST">
+                                @csrf
+                                @method('DELETE')
+                               <button type="submit" display="inline-block" class="btn btn-danger"> <i class="fa fa-trash"></i> </button>
+                           
+                          </form>
+                           
                             
                        </td>
                    </tr>

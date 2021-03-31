@@ -38,12 +38,17 @@ Route::post('/clientes', [UsuariosController::class, 'clientestore']);
 
 Route::get('/painel/servicos/cadastrotipos', [App\Http\Controllers\Painel\Servicos\ServicosController::class, 'cadastrotipoS'])->name('Painel.Servicos.cadastrotipoS');
 Route::post('/servicos', [ServicosController::class, 'cadastrotipostore']);
+Route::delete('/servicos/{id}', [ServicosController::class, 'destroy']);
 
 
 Route::get('/painel/servicos', [App\Http\Controllers\Painel\PainelController::class, 'viewServicos'])->name('Painel.Servicos.index');
 
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+  return view('dashboard');
+})->name('dashboard');
 
 ?>
+
 
 

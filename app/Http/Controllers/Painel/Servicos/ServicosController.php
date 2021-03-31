@@ -75,6 +75,14 @@ class ServicosController extends Controller
         return redirect()->back()->with('error', 'Houve um erro ao cadastrar o usuário.');
     }
 
+    public function destroy($id) {
+
+        Servico::findOrFail($id)->delete();
+        return redirect ('/painel/servicos/tiposServicos')->with('msg', 'Serviço removido com sucesso.');
+
+
+    }
+
 
 
 

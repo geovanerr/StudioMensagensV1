@@ -25,6 +25,23 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header" style="text-align:center">STUDIO MENSAGENS</li>
+
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-book"></i> <span> Painel Principal </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+    
+            <li class="active"><a href="/dashboard"><i class="fa fa-television"></i> Dashboard</a></li>
+                        
+          </ul>
+        </li>
+
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-users"></i> <span> Usuários </span>
@@ -34,7 +51,7 @@
           </a>
           <ul class="treeview-menu">
           <li class="active"><a href="{{ route('Painel.Usuarios.index') }}"><i class="fa fa-user-o"></i> Gerenciar Usuários </a></li>
-            <li class="active"><a href="{{ route('Painel.Usuarios.viewCadastro') }}"><i class="fa fa-user-plus"></i>Painel de Funcionários </a></li>
+            <li class="active"><a href="/register"><i class="fa fa-user-plus"></i>Painel de Funcionários </a></li>
             <li class="active"><a href="{{ route('Painel.Usuarios.listaclientes') }}"><i class="fa fa-user-plus"></i> Painel de Clientes </a></li>
           </ul>
         </li>

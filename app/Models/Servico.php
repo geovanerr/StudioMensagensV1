@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Servico extends Model
 {
     use HasFactory;
+
+    protected $dates = ['date'];
+
+    public function cliente() {
+
+        return $this->belongsTo('App\Models\Cliente');
+
+    }
+
 }
