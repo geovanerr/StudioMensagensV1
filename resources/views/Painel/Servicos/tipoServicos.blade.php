@@ -42,16 +42,23 @@
                     
                      
                        <td> 
-                          <button class="btn btn-warning"><i class="fa fa-edit"></i> </button>
-                          <button type="submit" display="inline-block" class="btn btn-danger"> <i class="fa fa-trash"></i> </button>
-
+                        
+                          
+                         
+                              
+                          <a href="/servicos/edit/{{ $servico->id }}" class="btn btn-warning"><i class="fa fa-edit"></i> Editar </a>
+                       
                           <form action="/servicos/{{ $servico->id }}"  method="POST">
+                          
                                 @csrf
                                 @method('DELETE')
-                               <button type="submit" display="inline-block" class="btn btn-danger"> <i class="fa fa-trash"></i> </button>
+                               <button type="submit" display="inline-block" class="btn btn-danger"> <i class="fa fa-trash"></i> Excluir </button>
                            
                           </form>
                            
+                          
+                  
+                       
                             
                        </td>
                    </tr>

@@ -11,6 +11,8 @@ class Servico extends Model
 
     protected $dates = ['date'];
 
+    protected $guarded = [];
+
     public function cliente() {
 
         return $this->belongsTo('App\Models\Cliente');

@@ -83,6 +83,31 @@ class ServicosController extends Controller
 
     }
 
+    public function edit($id) {
+
+
+        
+        $servico = Servico::findOrFail($id);
+   
+      
+        return view ('Painel.Servicos.edit', ['servico' => $servico]);
+
+
+    }
+
+    public function update(Request $request) {
+
+
+        
+        Servico::findOrFail($request->id)->update($request->all());
+   
+      
+    
+        return redirect ('/painel/servicos/tiposServicos')->with('msg', 'Serviço alterado com sucesso.');
+
+
+    }
+
 
 
 

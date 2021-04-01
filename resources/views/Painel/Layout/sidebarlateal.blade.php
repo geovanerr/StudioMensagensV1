@@ -36,7 +36,7 @@
           </a>
           <ul class="treeview-menu">
     
-            <li class="active"><a href="/dashboard"><i class="fa fa-television"></i> Dashboard</a></li>
+            <li class="active"><a href="/dashboard"><i class="fa fa-home"></i> Dashboard</a></li>
                         
           </ul>
         </li>
