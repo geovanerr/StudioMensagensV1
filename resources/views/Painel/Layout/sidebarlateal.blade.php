@@ -69,7 +69,7 @@
             <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-plus-square"></i> Painel de Serviços</a></li>
             <li class="active"><a href="{{ route('Painel.Servicos.tipoServicos') }}"><i class="fa fa-file-text-o"></i> Tipo de Serviços </a></li>
 
-            <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-file-text-o"></i> Ordem de Serviço </a></li>
+            <li class="active"><a href="{{ route('Painel.OrdemServico.index') }}"><i class="fa fa-file-text-o"></i> Ordem de Serviço </a></li>
        
 
           

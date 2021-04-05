@@ -5,6 +5,7 @@ use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Painel\PainelController;
 use App\Http\Controllers\Painel\Usuarios\UsuariosController;
 use App\Http\Controllers\Painel\Servicos\ServicosController;
+use App\Http\Controllers\Painel\OrdemServico\OrdemServicoController;
 
 Route::get('/', function () {
   return view('Home.index');
@@ -41,6 +42,13 @@ Route::post('/servicos', [ServicosController::class, 'cadastrotipostore']);
 Route::delete('/servicos/{id}', [ServicosController::class, 'destroy']);
 Route::get('/servicos/edit/{id}', [ServicosController::class, 'edit']);
 Route::put('/servicos/update/{id}', [ServicosController::class, 'update']);
+
+
+Route::get('/painel/ordemservico', [App\Http\Controllers\Painel\OrdemServico\OrdemServicoController::class, 'index'])->name('Painel.OrdemServico.index');
+//Route::post('/servicos', [ServicosController::class, 'cadastrotipostore']);
+//Route::delete('/servicos/{id}', [ServicosController::class, 'destroy']);
+//Route::get('/servicos/edit/{id}', [ServicosController::class, 'edit']);
+//Route::put('/servicos/update/{id}', [ServicosController::class, 'update']);
 
 
 
