@@ -14,9 +14,15 @@ class OrdemServicoController extends Controller
 
     public function index()
     {
+      
+        return view('Painel.OrdemServico.index');
+    }
+    
+    public function create()
+    {
 
        // $servicos = Servico::all();
-        return view('Painel.OrdemServico.index');
+        return view('Painel.OrdemServico.create');
     }
 
 

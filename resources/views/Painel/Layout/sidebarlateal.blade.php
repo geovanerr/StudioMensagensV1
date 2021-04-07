@@ -71,7 +71,7 @@
 
             <li class="active"><a href="{{ route('Painel.OrdemServico.index') }}"><i class="fa fa-file-text-o"></i> Ordem de Serviço </a></li>
        
-
+            
           
           </ul>
         </li>
