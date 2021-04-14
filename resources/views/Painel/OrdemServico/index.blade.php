@@ -6,7 +6,7 @@
 
   <section class="content">
 
-     
+     dd($ordens);
      
      <div class="row">
        
@@ -26,17 +26,46 @@
              <table id="example1" class="table table-bordered table-striped">
                <thead>
                <tr>
-                 <th> ID </th>
-                 <th> <i class="fa fa-handshake-o"></i>  Serviço  </th>
-                 <th> <i class="fa fa-money"></i> Preço  </th>
+                 <th> OS </th>
+                 <th> <i class="fa fa-handshake-o"></i>  Cliente  </th>
+                 <th> <i class="fa fa-money"></i> Receptor  </th>
                  
+                 <th> <i class="fa fa-cog" aria-hidden="true"></i>  Celular </th>
+                 <th> <i class="fa fa-cog" aria-hidden="true"></i>  Serviços </th>                 
+                 <th> <i class="fa fa-cog" aria-hidden="true"></i>  Data OS </th>                 
+                 <th> <i class="fa fa-cog" aria-hidden="true"></i>  Hora OS </th>
                  <th> <i class="fa fa-cog" aria-hidden="true"></i>  Ação </th>
+
                </tr>
                </thead>
                <tbody>
-             
+                    @foreach ($ordens as $ordem)
+                        <tr>
+                          <td> {{ $ordem->id }} </td>
+                          <td> {{ $ordem->cliente->nome }} </td>
+                          <td> {{ $ordem->receptor }} </td>
+                          <td> {{ $ordem->celular }} </td>
+                          <td>
+                          <ul>
+                          @foreach ($ordem->servicos as $servico)
+                        
+                          <li><ion-icon name="play-outline"></ion-icon> <span>{{ $servico }}</span></li>
+                          
+                          @endforeach
+                          </ul>
+                          </td>
+                          <td> {{ date('d/m/Y', strtotime($ordem->dataos))  }} </td>
+                          <td> {{ $ordem->horarioos }} </td>
+                                              
+                            <td> 
+                                <a class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                  
+                            </td>
+                        </tr>
+                    @endforeach            
                
-            
+               </tbody>
              </table>
            </div>
           

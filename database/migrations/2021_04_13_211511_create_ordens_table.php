@@ -23,13 +23,9 @@ class CreateOrdensTable extends Migration
             $table->string('phone');
             $table->string('celular');        
             $table->text('genero');
-         
-          
-            $table->unsignedBigInteger('servico_id');
-            $table->foreign('servico_id')->references('id')->on('servicos');
-
+            $table->json('servicos');
             $table->string('mensagem');
-            $table->date('dataos');
+            $table->dateTime('dataos');
             $table->string('horarioos');
             $table->text('status');
             $table->string('obs');

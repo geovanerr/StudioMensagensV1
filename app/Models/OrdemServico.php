@@ -9,9 +9,14 @@ class OrdemServico extends Model
 {
     use HasFactory;
 
-    protected $dates = ['date'];
+    protected $dates = ['dataos'];
 
     protected $guarded = [];
+
+    protected $casts = [
+        'servicos' => 'array' 
+
+    ];
 
 
     protected $table = "ordens";

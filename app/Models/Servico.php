@@ -13,6 +13,4 @@ class Servico extends Model
 
     protected $guarded = [];
 
-   
-
 }

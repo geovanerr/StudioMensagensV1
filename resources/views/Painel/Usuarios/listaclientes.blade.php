@@ -18,7 +18,7 @@
                     <p class="msg"> {{ session('msg')}} </p>
                   @endif
         
-               <h3 id="box-title" class="text-center"> Tipos de Serviços <a href="{{ route('Painel.Usuarios.viewCliente') }}" class="btn btn-success"><i class="fa fa-plus"></i></a> </h3>
+               <h3 id="box-title" class="text-center"> <b> Clientes </b><a href="{{ route('Painel.Usuarios.viewCliente') }}" class="btn btn-success"><i class="fa fa-plus"></i></a> </h3>
                
              </div>
            <!-- /.box-header -->
@@ -40,7 +40,7 @@
                      <td> {{ $cliente->id }} </td>
                      <td> {{ $cliente->nome }} </td>
                      <td> {{ $cliente->celular }} </td>
-                     <td> {{ $cliente->nascimento }} </td>
+                     <td> {{ date('d/m/Y', strtotime($cliente->nascimento))  }} </td>
                      <td> {{ $cliente->genero }} </td>
                      
                     
@@ -52,6 +52,7 @@
                        </td>
                    </tr>
                @endforeach
+               </tbody>
                
             
              </table>

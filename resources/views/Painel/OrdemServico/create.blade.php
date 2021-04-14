@@ -31,7 +31,7 @@
                       <div class="form-group">
                       <i class="fa fa-id-badge"></i></span>
                         <label>Cliente</label>
-                        <select name="cliente_id" class="form-control select2">
+                        <select name="cliente" class="form-control select2">
                         <option> Selecione um Cliente </option>
 
                         @foreach ($clientes as $cliente)
@@ -98,7 +98,7 @@
                 <i class="fa fa-shopping-bag"></i>
                 <label>Serviços</label>
                 <br>
-                <select name="servico_id" id="servico_id" class="form-control select2" multiple="multiple" data-placeholder="Selecione os Serviços"
+                <select name="servicos[]" class="form-control select2" multiple="multiple" data-placeholder="Selecione os Serviços"
                 style="width: 100%;">
                 @foreach ($servicos as $servico)
                   <option value="{{$servico->id}}">{{$servico->servico}}</option>
@@ -134,10 +134,7 @@
           <div class="form-group">
                 <label>Data da OS:</label>
                 <div class="input-group date">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input type="text" class="form-control pull-right" name="dataos" id="datepicker">
+                  <input type="date" class="form-control pull-right" name="dataos" id="dataos">
                 </div>
               
              

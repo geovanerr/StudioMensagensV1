@@ -68,7 +68,7 @@
                               <div class="col-xs-3">
                               <i class="fa fa-calendar"></i>
                               <label for=""> Data Nascimento:</label> 
-                              <input type="text" class="form-control pull-right" id="nascimento" name="nascimento" value="{{ date('d/M/Y') }}">
+                              <input type="date" class="form-control pull-right" id="nascimento" name="nascimento">
                               </div>
 
                   

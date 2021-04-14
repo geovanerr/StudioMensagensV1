@@ -12,13 +12,12 @@ use Illuminate\Http\Request;
 
 class OrdemServicoController extends Controller
 {
-    //
-
 
     public function index()
     {
-      
-        return view('Painel.OrdemServico.index');
+
+        $ordens = OrdemServico::all();
+        return view('Painel.OrdemServico.index', ['ordens' => $ordens]);
     }
     
     public function create()
@@ -32,8 +31,8 @@ class OrdemServicoController extends Controller
     public function store(Request $request)
     {
 
-        $cliente = Cliente::find($request->cliente_id);
-      
+        $cliente = Cliente::find($request->cliente);
+
         if(!$cliente){
 
             return 'Erro ao selecionar cliente';
@@ -41,12 +40,12 @@ class OrdemServicoController extends Controller
 
 
         $os = new OrdemServico;
-        $os->cliente_id = $request->cliente_id;
+        $os->cliente()->associate($cliente);
         $os->receptor = $request->receptor;
         $os->phone = $request->phone;
         $os->celular = $request->celular;
         $os->genero = $request->genero;
-        $os->servico_id = $request->servico_id;
+        $os->servicos = $request->servicos;
         $os->mensagem = $request->mensagem;
         $os->dataos = $request->dataos;
         $os->horarioos = $request->horarioos;

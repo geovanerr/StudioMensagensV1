@@ -23,7 +23,7 @@ class CreateClientesTable extends Migration
             $table->text('referencia');
             $table->string('phone');
             $table->string('celular')->nullable();
-            $table->date('nascimento');
+            $table->dateTime('nascimento');
             $table->string('genero');
             $table->text('obs');
                 
