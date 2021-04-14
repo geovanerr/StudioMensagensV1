@@ -10,9 +10,9 @@ class Cliente extends Model
     use HasFactory;
 
 
-    public function servicos() {
+    public function OrdensServicos() {
 
-        return $this->hasMany('App\Models\Servico');
+        return $this->hasMany('App\Models\OrdemServico');
 
     }
 }

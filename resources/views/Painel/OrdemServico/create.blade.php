@@ -6,11 +6,17 @@
 @section('content')
 
 
+            <div class="box-header with-border">
+              <h3 class="text-center"> <a> Cadastro <b> OS</b></a> </h3>
+            </div>
+
+<form action="{{ route('Painel.OrdemServico.store') }}" method="post">
+  @csrf
 
   <section class="content">
 
-      <!-- SELECT2 EXAMPLE -->
-      <div class="box box-default">
+    
+              <div class="box box-default">
               <div class="box-header with-border">
                 <h3 class="box-title">Dados do Cliente</h3>
                 <div class="box-tools pull-right">
@@ -19,41 +25,29 @@
               </div>
         
           <div class="box-body">
-            <div class="row">
-
             
-                    <div class="col-md-1">
-                      <div class="form-group">
-                        <label>ID</label>
-                        <select class="form-control select2" disabled="disabled" style="width: 100%;">
-                        <option selected="selected">Alabama</option>
-                        <option>Alaska</option>
-                        </select>
-                      </div>            
-                    </div>
-
+          <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
                       <i class="fa fa-id-badge"></i></span>
                         <label>Cliente</label>
-                        <select class="form-control select2">
-                        <option selected="selected">Alabama</option>
-                        <option>Alaska</option>
+                        <select name="cliente_id" class="form-control select2">
+                        <option> Selecione um Cliente </option>
+
+                        @foreach ($clientes as $cliente)
+
+                        <option value="{{$cliente->id}}"> {{$cliente->nome}} </option>
+
+                        @endforeach                        
                         </select>
                       </div>            
                     </div>
+                    </div>
             
                           
-                </div>
-            </div>
-         
+                </div>      
         </div>
-      
-    </section>
 
-    <section class="content">
-
-<!-- SELECT2 EXAMPLE -->
 <div class="box box-default">
         <div class="box-header with-border">
           <h3 class="box-title">Dados do Serviço</h3>
@@ -69,7 +63,7 @@
                 <div class="form-group">
                 <i class="fa fa-address-card-o"></i></span>
                   <label>Receptor</label>
-                  <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome Receptor">         
+                  <input type="text" class="form-control" id="receptor" name="receptor" placeholder="Nome Receptor">         
 
                 </div>            
               </div>
@@ -104,15 +98,12 @@
                 <i class="fa fa-shopping-bag"></i>
                 <label>Serviços</label>
                 <br>
-                <select class="form-control select2" multiple="multiple" data-placeholder="Selecione os Serviços"
+                <select name="servico_id" id="servico_id" class="form-control select2" multiple="multiple" data-placeholder="Selecione os Serviços"
                 style="width: 100%;">
-                  <option>Alabama</option>
-                  <option>Alaska</option>
-                  <option>California</option>
-                  <option>Delaware</option>
-                  <option>Tennessee</option>
-                  <option>Texas</option>
-                  <option>Washington</option>
+                @foreach ($servicos as $servico)
+                  <option value="{{$servico->id}}">{{$servico->servico}}</option>
+                @endforeach
+
                 </select>
                 </div>            
               </div>
@@ -122,7 +113,7 @@
             
               <label>Mensagem</label>
                 <br>
-                <select class="form-control select2" multiple="multiple" data-placeholder="Selecione a Mensagem"
+                <select name="mensagem" class="form-control select2" multiple="multiple" data-placeholder="Selecione a Mensagem"
                         style="width: 100%;">
                   <option>Alabama</option>
                   <option>Alaska</option>
@@ -146,7 +137,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control pull-right" id="datepicker">
+                  <input type="text" class="form-control pull-right" name="dataos" id="datepicker">
                 </div>
               
              
@@ -159,15 +150,13 @@
                   <label>Horário OS:</label>
 
                   <div class="input-group">
-                    <input type="text" class="form-control timepicker">
+                    <input type="text" class="form-control timepicker" name="horarioos" id="horarioos">
 
                     <div class="input-group-addon">
                       <i class="fa fa-clock-o"></i>
                     </div>
                   </div>
-                  <!-- /.input group -->
                 </div>
-                <!-- /.form group -->
               </div>
               </div>
 
@@ -175,7 +164,7 @@
               <div class="col-md-3">
               <div class="form-group">
                   <label>Status da OS</label>
-                  <select class="form-control">
+                  <select name="status" class="form-control">
                     <option> Aberta </option>
                     <option> Realizada </option>
                     <option> Cancelada </option>
@@ -191,7 +180,7 @@
             <div class="col-md-6">
             <div class="form-group">
                   <label>Observação</label>
-                  <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                  <textarea name="obs" class="form-control" rows="3" placeholder="Enter ..."></textarea>
                 </div>
 
             </div>
@@ -200,11 +189,20 @@
             <div class="col-md-6">
             <div class="form-group">
                   <label>Observação Cobrador</label>
-                  <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                  <textarea name="obscobrador" class="form-control" rows="3" placeholder="Enter ..."></textarea>
                 </div>
 
             </div>
             </div>
+
+
+                              <div class="box-footer with-footer">
+                              <h3 class="text-center">                               
+                              <button type="submit" class="btn btn-success">Cadastrar</button>
+                              
+                              <button type="submit" class="btn btn-danger">Cancelar</button>
+                            </h3>
+                            </div>  
 
 
 
@@ -216,7 +214,7 @@
 
 </section>
 
-
+</form>
 
 @endsection
 

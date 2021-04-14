@@ -13,10 +13,6 @@ class Servico extends Model
 
     protected $guarded = [];
 
-    public function cliente() {
-
-        return $this->belongsTo('App\Models\Cliente');
-
-    }
+   
 
 }

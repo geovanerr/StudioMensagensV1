@@ -17,7 +17,7 @@
             </div>
 
             
-            <form action="/servicos" method="POST">
+            <form action="{{ route('Painel.Servicos.cadastrotipostore') }}" method="POST">
             @csrf
             <div class="box-body">
                    

@@ -25,29 +25,31 @@ Auth::routes();
 //Route::get('/home', [App\Http\Controllers\Home\HomeController::class, 'index'])->name('Home.index');
 
 
-Route::get('/painel', [App\Http\Controllers\Painel\PainelController::class, 'index'])->name('Painel.index');
-Route::get('/painel/usuarios', [App\Http\Controllers\Painel\Usuarios\UsuariosController::class, 'index'])->name('Painel.Usuarios.index');
-Route::get('/painel/usuarios/cadastrofuncionario', [App\Http\Controllers\Painel\Usuarios\UsuariosController::class, 'viewCadastro'])->name('Painel.Usuarios.viewCadastro');
+Route::get('/painel', [PainelController::class, 'index'])->name('Painel.index');
+Route::get('/painel/usuarios', [UsuariosController::class, 'index'])->name('Painel.Usuarios.index');
+Route::get('/painel/usuarios/cadastrofuncionario', [UsuariosController::class, 'viewCadastro'])->name('Painel.Usuarios.viewCadastro');
 
 
 
-Route::get('/painel/usuarios/listaclientes', [App\Http\Controllers\Painel\Usuarios\UsuariosController::class, 'listaclientes'])->name('Painel.Usuarios.listaclientes');
+Route::get('/painel/usuarios/listaclientes', [UsuariosController::class, 'listaclientes'])->name('Painel.Usuarios.listaclientes');
 
-Route::get('/painel/usuarios/cadastrocliente', [App\Http\Controllers\Painel\Usuarios\UsuariosController::class, 'viewCliente'])->name('Painel.Usuarios.viewCliente');
+Route::get('/painel/usuarios/cadastrocliente', [UsuariosController::class, 'viewCliente'])->name('Painel.Usuarios.viewCliente');
 Route::post('/clientes', [UsuariosController::class, 'clientestore']);
 
 
 
-Route::get('/painel/servicos/tiposServicos', [App\Http\Controllers\Painel\Servicos\ServicosController::class, 'tipoServicos'])->name('Painel.Servicos.tipoServicos');
-Route::get('/painel/servicos/cadastrotipos', [App\Http\Controllers\Painel\Servicos\ServicosController::class, 'cadastrotipoS'])->name('Painel.Servicos.cadastrotipoS');
-Route::post('/servicos', [ServicosController::class, 'cadastrotipostore']);
-Route::delete('/servicos/{id}', [ServicosController::class, 'destroy']);
-Route::get('/servicos/edit/{id}', [ServicosController::class, 'edit']);
-Route::put('/servicos/update/{id}', [ServicosController::class, 'update']);
+Route::get('/painel/servicos/tiposServicos', [ServicosController::class, 'tipoServicos'])->name('Painel.Servicos.tipoServicos');
+Route::get('/painel/servicos/cadastrotipos', [ServicosController::class, 'cadastrotipoS'])->name('Painel.Servicos.cadastrotipoS');
+Route::post('/servicos', [ServicosController::class, 'cadastrotipostore'])->name('Painel.Servicos.cadastrotipostore');
+Route::delete('/servicos/{id}', [ServicosController::class, 'destroy'])->name('Painel.Servicos.destroy');
+Route::get('/servicos/edit/{id}', [ServicosController::class, 'edit'])->name('Painel.Servicos.edit');
+Route::put('/servicos/update/{id}', [ServicosController::class, 'update'])->name('Painel.Servicos.update');
 
 
-Route::get('/painel/ordemservico', [App\Http\Controllers\Painel\OrdemServico\OrdemServicoController::class, 'index'])->name('Painel.OrdemServico.index');
-Route::get('/painel/ordemservico/create', [App\Http\Controllers\Painel\OrdemServico\OrdemServicoController::class, 'create'])->name('Painel.OrdemServico.create');
+Route::get('/painel/ordemservico', [OrdemServicoController::class, 'index'])->name('Painel.OrdemServico.index');
+Route::get('/painel/ordemservico/create', [OrdemServicoController::class, 'create'])->name('Painel.OrdemServico.create');
+Route::post('/painel/ordemservico/create', [OrdemServicoController::class, 'store'])->name('Painel.OrdemServico.store');
+
 ///Route::post('/ordemservico/create', [OrdemServicoController::class, 'create']);
 //Route::delete('/servicos/{id}', [ServicosController::class, 'destroy']);
 //Route::get('/servicos/edit/{id}', [ServicosController::class, 'edit']);
