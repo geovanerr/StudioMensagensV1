@@ -29,15 +29,15 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-book"></i> <span> Painel Principal </span>
+            <i class="fa fa-home"></i> <span> Painel Principal </span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-    
+
             <li class="active"><a href="/dashboard"><i class="fa fa-home"></i> Dashboard</a></li>
-                        
+
           </ul>
         </li>
 
@@ -55,37 +55,37 @@
             <li class="active"><a href="{{ route('Painel.Usuarios.listaclientes') }}"><i class="fa fa-user-plus"></i> Painel de Clientes </a></li>
           </ul>
         </li>
-        
+
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-book"></i> <span> Serviços </span>
+            <i class="fa fa-list-ul" aria-hidden="true"></i><span> Serviços </span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-    
-            <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-plus-square"></i> Painel de Serviços</a></li>
-            <li class="active"><a href="{{ route('Painel.Servicos.tipoServicos') }}"><i class="fa fa-file-text-o"></i> Tipo de Serviços </a></li>
+
+            <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-pie-chart"></i> Painel de Serviços</a></li>
+            <li class="active"><a href="{{ route('Painel.Servicos.tipoServicos') }}"><i class="fa fa-list-ol" aria-hidden="true"></i> Tipo de Serviços </a></li>
 
             <li class="active"><a href="{{ route('Painel.OrdemServico.index') }}"><i class="fa fa-file-text-o"></i> Ordem de Serviço </a></li>
-       
-            
-          
+
+
+
           </ul>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-users"></i> <span> Cobrança </span>
+            <i class="fa fa-money"></i> <span> Cobrança </span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
            <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-money"></i> Cobrança </a></li>
-        
+
           </ul>
 
           <li class="treeview">
@@ -99,7 +99,7 @@
            <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-user"></i> Clientes </a></li>
            <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-book"></i> Serviços </a></li>
            <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-calendar"></i> Aniversariantes </a></li>
-        
+
           </ul>
 
 
@@ -112,7 +112,7 @@
           </a>
           <ul class="treeview-menu">
            <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-book"></i> Cobrança </a></li>
-        
+
           </ul>
 
           <li class="treeview">
@@ -124,7 +124,7 @@
           </a>
           <ul class="treeview-menu">
            <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-info"></i> Sobre </a></li>
-        
+
           </ul>
         </li>
       </ul>
