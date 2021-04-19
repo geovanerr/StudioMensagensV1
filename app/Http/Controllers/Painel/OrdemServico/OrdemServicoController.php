@@ -60,6 +60,17 @@ class OrdemServicoController extends Controller
 
     }
 
+    public function dashboard()
+    {
+        $ordens = OrdemServico::all();
+        return view('dashboard', ['ordens' => $ordens]);
+    }
+
+    public function show($id)
+    {
+        dd($id);
+    }
+
  
 
 }

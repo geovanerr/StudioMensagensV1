@@ -49,6 +49,8 @@ Route::put('/servicos/update/{id}', [ServicosController::class, 'update'])->name
 Route::get('/painel/ordemservico', [OrdemServicoController::class, 'index'])->name('Painel.OrdemServico.index');
 Route::get('/painel/ordemservico/create', [OrdemServicoController::class, 'create'])->name('Painel.OrdemServico.create');
 Route::post('/painel/ordemservico/create', [OrdemServicoController::class, 'store'])->name('Painel.OrdemServico.store');
+Route::get('/dashboard', [OrdemServicoController::class, 'dashboard'])->name('dashboard');
+Route::get('/painel/ordemservico/{id}', [OrdemServicoController::class, 'show'])->name('Painel.OrdemServico.show');
 
 ///Route::post('/ordemservico/create', [OrdemServicoController::class, 'create']);
 //Route::delete('/servicos/{id}', [ServicosController::class, 'destroy']);
@@ -60,9 +62,9 @@ Route::post('/painel/ordemservico/create', [OrdemServicoController::class, 'stor
 Route::get('/painel/servicos', [App\Http\Controllers\Painel\PainelController::class, 'viewServicos'])->name('Painel.Servicos.index');
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-  return view('dashboard');
-})->name('dashboard');
+//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//  return view('dashboard');
+//})->name('dashboard');
 
 ?>
 

@@ -162,9 +162,9 @@
               <div class="form-group">
                   <label>Status da OS</label>
                   <select name="status" class="form-control">
-                    <option> Aberta </option>
-                    <option> Realizada </option>
-                    <option> Cancelada </option>
+                    <option value="Aberta"> Aberta </option>
+                    <option value="Realizada"> Realizada </option>
+                    <option value="Cancelada"> Cancelada </option>
                   
                   </select>
                 </div>

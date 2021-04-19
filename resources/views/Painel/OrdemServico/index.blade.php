@@ -6,8 +6,6 @@
 
   <section class="content">
 
-     dd($ordens);
-
      <div class="row">
 
      <div class="col-xs-12">
