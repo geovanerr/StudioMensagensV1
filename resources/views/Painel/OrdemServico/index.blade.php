@@ -61,6 +61,8 @@
                             <td>
                                 <a class="btn btn-warning"><i class="fa fa-edit"></i></a>
                                 <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                [ <a href="{{ route('Painel.OrdemServico.show', $ordem->id) }}">Detalhes</a> ]
+
 
                             </td>
                         </tr>

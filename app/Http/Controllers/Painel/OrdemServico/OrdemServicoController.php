@@ -19,7 +19,7 @@ class OrdemServicoController extends Controller
         $ordens = OrdemServico::all();
         return view('Painel.OrdemServico.index', ['ordens' => $ordens]);
     }
-    
+
     public function create()
     {
 
@@ -52,7 +52,7 @@ class OrdemServicoController extends Controller
         $os->status = $request->status;
         $os->obs = $request->obs;
         $os->obscobrador = $request->obscobrador;
-        
+
         $os->save();
 
         return redirect ('/painel/ordemservico')->with('msg', 'Ordem de Serviço criada com sucesso.');
@@ -68,9 +68,17 @@ class OrdemServicoController extends Controller
 
     public function show($id)
     {
-        dd($id);
+       //$ordens = OrdemServico::where('id', $id)->first();
+
+       $ordem = OrdemServico::find($id);
+
+       if(!$ordem) {
+
+        return redirect()->route('Painel.OrdemServico.index');
+       }
+          return view('Painel.OrdemServico.show', compact('ordem'));
     }
 
- 
+
 
 }
