@@ -48,6 +48,7 @@ Route::put('/servicos/update/{id}', [ServicosController::class, 'update'])->name
 
 Route::get('/painel/ordemservico', [OrdemServicoController::class, 'index'])->name('Painel.OrdemServico.index');
 Route::get('/painel/ordemservico/create', [OrdemServicoController::class, 'create'])->name('Painel.OrdemServico.create');
+Route::get('/painel/ordemservico/edit/{id}', [OrdemServicoController::class, 'edit'])->name('Painel.OrdemServico.edit');
 Route::post('/painel/ordemservico/create', [OrdemServicoController::class, 'store'])->name('Painel.OrdemServico.store');
 Route::get('/dashboard', [OrdemServicoController::class, 'dashboard'])->name('dashboard');
 Route::get('/painel/ordemservico/{id}', [OrdemServicoController::class, 'show'])->name('Painel.OrdemServico.show');

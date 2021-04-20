@@ -79,6 +79,22 @@ class OrdemServicoController extends Controller
           return view('Painel.OrdemServico.show', compact('ordem'));
     }
 
+    public function edit($id)
+    {
+
+
+        $clientes = Cliente::all();
+        $servicos = Servico::all();
+
+        $ordem = OrdemServico::find($id);
+
+        if(!$ordem) {
+
+        return redirect()->route('Painel.OrdemServico.index');
+        }
+        //  return view('Painel.OrdemServico.edit', compact('ordem'));
+          return view('Painel.OrdemServico.edit', ['clientes' => $clientes, 'servicos' => $servicos, 'ordem' => $ordem]);
+    }
 
 
 }
