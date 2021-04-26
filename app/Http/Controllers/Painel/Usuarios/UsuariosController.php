@@ -13,7 +13,7 @@ use App\Models\Roles\Roles;
 
 class UsuariosController extends Controller
 {
-  
+
     protected $model;
     public $request;
     public $usuarios;
@@ -42,7 +42,7 @@ class UsuariosController extends Controller
     }
 
 
-    
+
     public function viewCadastro()
     {
         //Controla a rota do usuário.
@@ -50,7 +50,7 @@ class UsuariosController extends Controller
         $uri = $this->request->route()->uri();
         $exploder = explode('/', $uri);
         $urlAtual = $exploder[2];
-        
+
         $title = 'Painel de Cadastro';
       //  $roles = Roles::all();
         return view('Painel.Usuarios.viewCadastro', compact('user','urlAtual'));
@@ -62,18 +62,19 @@ class UsuariosController extends Controller
         $store = User::create ($request->all());
         if($store)
             return redirect()->route('Painel.Usuarios.index')->with('success', 'Usuário Cadastrado com sucesso!');
-        
+
         return redirect()->back()->with('error', 'Houve um erro ao cadastrar o usuário.');
     }*/
 
     public function viewCliente()
     {
         //Controla a rota do usuário.
+
         $user = Auth()->User();
         $uri = $this->request->route()->uri();
         $exploder = explode('/', $uri);
         $urlAtual = $exploder[2];
-        
+
         $title = 'Painel de Cadastro';
       //  $roles = Roles::all();
         return view('Painel.Usuarios.viewCliente', compact('user','urlAtual'));
@@ -104,7 +105,7 @@ class UsuariosController extends Controller
         $cliente->obs = $request->obs;
 
         $cliente->save();
-    
+
         return redirect ('/painel/usuarios/listaclientes')->with('msg', 'Cliente cadastrado com sucesso.');
 
     }

@@ -13,11 +13,6 @@ class OrdemServico extends Model
 
     protected $guarded = [];
 
-    protected $casts = [
-        'servicos' => 'array' 
-
-    ];
-
 
     protected $table = "ordens";
 
@@ -26,10 +21,16 @@ class OrdemServico extends Model
     //protected $fillable = ['servico', 'servico', 'prop3'];
 
 
-    public function cliente() {
+    public function cliente()
+    {
 
         return $this->belongsTo('App\Models\Cliente');
 
+    }
+
+    public function servicos()
+    {
+        return $this->belongsToMany('App\Models\Servico', 'ordem_servicos_servicos', 'ordem_id', 'servico_id');
     }
 
 }

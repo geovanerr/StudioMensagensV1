@@ -17,6 +17,7 @@ class OrdemServicoController extends Controller
     {
 
         $ordens = OrdemServico::all();
+
         return view('Painel.OrdemServico.index', ['ordens' => $ordens]);
     }
 
@@ -32,6 +33,7 @@ class OrdemServicoController extends Controller
     {
 
         $cliente = Cliente::find($request->cliente);
+        $servico = Servico::find($request->servico);
 
         if(!$cliente){
 
@@ -45,7 +47,8 @@ class OrdemServicoController extends Controller
         $os->phone = $request->phone;
         $os->celular = $request->celular;
         $os->genero = $request->genero;
-        $os->servicos = $request->servicos;
+        $os->servicos()->attach($servico);
+
         $os->mensagem = $request->mensagem;
         $os->dataos = $request->dataos;
         $os->horarioos = $request->horarioos;
@@ -54,7 +57,6 @@ class OrdemServicoController extends Controller
         $os->obscobrador = $request->obscobrador;
 
         $os->save();
-
         return redirect ('/painel/ordemservico')->with('msg', 'Ordem de Serviço criada com sucesso.');
 
 
@@ -95,6 +97,8 @@ class OrdemServicoController extends Controller
         //  return view('Painel.OrdemServico.edit', compact('ordem'));
           return view('Painel.OrdemServico.edit', ['clientes' => $clientes, 'servicos' => $servicos, 'ordem' => $ordem]);
     }
+
+
 
 
 }

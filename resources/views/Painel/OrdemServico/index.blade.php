@@ -47,13 +47,6 @@
                           <td> {{ $ordem->receptor }} </td>
                           <td> {{ $ordem->celular }} </td>
                           <td>
-                          <ul>
-                          @foreach ($ordem->servicos as $servico)
-
-                          <li><ion-icon name="play-outline"></ion-icon> <span>{{ $servico }}</span></li>
-
-                          @endforeach
-                          </ul>
                           </td>
                           <td> {{ date('d/m/Y', strtotime($ordem->dataos))  }} </td>
                           <td> {{ $ordem->horarioos }} </td>

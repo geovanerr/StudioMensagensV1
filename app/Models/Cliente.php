@@ -8,7 +8,23 @@ use Illuminate\Database\Eloquent\Model;
 class Cliente extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nome',
+        'logradouro',
+        'numero',
+        'bairro',
+        'referencia',
+        'phone',
+        'celular',
+        'nascimento',
+        'genero',
+        'obs',
+
+    ];
+
     protected $dates = ['nascimento'];
+
+
 
     public function OrdensServicos() {
 

@@ -15,24 +15,24 @@ class CreateOrdensTable extends Migration
     {
         Schema::create('ordens', function (Blueprint $table) {
             $table->id();
-           
+
             $table->unsignedBigInteger('cliente_id');
             $table->foreign('cliente_id')->references('id')->on('clientes');
 
             $table->string('receptor');
             $table->string('phone');
-            $table->string('celular');        
+            $table->string('celular');
             $table->text('genero');
-            $table->json('servicos');
+
             $table->string('mensagem');
             $table->dateTime('dataos');
             $table->string('horarioos');
             $table->text('status');
             $table->string('obs');
-            $table->string('obscobrador');     
+            $table->string('obscobrador');
             $table->timestamps();
 
-     
+
         });
     }
 

@@ -15,17 +15,17 @@
 
   <section class="content">
 
-    
+
               <div class="box box-default">
               <div class="box-header with-border">
                 <h3 class="box-title">Dados do Cliente</h3>
                 <div class="box-tools pull-right">
-                  
+
                 </div>
               </div>
-        
+
           <div class="box-body">
-            
+
           <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
@@ -38,14 +38,14 @@
 
                         <option value="{{$cliente->id}}"> {{$cliente->nome}} </option>
 
-                        @endforeach                        
+                        @endforeach
                         </select>
-                      </div>            
+                      </div>
                     </div>
                     </div>
-            
-                          
-                </div>      
+
+
+                </div>
         </div>
 
 <div class="box box-default">
@@ -55,28 +55,28 @@
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           </div>
         </div>
-  
+
     <div class="box-body">
       <div class="row">
               <div class="col-md-6">
-             
+
                 <div class="form-group">
                 <i class="fa fa-address-card-o"></i></span>
                   <label>Receptor</label>
-                  <input type="text" class="form-control" id="receptor" name="receptor" placeholder="Nome Receptor">         
+                  <input type="text" class="form-control" id="receptor" name="receptor" placeholder="Nome Receptor">
 
-                </div>            
+                </div>
               </div>
-      
+
               <div class="col-xs-2">
               <i class="fa fa-phone"></i></span>
               <label for=""> Telefone:</label> <input type="text" class="form-control" id="phone" name="phone" placeholder="Rua:">
               </div>
-                            
+
               <div class="col-xs-2">
               <i class="fa fa-mobile"></i></span>
               <label for="">  Celular:</label> <input type="text" class="form-control" id="celular" name="celular" placeholder="Nº">
-              </div>   
+              </div>
 
               <div class="col-md-2">
               <i class="fa fa-female"></i>
@@ -86,9 +86,9 @@
                       <option value="N/I" selected="selected">Nao Informar</option>
                       <option value="F">Feminino</option>
                       <option value="M">Masculino</option>
-                   </select>                          
-              </div>   
-         
+                   </select>
+              </div>
+
           </div>
 
 
@@ -98,19 +98,20 @@
                 <i class="fa fa-shopping-bag"></i>
                 <label>Serviços</label>
                 <br>
-                <select name="servicos[]" class="form-control select2" multiple="multiple" data-placeholder="Selecione os Serviços"
+                <select name="servico" class="form-control select2" multiple="multiple" data-placeholder="Selecione os Serviços"
                 style="width: 100%;">
+
                 @foreach ($servicos as $servico)
                   <option value="{{$servico->id}}">{{$servico->servico}}</option>
                 @endforeach
 
                 </select>
-                </div>            
+                </div>
               </div>
-      
+
               <div class="col-md-6">
               <i class="fa fa-file-audio-o"></i></span>
-            
+
               <label>Mensagem</label>
                 <br>
                 <select name="mensagem" class="form-control select2" multiple="multiple" data-placeholder="Selecione a Mensagem"
@@ -124,7 +125,7 @@
                   <option>Washington</option>
                 </select>
             </div>
-                                    
+
           </div>
 
 
@@ -136,8 +137,8 @@
                 <div class="input-group date">
                   <input type="date" class="form-control pull-right" name="dataos" id="dataos">
                 </div>
-              
-             
+
+
             </div>
             </div>
 
@@ -165,7 +166,7 @@
                     <option value="Aberta"> Aberta </option>
                     <option value="Realizada"> Realizada </option>
                     <option value="Cancelada"> Cancelada </option>
-                  
+
                   </select>
                 </div>
                 </div>
@@ -194,18 +195,18 @@
 
 
                               <div class="box-footer with-footer">
-                              <h3 class="text-center">                               
+                              <h3 class="text-center">
                               <button type="submit" class="btn btn-success">Cadastrar</button>
-                              
+
                               <button type="submit" class="btn btn-danger">Cancelar</button>
                             </h3>
-                            </div>  
+                            </div>
 
 
 
-          
+
       </div>
-   
+
   </div>
 
 
