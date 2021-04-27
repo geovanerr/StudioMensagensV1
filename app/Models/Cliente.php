@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Cliente extends Model
 {
     use HasFactory;
+
+    protected $table = 'clientes';
+
     protected $fillable = [
         'nome',
         'logradouro',
@@ -28,7 +31,7 @@ class Cliente extends Model
 
     public function OrdensServicos() {
 
-        return $this->hasMany('App\Models\OrdemServico');
+        return $this->hasMany('App\Models\OrdemServico', 'cliente_id', 'id');
 
     }
 }

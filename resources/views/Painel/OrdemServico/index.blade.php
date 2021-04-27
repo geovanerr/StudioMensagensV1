@@ -46,7 +46,12 @@
                           <td> {{ $ordem->cliente->nome }} </td>
                           <td> {{ $ordem->receptor }} </td>
                           <td> {{ $ordem->celular }} </td>
-                          <td>
+                          <td> 
+                          @foreach ($ordem->servicos as $servico)
+                          {{ $servico->servico }}
+
+                          @endforeach
+
                           </td>
                           <td> {{ date('d/m/Y', strtotime($ordem->dataos))  }} </td>
                           <td> {{ $ordem->horarioos }} </td>

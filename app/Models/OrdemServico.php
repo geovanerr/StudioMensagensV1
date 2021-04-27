@@ -24,13 +24,15 @@ class OrdemServico extends Model
     public function cliente()
     {
 
-        return $this->belongsTo('App\Models\Cliente');
+        return $this->belongsTo('App\Models\Cliente', 'cliente_id', 'id');
 
     }
 
-    public function servicos()
-    {
-        return $this->belongsToMany('App\Models\Servico', 'ordem_servicos_servicos', 'ordem_id', 'servico_id');
-    }
+
+    public function servicos(){
+
+        return $this->belongsToMany('App\Models\Servico', 'ordem_servicos','ordem_id', 'servico_id');
+    
+        }
 
 }

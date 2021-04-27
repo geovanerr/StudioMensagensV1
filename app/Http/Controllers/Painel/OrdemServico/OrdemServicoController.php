@@ -15,9 +15,9 @@ class OrdemServicoController extends Controller
 
     public function index()
     {
-
+        
         $ordens = OrdemServico::all();
-
+               
         return view('Painel.OrdemServico.index', ['ordens' => $ordens]);
     }
 
@@ -47,7 +47,7 @@ class OrdemServicoController extends Controller
         $os->phone = $request->phone;
         $os->celular = $request->celular;
         $os->genero = $request->genero;
-        $os->servicos()->attach($servico);
+       
 
         $os->mensagem = $request->mensagem;
         $os->dataos = $request->dataos;
@@ -57,6 +57,8 @@ class OrdemServicoController extends Controller
         $os->obscobrador = $request->obscobrador;
 
         $os->save();
+
+        $os->servicos()->attach($servico);
         return redirect ('/painel/ordemservico')->with('msg', 'Ordem de Serviço criada com sucesso.');
 
 
@@ -73,12 +75,13 @@ class OrdemServicoController extends Controller
        //$ordens = OrdemServico::where('id', $id)->first();
 
        $ordem = OrdemServico::find($id);
-
+       $servicos = $ordem->servicos()->get();
+        
        if(!$ordem) {
 
         return redirect()->route('Painel.OrdemServico.index');
        }
-          return view('Painel.OrdemServico.show', compact('ordem'));
+          return view('Painel.OrdemServico.show', compact('ordem', 'servicos'));
     }
 
     public function edit($id)
