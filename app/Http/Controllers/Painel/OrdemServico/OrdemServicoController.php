@@ -15,9 +15,9 @@ class OrdemServicoController extends Controller
 
     public function index()
     {
-        
+
         $ordens = OrdemServico::all();
-               
+
         return view('Painel.OrdemServico.index', ['ordens' => $ordens]);
     }
 
@@ -47,7 +47,7 @@ class OrdemServicoController extends Controller
         $os->phone = $request->phone;
         $os->celular = $request->celular;
         $os->genero = $request->genero;
-       
+
 
         $os->mensagem = $request->mensagem;
         $os->dataos = $request->dataos;
@@ -76,7 +76,8 @@ class OrdemServicoController extends Controller
 
        $ordem = OrdemServico::find($id);
        $servicos = $ordem->servicos()->get();
-        
+
+
        if(!$ordem) {
 
         return redirect()->route('Painel.OrdemServico.index');

@@ -16,7 +16,7 @@
                     <p class="msg"> {{ session('msg')}} </p>
                   @endif
 
-               <h3 id="box-title" class="text-center"> Ordens de Serviços <a href="{{ route('Painel.OrdemServico.create') }}" class="btn btn-success"><i class="fa fa-plus"></i></a> </h3>
+               <h3 id="box-header" class="text-center"> Ordens de Serviços <a href="{{ route('Painel.OrdemServico.create') }}" class="btn btn-success">Cadastrar OS</a> </h3>
 
              </div>
            <!-- /.box-header -->
@@ -46,12 +46,13 @@
                           <td> {{ $ordem->cliente->nome }} </td>
                           <td> {{ $ordem->receptor }} </td>
                           <td> {{ $ordem->celular }} </td>
-                          <td> 
+                          <td>
+                             <ul>
                           @foreach ($ordem->servicos as $servico)
-                          {{ $servico->servico }}
-
+                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>
+                                    {{ $servico->servico }}</li>
                           @endforeach
-
+                            </ul>
                           </td>
                           <td> {{ date('d/m/Y', strtotime($ordem->dataos))  }} </td>
                           <td> {{ $ordem->horarioos }} </td>

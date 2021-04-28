@@ -98,7 +98,7 @@
                 <i class="fa fa-shopping-bag"></i>
                 <label>Serviços</label>
                 <br>
-                <select name="servico" class="form-control select2" multiple="multiple" data-placeholder="Selecione os Serviços"
+                <select name="servico[]" class="form-control select2" multiple="multiple" data-placeholder="Selecione os Serviços"
                 style="width: 100%;">
 
                 @foreach ($servicos as $servico)
