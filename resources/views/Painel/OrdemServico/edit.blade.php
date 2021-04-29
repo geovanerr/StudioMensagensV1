@@ -10,8 +10,11 @@
               <h3 class="text-center"> <a> Alterar <b> OS <strong>{{ $ordem->id }}</strong></b></a> </h3>
             </div>
 
-<form action="" method="post">
+<form action="/painel/ordemservico/update/{{ $ordem->id }}" method="POST">
+
+
   @csrf
+  @method ('PUT')
 
   <section class="content">
 
@@ -39,6 +42,7 @@
                         <option value="{{$cliente->id}}"> {{$cliente->nome}} </option>
 
                         @endforeach
+                        
                         </select>
                       </div>
                     </div>
@@ -101,7 +105,7 @@
                 <select name="servicos[]" class="form-control select2" multiple="multiple" data-placeholder="Selecione os Serviços"
                 style="width: 100%;" >
                 @foreach ($servicos as $servico)
-                  <option value="{{$servico->id}}">{{$servico->servico}}</option>
+                  <option value="{{$servico->id}}">{{$servico->servico}} </option>
                 @endforeach
 
                 </select>
@@ -134,7 +138,7 @@
           <div class="form-group">
                 <label>Data da OS:</label>
                 <div class="input-group date">
-                  <input type="date" class="form-control pull-right" name="dataos" id="dataos">
+                  <input type="date" class="form-control pull-right" name="dataos" id="dataos" value="{{ $ordem->dataos->format('Y-m-d')}}">
                 </div>
 
 
@@ -177,7 +181,7 @@
             <div class="col-md-6">
             <div class="form-group">
                   <label>Observação</label>
-                  <textarea name="obs" class="form-control" rows="3" placeholder="Enter ..." value="{{ $ordem->obs}}"></textarea>
+                  <textarea name="obs" class="form-control" rows="3" placeholder="Enter ...">{{ $ordem->obs }}</textarea>
                 </div>
 
             </div>
@@ -186,20 +190,18 @@
             <div class="col-md-6">
             <div class="form-group">
                   <label>Observação Cobrador</label>
-                  <textarea name="obscobrador" class="form-control" rows="3" placeholder="Enter ..." value="{{ $ordem->celular}}"></textarea>
+                  <textarea name="obscobrador" class="form-control" rows="3">{{ $ordem->obscobrador }}</textarea>
                 </div>
 
             </div>
             </div>
-
-
-                              <div class="box-footer with-footer">
-                              <h3 class="text-center">
-                              <button type="submit" class="btn btn-success">Cadastrar</button>
-
+   
+                            <div class="box-footer with-footer">
+                              <h3 class="text-center">                               
+                              <input type="submit" class="btn btn-success" value="Editar" >
                               <button type="submit" class="btn btn-danger">Cancelar</button>
                             </h3>
-                            </div>
+                            </div>  
 
 
 

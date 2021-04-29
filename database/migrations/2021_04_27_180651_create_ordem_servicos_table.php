@@ -16,7 +16,7 @@ class CreateOrdemServicosTable extends Migration
         Schema::create('ordem_servicos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('ordem_id');
-            $table->foreign('ordem_id')->references('id')->on('ordem');
+            $table->foreign('ordem_id')->references('id')->on('ordens');
 
             $table->unsignedBigInteger('servico_id');
             $table->foreign('servico_id')->references('id')->on('servicos');

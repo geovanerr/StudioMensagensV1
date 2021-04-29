@@ -102,6 +102,20 @@ class OrdemServicoController extends Controller
           return view('Painel.OrdemServico.edit', ['clientes' => $clientes, 'servicos' => $servicos, 'ordem' => $ordem]);
     }
 
+    public function update(Request $request) {
+
+
+        
+        OrdemServico::findOrFail($request->id)->update($request->all());
+        
+        
+      
+    
+        return redirect ('/painel/ordemservico')->with('msg', 'Ordem de Serviço alterada com sucesso.');
+
+
+    }
+
 
 
 

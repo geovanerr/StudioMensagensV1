@@ -50,6 +50,10 @@ Route::get('/painel/ordemservico', [OrdemServicoController::class, 'index'])->na
 Route::get('/painel/ordemservico/create', [OrdemServicoController::class, 'create'])->name('Painel.OrdemServico.create');
 Route::get('/painel/ordemservico/edit/{id}', [OrdemServicoController::class, 'edit'])->name('Painel.OrdemServico.edit');
 Route::post('/painel/ordemservico/create', [OrdemServicoController::class, 'store'])->name('Painel.OrdemServico.store');
+Route::put('/painel/ordemservico/update/{id}', [OrdemServicoController::class, 'update'])->name('Painel.OrdemServico.update');
+
+
+
 Route::get('/dashboard', [OrdemServicoController::class, 'dashboard'])->name('dashboard');
 Route::get('/painel/ordemservico/{id}', [OrdemServicoController::class, 'show'])->name('Painel.OrdemServico.show');
 Route::get('/painel/ordemservico/{id}/add-servicos', [OrdemServicoController::class, 'addservicos'])->name('Painel.OrdemServico.addservicos');
