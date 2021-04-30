@@ -105,12 +105,19 @@ class OrdemServicoController extends Controller
     public function update(Request $request) {
 
 
-        
-        OrdemServico::findOrFail($request->id)->update($request->all());
-        
-        
-      
-    
+        $inputs = $request->all();
+    //    dd($inputs);
+
+
+      $ordem = OrdemServico::findOrFail($request->id);
+
+      $ordem->update($inputs);
+
+
+      $ordem->servicos()->sync($inputs['servicos']);
+
+
+
         return redirect ('/painel/ordemservico')->with('msg', 'Ordem de Serviço alterada com sucesso.');
 
 

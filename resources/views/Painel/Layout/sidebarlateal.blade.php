@@ -11,7 +11,7 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-     
+
         </li>
 
 
@@ -60,6 +60,20 @@
            <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-money"></i> Cobrança </a></li>
 
           </ul>
+
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-table"></i> <span> Tabelas </span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+             <li class="active"><a href="{{ route('Painel.Tabelas.indexbairros') }}"><i class="fa fa-street-view"></i> Bairros </a></li>
+             <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-commenting-o"></i> Mensagens </a></li>
+             <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-usd"></i> Cobradores </a></li>
+
+            </ul>
 
           <li class="treeview">
           <a href="#">

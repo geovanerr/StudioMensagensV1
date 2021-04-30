@@ -34,7 +34,7 @@
                  <th> <i class="fa fa-tablet" aria-hidden="true"></i>  Celular </th>
                  <th> <i class="fa fa-shopping-bag" aria-hidden="true"></i>  Serviços </th>
                  <th> <i class="fa fa-calendar-check-o" aria-hidden="true"></i>  Data OS </th>
-                 <th> <i class="fa fa-spinner" aria-hidden="true"></i>  Hora OS </th>
+                 <th> <i class="fa fa-clock-o" aria-hidden="true"></i>  Hora OS </th>
                  <th> <i class="fa fa-cog" aria-hidden="true"></i>  Ação </th>
 
                </tr>

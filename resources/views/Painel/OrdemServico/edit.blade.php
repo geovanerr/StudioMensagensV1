@@ -34,15 +34,17 @@
                       <div class="form-group">
                       <i class="fa fa-id-badge"></i></span>
                         <label>Cliente</label>
-                        <select name="cliente" class="form-control select2">
-                        <option> Selecione um Cliente </option>
+
+
+                        <select name="cliente_id" class="form-control select2">
+                        <option></option>
 
                         @foreach ($clientes as $cliente)
 
-                        <option value="{{$cliente->id}}"> {{$cliente->nome}} </option>
+                        <option value="{{$cliente->id}}" @if(in_array($cliente->id, $ordem->cliente->pluck('id')->toArray())) selected="selected" @endif> {{$cliente->nome}} </option>
 
                         @endforeach
-                        
+
                         </select>
                       </div>
                     </div>
@@ -105,7 +107,7 @@
                 <select name="servicos[]" class="form-control select2" multiple="multiple" data-placeholder="Selecione os Serviços"
                 style="width: 100%;" >
                 @foreach ($servicos as $servico)
-                  <option value="{{$servico->id}}">{{$servico->servico}} </option>
+                  <option value="{{$servico->id}}" @if(in_array($servico->id, $ordem->servicos->pluck('id')->toArray())) selected="selected" @endif> {{$servico->servico}} </option>
                 @endforeach
 
                 </select>
@@ -195,13 +197,13 @@
 
             </div>
             </div>
-   
+
                             <div class="box-footer with-footer">
-                              <h3 class="text-center">                               
+                              <h3 class="text-center">
                               <input type="submit" class="btn btn-success" value="Editar" >
                               <button type="submit" class="btn btn-danger">Cancelar</button>
                             </h3>
-                            </div>  
+                            </div>
 
 
 

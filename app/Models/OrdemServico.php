@@ -18,7 +18,19 @@ class OrdemServico extends Model
 
    // protected $attributes = [ 'status' ];
 
-    //protected $fillable = ['servico', 'servico', 'prop3'];
+    protected $fillable = [
+        'cliente_id',
+        'receptor',
+        'phone',
+        'celular',
+        'genero',
+        'mensagem',
+        'dataos',
+        'horarioos',
+        'status',
+        'obs',
+        'obscobrador'
+    ];
 
 
     public function cliente()
@@ -32,7 +44,7 @@ class OrdemServico extends Model
     public function servicos(){
 
         return $this->belongsToMany('App\Models\Servico', 'ordem_servicos','ordem_id', 'servico_id');
-    
+
         }
 
 }

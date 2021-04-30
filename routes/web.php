@@ -6,6 +6,8 @@ use App\Http\Controllers\Painel\PainelController;
 use App\Http\Controllers\Painel\Usuarios\UsuariosController;
 use App\Http\Controllers\Painel\Servicos\ServicosController;
 use App\Http\Controllers\Painel\OrdemServico\OrdemServicoController;
+use App\Http\Controllers\Painel\Tabelas\TabelasController;
+
 
 Route::get('/', function () {
   return view('Home.index');
@@ -53,6 +55,15 @@ Route::post('/painel/ordemservico/create', [OrdemServicoController::class, 'stor
 Route::put('/painel/ordemservico/update/{id}', [OrdemServicoController::class, 'update'])->name('Painel.OrdemServico.update');
 
 
+Route::get('/painel/tabelas/bairros', [TabelasController::class, 'indexbairros'])->name('Painel.Tabelas.indexbairros');
+Route::get('/painel/tabelas/createbairro', [TabelasController::class, 'createbairro'])->name('Painel.Tabelas.createbairro');
+Route::post('/painel/tabelas/createbairro', [TabelasController::class, 'storebairro'])->name('Painel.Tabelas.storebairro');
+
+//Route::get('/painel/servicos/cadastrotipos', [ServicosController::class, 'cadastrotipoS'])->name('Painel.Servicos.cadastrotipoS');
+//Route::post('/servicos', [ServicosController::class, 'cadastrotipostore'])->name('Painel.Servicos.cadastrotipostore');
+//Route::delete('/servicos/{id}', [ServicosController::class, 'destroy'])->name('Painel.Servicos.destroy');
+//Route::get('/servicos/edit/{id}', [ServicosController::class, 'edit'])->name('Painel.Servicos.edit');
+//Route::put('/servicos/update/{id}', [ServicosController::class, 'update'])->name('Painel.Servicos.update');
 
 Route::get('/dashboard', [OrdemServicoController::class, 'dashboard'])->name('dashboard');
 Route::get('/painel/ordemservico/{id}', [OrdemServicoController::class, 'show'])->name('Painel.OrdemServico.show');

@@ -31,7 +31,7 @@
                       <div class="form-group">
                       <i class="fa fa-id-badge"></i></span>
                         <label>Cliente</label>
-                        <select name="cliente" class="form-control select2">
+                        <select name="cliente_id" class="form-control select2">
                         <option> Selecione um Cliente </option>
 
                         @foreach ($clientes as $cliente)
