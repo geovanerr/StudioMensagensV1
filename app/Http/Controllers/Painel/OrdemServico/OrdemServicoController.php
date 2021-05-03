@@ -32,7 +32,7 @@ class OrdemServicoController extends Controller
     public function store(Request $request)
     {
 
-        $cliente = Cliente::find($request->cliente);
+        $cliente = Cliente::find($request->cliente_id);
         $servico = Servico::find($request->servico);
 
         if(!$cliente){

@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tabelas extends Model
+class Bairro extends Model
 {
     use HasFactory;
 
-    protected $table = 'Tabelas';
+    protected $table = 'bairros';
 
     protected $dates = ['date'];
 

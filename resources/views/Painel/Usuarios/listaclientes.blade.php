@@ -14,11 +14,24 @@
        <div class="box">
 
              <div class="box-header with-border">
+                  
+                  @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                      <ul>
+                        @foreach ($errors->all as $error)
+                        <li>{{$error}}</li>
+                        @endforeach
+                      </ul>
+                    </div>
+                  @endif
+
                   @if(session('msg'))
+                  <div class="alert alert-success">
                     <p class="msg"> {{ session('msg')}} </p>
+                  </div>
                   @endif
         
-               <h3 id="box-title" class="text-center"> <b> Clientes </b><a href="{{ route('Painel.Usuarios.viewCliente') }}" class="btn btn-success"><i class="fa fa-plus"></i></a> </h3>
+               <h3 id="box-title" class="text-center"> <b> Clientes </b><a href="{{ route('Painel.Usuarios.viewCliente') }}" class="btn btn-success">Novo Cliente</a> </h3>
                
              </div>
            <!-- /.box-header -->
@@ -48,10 +61,35 @@
                        <td> 
                            <a class="btn btn-warning"><i class="fa fa-edit"></i></a>
                            <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
+
+                           <button type="button" class="btn btn-info" data-toggle="modal" data-target="#osmodal">
+                                    <i class="fa fa-eye"></i>
+                           </button>
                             
                        </td>
                    </tr>
                @endforeach
+
+                               <!-- Modal -->
+<div class="modal fade" id="osmodal" style="z-index: 10000" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="osmodal">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
                </tbody>
                
             

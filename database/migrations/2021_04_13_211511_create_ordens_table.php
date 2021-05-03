@@ -23,13 +23,13 @@ class CreateOrdensTable extends Migration
             $table->string('phone');
             $table->string('celular');
             $table->text('genero');
-
             $table->string('mensagem');
             $table->dateTime('dataos');
             $table->string('horarioos');
-            $table->text('status');
+            $table->text('status', 4);
             $table->string('obs');
             $table->string('obscobrador');
+           // $table->decimal('valor', 10,2);
             $table->timestamps();
 
 

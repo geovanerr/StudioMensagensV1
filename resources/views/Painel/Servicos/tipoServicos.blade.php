@@ -14,8 +14,21 @@
        <div class="box">
 
              <div class="box-header with-border">
+                  
+                  @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                      <ul>
+                        @foreach ($errors->all as $error)
+                        <li>{{$error}}</li>
+                        @endforeach
+                      </ul>
+                    </div>
+                  @endif
+
                   @if(session('msg'))
+                  <div class="alert alert-success">
                     <p class="msg"> {{ session('msg')}} </p>
+                  </div>
                   @endif
         
                <h3 id="box-title" class="text-center"> Tipos de Serviços <a href="{{ route('Painel.Servicos.cadastrotipoS') }}" class="btn btn-success"><i class="fa fa-plus"></i></a> </h3>
@@ -48,7 +61,7 @@
                               
                           <a href="/servicos/edit/{{ $servico->id }}" class="btn btn-warning"><i class="fa fa-edit"></i> Editar </a>
                        
-                          <form action="/servicos/{{ $servico->id }}"  method="POST">
+                          <form action="/servicos/{{ $servico->id }}" onclick="return confirm('Deseja realmente remover o serviço?')" method="POST">
                           
                                 @csrf
                                 @method('DELETE')

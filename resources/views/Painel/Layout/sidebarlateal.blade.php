@@ -23,9 +23,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-          <li class="active"><a href="{{ route('Painel.Usuarios.index') }}"><i class="fa fa-user-o"></i> Gerenciar Usuários </a></li>
-            <li class="active"><a href="/register"><i class="fa fa-user-plus"></i>Painel de Funcionários </a></li>
-            <li class="active"><a href="{{ route('Painel.Usuarios.listaclientes') }}"><i class="fa fa-user-plus"></i> Painel de Clientes </a></li>
+          <li class="active"><a href="{{ route('Painel.Usuarios.index') }}"><i class="fa fa-user-o"></i>Painel de Funcionários </a></li>
+          <li class="active"><a href="{{ route('Painel.Usuarios.listaclientes') }}"><i class="fa fa-user"></i> Painel de Clientes </a></li>
           </ul>
         </li>
 
@@ -70,8 +69,8 @@
             </a>
             <ul class="treeview-menu">
              <li class="active"><a href="{{ route('Painel.Tabelas.indexbairros') }}"><i class="fa fa-street-view"></i> Bairros </a></li>
-             <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-commenting-o"></i> Mensagens </a></li>
-             <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-usd"></i> Cobradores </a></li>
+             <li class="active"><a href="{{ route('Painel.Tabelas.indexmsn') }}"><i class="fa fa-commenting-o"></i> Mensagens </a></li>
+             <li class="active"><a href="{{ route('Painel.Tabelas.indexcobradores') }}"><i class="fa fa-usd"></i> Cobradores </a></li>
 
             </ul>
 

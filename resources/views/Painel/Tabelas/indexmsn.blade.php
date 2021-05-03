@@ -1,6 +1,6 @@
 @extends ('Painel.Layout.index')
 
-@section('title', 'Bairros')
+@section('title', 'Mensagens')
 
   @section('content')
 
@@ -14,7 +14,7 @@
        <div class="box">
 
              <div class="box-header with-border">
-
+                  
                   @if (count($errors) > 0)
                     <div class="alert alert-danger">
                       <ul>
@@ -31,7 +31,7 @@
                   </div>
                   @endif
 
-               <h3 id="box-title" class="text-center"> Bairros <a href="{{ route('Painel.Tabelas.createbairro') }}" class="btn btn-success">Cadastrar Bairro</a> </h3>
+               <h3 id="box-title" class="text-center"> Mensagens <a href="{{ route('Painel.Tabelas.createmsn') }}" class="btn btn-success">Cadastrar Mensagem</a> </h3>
 
              </div>
            <!-- /.box-header -->
@@ -40,21 +40,20 @@
                <thead>
                <tr>
                  <th> ID </th>
-                 <th> <i class="fa fa-handshake-o"></i>  Bairro  </th>
+                 <th> <i class="fa fa-handshake-o"></i>  Mensagem  </th>
                  <th> <i class="fa fa-cog" aria-hidden="true"></i>  Ação </th>
                </tr>
                </thead>
                <tbody>
-               @foreach ($bairros as $bairro)
+               @foreach ($mensagens as $mensagem)
                    <tr>
-                     <td> {{ $bairro->id }} </td>
-                     <td> {{ $bairro->bairro }} </td>
+                     <td> {{ $mensagem->id }} </td>
+                     <td> {{ $mensagem->mensagem }} </td>
         
                      <td>
-                         <a href="/painel/tabelas/bairro/edit/{{ $bairro->id }}" class="btn btn-warning"><i class="fa fa-edit"></i> Editar </a>
+                         <a href="/painel/tabelas/mensagem/edit/{{ $mensagem->id }}" class="btn btn-warning"><i class="fa fa-edit"></i> Editar </a>
 
-
-                          <form action="/painel/tabelas/bairro/{{ $bairro->id }}" onclick="return confirm('Deseja realmente remover o bairro?')"  method="POST">
+                          <form action="/painel/tabelas/mensagem/{{ $mensagem->id }}" onclick="return confirm('Deseja realmente remover a mensagem?')"  method="POST">
                                 @csrf
                                 @method('DELETE')
                                <button type="submit" display="inline-block" class="btn btn-danger"> <i class="fa fa-trash"></i> Excluir </button>

@@ -1,6 +1,6 @@
 @extends ('Painel.Layout.index')
 
-@section('title', 'Bairros')
+@section('title', 'Cobradores')
 
   @section('content')
 
@@ -30,8 +30,8 @@
                     <p class="msg"> {{ session('msg')}} </p>
                   </div>
                   @endif
-
-               <h3 id="box-title" class="text-center"> Bairros <a href="{{ route('Painel.Tabelas.createbairro') }}" class="btn btn-success">Cadastrar Bairro</a> </h3>
+                  
+               <h3 id="box-title" class="text-center"> Cobradores <a href="{{ route('Painel.Tabelas.createcobrador') }}" class="btn btn-success">Cadastrar Cobrador</a> </h3>
 
              </div>
            <!-- /.box-header -->
@@ -40,21 +40,20 @@
                <thead>
                <tr>
                  <th> ID </th>
-                 <th> <i class="fa fa-handshake-o"></i>  Bairro  </th>
+                 <th> <i class="fa fa-user"></i><i class="fa fa-usd"></i>  Cobrador  </th>
                  <th> <i class="fa fa-cog" aria-hidden="true"></i>  Ação </th>
                </tr>
                </thead>
                <tbody>
-               @foreach ($bairros as $bairro)
+               @foreach ($cobradores as $cobrador)
                    <tr>
-                     <td> {{ $bairro->id }} </td>
-                     <td> {{ $bairro->bairro }} </td>
+                     <td> {{ $cobrador->id }} </td>
+                     <td> {{ $cobrador->cobrador }} </td>
         
                      <td>
-                         <a href="/painel/tabelas/bairro/edit/{{ $bairro->id }}" class="btn btn-warning"><i class="fa fa-edit"></i> Editar </a>
+                         <a href="/painel/tabelas/cobrador/edit/{{ $cobrador->id }}" class="btn btn-warning"><i class="fa fa-edit"></i> Editar </a>
 
-
-                          <form action="/painel/tabelas/bairro/{{ $bairro->id }}" onclick="return confirm('Deseja realmente remover o bairro?')"  method="POST">
+                          <form action="/painel/tabelas/cobrador/{{ $cobrador->id }}" onclick="return confirm('Deseja realmente remover o cobrador?')" method="POST">
                                 @csrf
                                 @method('DELETE')
                                <button type="submit" display="inline-block" class="btn btn-danger"> <i class="fa fa-trash"></i> Excluir </button>
