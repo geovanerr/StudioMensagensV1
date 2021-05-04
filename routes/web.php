@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/painel', [PainelController::class, 'index'])->name('Painel.index');
 Route::get('/painel/usuarios', [UsuariosController::class, 'index'])->name('Painel.Usuarios.index');
 Route::get('/painel/usuarios/cadastrofuncionario', [UsuariosController::class, 'viewCadastro'])->name('Painel.Usuarios.viewCadastro');
+Route::post('/painel/usuario/create', [UsuariosController::class, 'storefunc'])->name('Painel.Usuarios.storefunc');
 
 
 

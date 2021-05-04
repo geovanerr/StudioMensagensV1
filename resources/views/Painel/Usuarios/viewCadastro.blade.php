@@ -1,109 +1,135 @@
 @extends ('Painel.Layout.index')
 
+<script>
+  $(function() {
+    $("#cpf").mask("000.000.000-00")
+  })
+</script>
 
-@section('title', 'Cadastro Cliente')
+@section('title', 'Cadastro Funcionário')
 
 @section('content')
 
-<br>
-<br>
 
-<div class="box box-info">
-  <div class="container">
-    
-    
-            <div class="box-header with-border">
-              <h3 class="text-center"> <a><b> Cadastro </b> Funcionário</a> </h3>
+            <div class="col-xs-12">
+              <h3 class="text-center"> <a>Cadastro <b>Funcionário</b></a> </h3>
             </div>
 
-            
-            <div class="box-body">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-address-card-o"></i></span>
-                      <input type="text" class="form-control" placeholder="Nome">         
-                    </div><br>
-                    
-                    
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-address-card"></i></span>
-                      <div><input type="text" class="form-control" placeholder="CPF"> </div>
-                    </div><br>
 
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                      <div><input type="text" class="form-control" placeholder="Senha"> </div>
-                    </div><br>
-
-                    
-                  
-
-                    
-                          <div class="row">
-                              <div class="col-xs-2">
-                              <i class="fa fa-phone"></i></span>
-                              <label for=""> Telefone:</label> <input type="text" class="form-control" placeholder="Rua:">
-                              </div>
-                            
-                              <div class="col-xs-2">
-                              <i class="fa fa-mobile"></i></span>
-                              <label for="">  Celular:</label> <input type="text" class="form-control" placeholder="Nº">
-                              </div>     
-                              
-                              <div class="col-xs-3">
-                              <i class="fa fa-calendar"></i>
-                              <label for=""> Data Nascimento:</label> <input type="text" class="form-control pull-right" id="datepicker">
-                              </div>
-
-                  
-                              <div class="col-xs-2">
-                                <i class="fa fa-female"></i>
-                                <i class="fa fa-male"></i>
-                                <label for=""> Gênero:</label>
-                                <select class="form-control select2" style="width: 100%;">
-                                      <option selected="selected">Nao Informar</option>
-                                      <option>Feminino</option>
-                                      <option>Masculino</option>
-                               
-                                    </select>                          
-                               </div>
-
-                               <div class="col-xs-2">
-                                <i class="fa fa-female"></i>
-                                <i class="fa fa-male"></i>
-                                <label for=""> Função:</label>
-                                <select class="form-control select2" style="width: 100%;">
-                                      <option selected="selected"> Administrador </option>
-                                      <option>Gerente</option>
-                                      <option>Colaborador</option>
-                               
-                                    </select>                          
-                               </div>
-
-
-                          </div>
-
-              
-
+      <div class="container">
+      <div class="col-xs-12">
+      <form action="{{ route('Painel.Usuarios.storefunc') }}" method="post">
+      @csrf
+      <div class="row">
                           
-                            <div class="box-footer with-footer">
-                              <h3 class="text-center">                               
-                              <button type="submit" class="btn btn-success">Cadastrar</button>
-                              <button type="submit" class="btn btn-danger">Cancelar</button>
-                            </h3>
-                            </div>       
+                    <div class="col-xs-6">
+                    <div class="form-group">
+                    Nome: <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome">
+                    </div>
+                    </div>
+                    
+
+                    <div class="col-xs-6">
+                    <div class="form-group">
+                    CPF: <input type="text" id="cpf" name="cpf" class="form-control" placeholder="CPF">
+                    </div>
+                    </div>
+
+                    <div class="col-xs-6">
+                    <div class="form-group">
+                    e-mail: <input type="text" name="email" class="form-control" placeholder="Nome">
+                    </div>
+                    </div>
+
+                    <div class="col-xs-6">
+                    <div class="form-group">
+                    Endereço: <input type="text" name="logradouro" class="form-control" placeholder="Rua...">
+                    </div>
+                    </div>
+
+                    <div class="col-xs-2">
+                    <div class="form-group">
+                    Número: <input type="text" name="numero" class="form-control" placeholder="N°">
+                    </div>
+                    </div>
+
+  
+                    <div class="col-xs-4">
+                    <div class="form-group">
+                    Bairro: <input type="text" name="bairro" class="form-control" placeholder="Bairro">
+                    </div>
+                    </div>
+
+           
+                    <div class="col-xs-6">
+                    <div class="form-group">
+                    Senha: <input type="password" name="password" class="form-control" placeholder="Senha">
+                    </div>
+                    </div>
+                             
+                    <div class="col-xs-3">
+                    <div class="form-group">
+                    Telefone: <input type="text" id="phone" name="phone" class="form-control" placeholder="Telefone">
+                    </div>
+                    </div>
+                            
+                    <div class="col-xs-3">
+                    <div class="form-group">
+                    Celular: <input type="text" id="celular" name="celular" class="form-control" placeholder="Celular:">
+                    </div>
+                    </div>     
+                              
+                    <div class="col-xs-2">
+                    <div class="form-group">
+                    Nascimento: <input type="date" name="nascimento" class="form-control pull-right">
+                    </div>
+                    </div>
+
+                    <div class="col-xs-2">
+                    <div class="form-group">
+                    Gênero:
+                    <select class="form-control select2" name="genero" style="width: 100%;">
+                       <option selected="selected">Nao Informar</option>
+                       <option>Feminino</option>
+                       <option>Masculino</option>
+                            
+                    </select>                          
+                    </div>
+                    </div>
+
+
+                    <div class="col-xs-2">
+                    <div class="form-group">
+                    Função:
+                    <select class="form-control select2" name="funcao" style="width: 100%;">
+                       <option selected="selected"> Administrador </option>
+                       <option>Gerente</option>
+                       <option>Colaborador</option>
+                    </select>                          
+                    </div>
+                    </div>
+
+  </div>                      
+                    <div class="col-xs-12">
+                    <div class="form-group">
+                    <h3 class="text-center">                               
+                    <button type="submit" class="btn btn-success">Cadastrar</button>
+                    <button type="submit" class="btn btn-danger">Cancelar</button>
+                    </h3>
+                    </div>   
+                    </div>   
+
+                        
 
             
             </div>
+          
+
+
+</form>  
             
-   
-      
-
-  
-  
-  </div>
 </div>
-
-
+</div>
 
 @endsection
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\User;
 use App\Models\Cliente;
+use App\Models\Funcionario;
 use Illuminate\Http\Request;
 use App\Models\Roles\Roles;
 
@@ -57,14 +58,32 @@ class UsuariosController extends Controller
 
     }
 
-  /*  public function store (Request $request)
-    {
-        $store = User::create ($request->all());
-        if($store)
-            return redirect()->route('Painel.Usuarios.index')->with('success', 'Usuário Cadastrado com sucesso!');
+    public function storefunc (Request $request)
 
-        return redirect()->back()->with('error', 'Houve um erro ao cadastrar o usuário.');
-    }*/
+    {
+        $funcionario = new Funcionario;
+        $funcionario->nome = $request->nome;
+        $funcionario->cpf = $request->cpf;
+        $funcionario->email = $request->email;
+        $funcionario->logradouro = $request->logradouro;
+        $funcionario->numero = $request->numero;
+        $funcionario->bairro = $request->bairro;
+        $password = $request->password;
+        $funcionario->password = \Hash::make($password);
+       
+        $funcionario->phone = $request->phone;
+        $funcionario->celular = $request->celular;
+        $funcionario->nascimento = $request->nascimento;
+        $funcionario->genero = $request->genero;
+        $funcionario->funcao = $request->funcao;
+
+        $funcionario->save();
+
+        return redirect ('/painel/usuarios')->with('msg', 'Funcionário cadastrado com sucesso.');
+
+    }
+
+
 
     public function viewCliente()
     {
