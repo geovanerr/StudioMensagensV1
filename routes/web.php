@@ -7,6 +7,8 @@ use App\Http\Controllers\Painel\Usuarios\UsuariosController;
 use App\Http\Controllers\Painel\Servicos\ServicosController;
 use App\Http\Controllers\Painel\OrdemServico\OrdemServicoController;
 use App\Http\Controllers\Painel\Tabelas\TabelasController;
+use App\Http\Controllers\FuncionariosController;
+
 
 
 Route::get('/', function () {
@@ -18,11 +20,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/', [HomeController::class, 'index'])->name('Home.index');
 
 Route::get('/painel', [PainelController::class, 'index'])->name('Painel.index');
 Route::get('/painel/usuarios', [UsuariosController::class, 'index'])->name('Painel.Usuarios.index');
 Route::get('/painel/usuarios/cadastrofuncionario', [UsuariosController::class, 'viewCadastro'])->name('Painel.Usuarios.viewCadastro');
 Route::post('/painel/usuario/create', [UsuariosController::class, 'storefunc'])->name('Painel.Usuarios.storefunc');
+Route::match(['get', 'post'], '/logar', [FuncionariosController::class, 'logar'])
+      ->name('logar');
 
 
 

@@ -58,12 +58,11 @@
                           <td> {{ $ordem->id }} </td>
                           <td> {{ $ordem->cliente->nome }} </td>
                           <td> {{ $ordem->receptor }} </td>
-                          <td> {{ $ordem->celular }} </td>
+                          <td> {{ $ordem->mensagem->mensagem }} </td>
                           <td>
                              <ul>
                           @foreach ($ordem->servicos as $servico)
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>
-                                    {{ $servico->servico }}</li>
+                                <li> {{ $servico->servico }}</li>
                           @endforeach
                             </ul>
                           </td>

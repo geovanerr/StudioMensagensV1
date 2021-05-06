@@ -24,7 +24,7 @@ class OrdemServico extends Model
         'phone',
         'celular',
         'genero',
-        'mensagem',
+        'mensagem_id',
         'dataos',
         'horarioos',
         'status',
@@ -39,6 +39,14 @@ class OrdemServico extends Model
         return $this->belongsTo('App\Models\Cliente', 'cliente_id', 'id');
 
     }
+
+    public function mensagem()
+    {
+
+        return $this->belongsTo('App\Models\Mensagem', 'mensagem_id', 'id');
+
+    }
+
 
 
     public function servicos(){

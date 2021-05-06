@@ -11,6 +11,18 @@
         <div class="box">
 
               <div class="box-header">
+                  
+                  @if(session('err'))
+                  <div class="alert alert-danger">
+                    <p class="msg"> {{ session('err')}} </p>
+                  </div>
+                  @endif
+
+                  @if(session('msg'))
+                  <div class="alert alert-success">
+                    <p class="msg"> {{ session('msg')}} </p>
+                  </div>
+                  @endif
                 <h3 id="box-title" class="text-center"> Funcionários <a href="{{ route('Painel.Usuarios.viewCadastro') }}" class="btn btn-success">Novo Funcionário</a> </h3>
               </div>
             <!-- /.box-header -->

@@ -98,13 +98,15 @@
                 <i class="fa fa-shopping-bag"></i>
                 <label>Serviços</label>
                 <br>
-                <select name="servico[]" class="form-control select2" multiple="multiple" data-placeholder="Selecione os Serviços"
+                <select name="servico[]" id="servico" class="form-control select2" multiple="multiple" data-placeholder="Selecione os Serviços"
                 style="width: 100%;">
-
+                @php $total = 0; 
+                @endphp
                 @foreach ($servicos as $servico)
                   <option value="{{$servico->id}}">{{$servico->servico}}</option>
+                
                 @endforeach
-
+               
                 </select>
                 </div>
               </div>
@@ -114,15 +116,14 @@
 
               <label>Mensagem</label>
                 <br>
-                <select name="mensagem" class="form-control select2" multiple="multiple" data-placeholder="Selecione a Mensagem"
-                        style="width: 100%;">
-                  <option>Alabama</option>
-                  <option>Alaska</option>
-                  <option>California</option>
-                  <option>Delaware</option>
-                  <option>Tennessee</option>
-                  <option>Texas</option>
-                  <option>Washington</option>
+                <select name="mensagem_id" class="form-control select2" data-placeholder="Selecione a Mensagem" style="width: 100%;">
+                <option> Selecione uma Mensagem </option>
+
+                @foreach ($mensagens as $mensagem)
+                <option value="{{$mensagem->id}}">{{$mensagem->mensagem}}</option>
+                
+                @endforeach
+            
                 </select>
             </div>
 
@@ -193,9 +194,13 @@
             </div>
             </div>
 
+<div>
+<h3>Total OS: R$ {{ $total }}</h3>
+</div>
 
                               <div class="box-footer with-footer">
                               <h3 class="text-center">
+
                               <button type="submit" class="btn btn-success">Cadastrar</button>
 
                               <button type="submit" class="btn btn-danger">Cancelar</button>
@@ -213,6 +218,7 @@
 </section>
 
 </form>
+
 
 @endsection
 

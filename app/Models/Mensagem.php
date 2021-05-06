@@ -10,14 +10,14 @@ class Mensagem extends Model
     use HasFactory;
 
     protected $table = 'mensagens';
-
+    
 
     protected $guarded = [];
 
-    public function ordens(){
+    public function OrdensServicos() {
 
-  //  return $this->belongsToMany('App\Models\OrdemServico', 'ordem_servicos','servico_id', 'ordem_id');
+      return $this->hasMany('App\Models\OrdemServico', 'mensagem_id', 'id');
 
-    }
+  }
 
 }

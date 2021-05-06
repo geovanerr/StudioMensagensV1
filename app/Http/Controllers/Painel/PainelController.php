@@ -37,19 +37,11 @@ class PainelController extends Controller
         return view('dashboard', compact('user'));
     }
 
-  /*  public function viewUsuarios()
-    {
-        //Controla a rota do usuário.
-        $user = Auth()->User();
-        $uri = $this->request->route()->uri();
-        $exploder = explode('/', $uri);
-        $urlAtual = $exploder[1];
+    public function rotabarra(){
 
+        return view('Home.index');
+    }
 
-        $usuarios = $this->usuarios->all();
-
-        return view('Painel.Usuarios.index', compact('user', 'urlAtual', 'usuarios'));
-    }*/
 
     public function viewServicos()
     {

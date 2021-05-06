@@ -61,8 +61,9 @@ class UsuariosController extends Controller
     public function storefunc (Request $request)
 
     {
-        $funcionario = new Funcionario;
-        $funcionario->nome = $request->nome;
+        $userr = $request->all();
+        $funcionario = new User;
+        $funcionario->name = $request->name;
         $funcionario->cpf = $request->cpf;
         $funcionario->email = $request->email;
         $funcionario->logradouro = $request->logradouro;
@@ -77,6 +78,11 @@ class UsuariosController extends Controller
         $funcionario->genero = $request->genero;
         $funcionario->funcao = $request->funcao;
 
+     
+        $dbfuncionario = User::where("email", $funcionario->email)->first();
+        if($dbfuncionario){
+            return redirect ('/painel/usuarios')->with('err', 'email ja cadastrado no sistema.');
+        }
         $funcionario->save();
 
         return redirect ('/painel/usuarios')->with('msg', 'Funcionário cadastrado com sucesso.');

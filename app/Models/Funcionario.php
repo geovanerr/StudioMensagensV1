@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\Authenticatable;
 
-class Funcionario extends Model
+class Funcionario extends Model implements Authenticatable
 {
     use HasFactory;
 
@@ -30,11 +31,23 @@ class Funcionario extends Model
 
     protected $dates = ['nascimento'];
 
-
-
-    public function OrdensServicos() {
-
-//        return $this->hasMany('App\Models\OrdemServico', 'cliente_id', 'id');
+    public function getAuthIdentifierName(){
+        return $this->getKey();
+    }
+    public function getAuthIdentifier(){
+        return $this->email;
+    }
+    public function getAuthPassword(){
+        return $this->password;
+    }
+    public function getRememberToken(){
 
     }
+    public function setRememberToken($value){
+
+    }
+    public function getRememberTokenName(){
+
+    }
+
 }

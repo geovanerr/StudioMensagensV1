@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Cliente;
 use App\Models\Servico;
 use App\Models\OrdemServico;
+use App\Models\Mensagem;
+
 
 
 
@@ -26,7 +28,8 @@ class OrdemServicoController extends Controller
 
         $clientes = Cliente::all();
         $servicos = Servico::all();
-        return view('Painel.OrdemServico.create', ['clientes' => $clientes, 'servicos' => $servicos]);
+        $mensagens = Mensagem::all();
+        return view('Painel.OrdemServico.create', ['clientes' => $clientes, 'servicos' => $servicos, "mensagens" => $mensagens]);
     }
 
     public function store(Request $request)
@@ -34,7 +37,8 @@ class OrdemServicoController extends Controller
 
         $cliente = Cliente::find($request->cliente_id);
         $servico = Servico::find($request->servico);
-
+        $mensagem = Mensagem::find($request->mensagem_id);
+        
         if(!$cliente){
 
             return 'Erro ao selecionar cliente';
@@ -48,8 +52,7 @@ class OrdemServicoController extends Controller
         $os->celular = $request->celular;
         $os->genero = $request->genero;
 
-
-        $os->mensagem = $request->mensagem;
+        $os->mensagem()->associate($mensagem);
         $os->dataos = $request->dataos;
         $os->horarioos = $request->horarioos;
         $os->status = $request->status;

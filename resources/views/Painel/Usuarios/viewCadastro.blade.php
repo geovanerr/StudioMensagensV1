@@ -24,7 +24,7 @@
                           
                     <div class="col-xs-6">
                     <div class="form-group">
-                    Nome: <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome">
+                    Nome: <input type="text" id="name" name="name" class="form-control" placeholder="Nome">
                     </div>
                     </div>
                     

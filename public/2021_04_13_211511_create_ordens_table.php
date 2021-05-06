@@ -19,14 +19,14 @@ class CreateOrdensTable extends Migration
             $table->unsignedBigInteger('cliente_id');
             $table->foreign('cliente_id')->references('id')->on('clientes');
            
-          
-            $table->unsignedBigInteger('mensagem_id');
-            $table->foreign('mensagem_id')->references('id')->on('mensagens');
-            
+                     
             $table->string('receptor');
             $table->string('phone');
             $table->string('celular');
-            $table->text('genero');              
+            $table->text('genero');      
+            
+            $table->unsignedBigInteger('mensagem_id');
+            $table->foreign('mensagem_id')->references('id')->on('mensagens');
            
             $table->dateTime('dataos');
             $table->string('horarioos');
