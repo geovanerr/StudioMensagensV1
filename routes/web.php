@@ -79,6 +79,8 @@ Route::put('/painel/tabelas/cobrador/update/{id}', [TabelasController::class, 'u
 Route::get('/dashboard', [OrdemServicoController::class, 'dashboard'])->name('dashboard');
 Route::get('/painel/ordemservico/{id}', [OrdemServicoController::class, 'show'])->name('Painel.OrdemServico.show');
 Route::get('/painel/ordemservico/{id}/add-servicos', [OrdemServicoController::class, 'addservicos'])->name('Painel.OrdemServico.addservicos');
+//Dados da ordem.
+Route::get('/ordens/show/{id?}', [OrdemServicoController::class, 'showos'])->name('Painel.OrdemServico.showos');
 
 
 ///Route::post('/ordemservico/create', [OrdemServicoController::class, 'create']);

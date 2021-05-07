@@ -22,7 +22,10 @@ class CreateUsersTable extends Migration
             $table->string('cpf')->nullable();
             $table->string('logradouro')->nullable();
             $table->string('numero')->nullable();
-            $table->string('bairro')->nullable();
+
+            $table->unsignedBigInteger('bairro_id')->nullable();
+            $table->foreign('bairro_id')->references('id')->on('bairros');
+
             $table->string('phone')->nullable();
             $table->string('celular')->nullable();
             $table->dateTime('nascimento')->nullable();

@@ -13,12 +13,12 @@ class Funcionario extends Model implements Authenticatable
     protected $table = 'funcionarios';
 
     protected $fillable = [
-        'nome',
+        'name',
         'cpf',
         'email',
         'logradouro',
         'numero',
-        'bairro',
+        'bairro_id',
         'password',
         'phone',
         'celular',
@@ -30,6 +30,13 @@ class Funcionario extends Model implements Authenticatable
     ];
 
     protected $dates = ['nascimento'];
+
+    public function bairro()
+    {
+
+        return $this->belongsTo('App\Models\Bairro', 'bairro_id', 'id');
+
+    }
 
     public function getAuthIdentifierName(){
         return $this->getKey();

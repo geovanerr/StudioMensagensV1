@@ -19,7 +19,9 @@ class CreatFuncionariosTable extends Migration
             $table->string('cpf');
             $table->string('logradouro');
             $table->string('numero');
-            $table->string('bairro');    
+         
+            $table->unsignedBigInteger('bairro_id');
+            $table->foreign('bairro_id')->references('id')->on('bairros'); 
             $table->string('email')->unique();
             $table->string('phone')->nullable();
             $table->string('celular');

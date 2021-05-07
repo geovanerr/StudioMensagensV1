@@ -46,6 +46,7 @@
                       <td> {{ $usuario->email }} </td>
                         <td> 
                             <a class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                            <a href="javascript:;" class="btn btn-info"><i class="fa fa-edit"></i></a>
                             <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
                              
                         </td>

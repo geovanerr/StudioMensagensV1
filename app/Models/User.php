@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\Bairro;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -27,6 +28,15 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'cpf',
+        'logradouro',
+        'numero',
+        'bairro_id',
+        'phone',
+        'celular',
+        'nascimento',
+        'genero',
+        'funcao',
     ];
 
     /**
@@ -58,4 +68,11 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function bairro()
+    {
+
+        return $this->belongsTo('App\Models\Bairro', 'bairro_id', 'id');
+
+    }
 }

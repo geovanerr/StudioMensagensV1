@@ -18,7 +18,10 @@ class CreateClientesTable extends Migration
             $table->string('nome', 100);
             $table->string('logradouro');
             $table->string('numero');
-            $table->string('bairro');        
+
+            $table->unsignedBigInteger('bairro_id');
+            $table->foreign('bairro_id')->references('id')->on('bairros');
+           
             $table->text('referencia')->nullable();
             $table->string('phone')->nullable();
             $table->string('celular');

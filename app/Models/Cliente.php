@@ -15,7 +15,7 @@ class Cliente extends Model
         'nome',
         'logradouro',
         'numero',
-        'bairro',
+        'bairro_id',
         'referencia',
         'phone',
         'celular',
@@ -32,6 +32,13 @@ class Cliente extends Model
     public function OrdensServicos() {
 
         return $this->hasMany('App\Models\OrdemServico', 'cliente_id', 'id');
+
+    }
+
+    public function bairro()
+    {
+
+        return $this->belongsTo('App\Models\Bairro', 'bairro_id', 'id');
 
     }
 }

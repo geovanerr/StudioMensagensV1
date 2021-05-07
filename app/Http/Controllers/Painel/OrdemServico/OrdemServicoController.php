@@ -88,6 +88,13 @@ class OrdemServicoController extends Controller
           return view('Painel.OrdemServico.show', compact('ordem', 'servicos'));
     }
 
+    public function showos($id)
+    {
+        $ordem = OrdemServico::find($id);
+        
+        return response()->json($ordem);      
+    }
+
     public function edit($id)
     {
 

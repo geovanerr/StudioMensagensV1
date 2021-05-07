@@ -36,15 +36,15 @@
 
                           <div class="col-xs-2">
                           <label for=""> Bairro:</label>
-                          <select class="form-control select2" name="bairro" id="bairro" style="width: 100%;">
-                                <option value="Asa Branca" selected="selected">Asa Branca</option>
-                                <option value="Aparecida">Aparecida</option>
-                                <option value="Buritis">Buritis</option>
-                                <option value="3">Bela Vista</option>
-                                <option value="4">Centro</option>
-                                <option value="5">Caimbé</option>
-                                <option value="6">Caranã</option>
-                              </select>                          
+                          <select name="bairro_id" class="form-control select2" data-placeholder="Selecione o Bairro" style="width: 100%;">
+                          <option> Bairro </option>
+
+                          @foreach ($bairros as $bairro)
+                          <option value="{{$bairro->id}}">{{$bairro->bairro}}</option>
+                          
+                          @endforeach
+                      
+                          </select>                        
                           </div>
                         </div> <br>
 

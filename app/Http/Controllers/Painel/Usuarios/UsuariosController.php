@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\User;
 use App\Models\Cliente;
+use App\Models\Bairro;
 use App\Models\Funcionario;
 use Illuminate\Http\Request;
 use App\Models\Roles\Roles;
@@ -31,6 +32,7 @@ class UsuariosController extends Controller
     public function index()
     {
 
+     
         $user = Auth()->User();
         $uri = $this->request->route()->uri();
         $exploder = explode('/', $uri);
@@ -53,8 +55,9 @@ class UsuariosController extends Controller
         $urlAtual = $exploder[2];
 
         $title = 'Painel de Cadastro';
+        $bairros = Bairro::all();
       //  $roles = Roles::all();
-        return view('Painel.Usuarios.viewCadastro', compact('user','urlAtual'));
+        return view('Painel.Usuarios.viewCadastro', ['user','urlAtual', 'bairros' => $bairros]);
 
     }
 
@@ -62,13 +65,16 @@ class UsuariosController extends Controller
 
     {
         $userr = $request->all();
+        $bairro = Bairro::find($request->bairro_id);
+
+
         $funcionario = new User;
         $funcionario->name = $request->name;
         $funcionario->cpf = $request->cpf;
         $funcionario->email = $request->email;
         $funcionario->logradouro = $request->logradouro;
         $funcionario->numero = $request->numero;
-        $funcionario->bairro = $request->bairro;
+        $funcionario->bairro()->associate($bairro);
         $password = $request->password;
         $funcionario->password = \Hash::make($password);
        
@@ -90,6 +96,12 @@ class UsuariosController extends Controller
     }
 
 
+    public function listaclientes()
+    {
+
+        $clientes = Cliente::all();
+        return view('Painel.Usuarios.listaclientes', [ 'clientes' => $clientes]);
+    }
 
     public function viewCliente()
     {
@@ -99,29 +111,26 @@ class UsuariosController extends Controller
         $uri = $this->request->route()->uri();
         $exploder = explode('/', $uri);
         $urlAtual = $exploder[2];
+        $bairros = Bairro::all();
 
         $title = 'Painel de Cadastro';
       //  $roles = Roles::all();
-        return view('Painel.Usuarios.viewCliente', compact('user','urlAtual'));
+        return view('Painel.Usuarios.viewCliente', ['user','urlAtual','bairros' => $bairros]);
 
     }
 
-    public function listaclientes()
-    {
-
-        $clientes = Cliente::all();
-        return view('Painel.Usuarios.listaclientes', [ 'clientes' => $clientes]);
-    }
 
     public function clientestore (Request $request)
 
     {
         $cliente = new Cliente;
+        $bairro = Bairro::find($request->bairro_id);
 
         $cliente->nome = $request->nome;
         $cliente->logradouro = $request->logradouro;
         $cliente->numero = $request->numero;
-        $cliente->bairro = $request->bairro;
+        $cliente->bairro()->associate($bairro);
+       
         $cliente->referencia = $request->referencia;
         $cliente->phone = $request->phone;
         $cliente->celular = $request->celular;

@@ -74,40 +74,16 @@
                                 <a class="btn btn-warning" href="{{ route('Painel.OrdemServico.edit', $ordem->id)}}"><i class="fa fa-edit"></i></a>
                                 <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
 
-                                <button type="button" class="btn btn-info view_data"  data-toggle="modal" data-target="#osview">
+                                <button type="button" class="btn btn-info"  data-toggle="modal" onclick="dataformView('{{ $ordem->id }}')" data-target="#view-ordem">
                                     <i class="fa fa-eye"></i>
                                 </button>
 
                           </td>
                         </tr>
                     @endforeach
+                    
 
-                    <!-- Modal -->
-<div class="modal fade" id="osview" style="z-index: 10000" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        
-        <div class="modal-header">
-          <h5 class="modal-title" id="osmodal">Ordem de Serviço</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
 
-     
-        <div class="modal-body" id="change_datail">
-          ...
-        </div>
-        
-     
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-     
-      </div>
-    </div>
-  </div>
 
                </tbody>
              </table>
@@ -138,10 +114,6 @@ $(document).ready(function(){
 </script>
    </section>
 
-  
-
-
-
-
   @endsection
 
+  @includeIf("Painel.Modals.modals")

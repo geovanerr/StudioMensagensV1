@@ -47,18 +47,26 @@
                     </div>
                     </div>
 
-                    <div class="col-xs-2">
+                    <div class="col-xs-3">
                     <div class="form-group">
                     Número: <input type="text" name="numero" class="form-control" placeholder="N°">
                     </div>
                     </div>
 
   
-                    <div class="col-xs-4">
-                    <div class="form-group">
-                    Bairro: <input type="text" name="bairro" class="form-control" placeholder="Bairro">
+                    <div class="col-xs-3">
+                    Bairro:
+                    <select name="bairro_id" class="form-control select2" data-placeholder="Selecione o Bairro" style="width: 100%;">
+                    <option> Bairro </option>
+
+                    @foreach ($bairros as $bairro)
+                    <option value="{{$bairro->id}}">{{$bairro->bairro}}</option>
+                          
+                    @endforeach
+                      
+                    </select>                        
                     </div>
-                    </div>
+                   
 
            
                     <div class="col-xs-6">
