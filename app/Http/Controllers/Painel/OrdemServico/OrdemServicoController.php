@@ -10,15 +10,24 @@ use App\Models\Mensagem;
 
 
 
+
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+
 
 class OrdemServicoController extends Controller
 {
 
+    protected $model;
+
+    public function __construct(OrdemServico $model){
+        $this->model = $model;
+    }
+
     public function index()
     {
 
-        $ordens = OrdemServico::all();
+        $ordens = $this->model->all();
 
         return view('Painel.OrdemServico.index', ['ordens' => $ordens]);
     }
@@ -88,10 +97,12 @@ class OrdemServicoController extends Controller
           return view('Painel.OrdemServico.show', compact('ordem', 'servicos'));
     }
 
+
+ 
     public function showos($id)
     {
         $ordem = OrdemServico::find($id);
-        
+
         return response()->json($ordem);      
     }
 

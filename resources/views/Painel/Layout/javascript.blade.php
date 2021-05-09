@@ -59,6 +59,7 @@
 <script src="{{ asset('AdminLTE/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('AdminLTE/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
 
+
 <script>
   $(function () {
     $('#example1').DataTable({
@@ -256,11 +257,29 @@
     })
   });
 
+
+
   function dataformView(id){
     $.ajax({
-      url : "ordens/show/"+id,
+      url : "/ordens/show/"+id,
       method : "GET",
       success : function (response){
+        var formViewOS = $("form[name=formViewOS]");
+        formViewOS.find("input[name=id]").val(response.id);
+
+        formViewOS.find("input[name=cliente_id]").val(response.cliente_id);
+        formViewOS.find("input[name=receptor]").val(response.receptor);
+        formViewOS.find("input[name=phone]").val(response.phone);
+        formViewOS.find("input[name=celular]").val(response.celular);
+        formViewOS.find("input[name=genero]").val(response.genero);
+        formViewOS.find("input[name=servicos]").val(response.servicos);
+        formViewOS.find("input[name=mensagem_id]").val(response.mensagem_id);
+        formViewOS.find("input[name=dataos]").val(response.dataos);
+        formViewOS.find("input[name=horarioos]").val(response.horarioos);
+        formViewOS.find("input[name=status]").val(response.status);
+        formViewOS.find("input[name=obs]").val(response.obs);
+        formViewOS.find("input[name=obscobrador]").val(response.obscobrador);
+
         console.log(response, "success");
       },
       error : function (response){
@@ -268,6 +287,7 @@
       },
     });
   }
+
 </script>
 
 
@@ -282,6 +302,7 @@
     });
   });
 </script>
+
 
 <script>
   $(function() {

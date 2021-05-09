@@ -42,7 +42,6 @@
                     <tr>
                       <td> {{ $usuario->id }} </td>
                       <td> {{ $usuario->name }} </td>
-                      <td> {{ $usuario->created_at->diffForHumans() }} </td>
                       <td> {{ $usuario->email }} </td>
                         <td> 
                             <a class="btn btn-warning"><i class="fa fa-edit"></i></a>

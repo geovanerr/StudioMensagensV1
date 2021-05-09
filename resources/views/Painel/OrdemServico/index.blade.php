@@ -58,7 +58,7 @@
                           <td> {{ $ordem->id }} </td>
                           <td> {{ $ordem->cliente->nome }} </td>
                           <td> {{ $ordem->receptor }} </td>
-                          <td> {{ $ordem->mensagem->mensagem }} </td>
+                          <td> {{ $ordem->celular }} </td>
                           <td>
                              <ul>
                           @foreach ($ordem->servicos as $servico)
@@ -93,25 +93,7 @@
          </div>
 
      </div>
-<script>
-$(document).ready(function(){
-   $('.view_data').click(function(){
-      $('#osview').modal('show'); //  abre a modal
-      $('#change_detail').html('Carregando...'); // mensagem
-      var change_id = $(this).attr("id");
-      $.ajax({
-         url:"teste.php",
-         method:"post",
-         data:{change_id:change_id},
-         success:function(data){
-            $('#change_detail').html(data);
-            $('#osview').modal({backdrop: 'static', keyboard: false});
-            //$('#dataModal').on('hidden.bs.modal', function () { location.reload();});
-         }
-      });
-   });
-});
-</script>
+
    </section>
 
   @endsection

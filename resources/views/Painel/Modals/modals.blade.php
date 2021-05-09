@@ -1,6 +1,6 @@
 <!-- Modal view viewOrdemServico-->
 <div class="modal fade" id="view-ordem" style="z-index: 10000" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
       
         <div class="modal-header">
@@ -14,7 +14,7 @@
         <div class="modal-body" id="change_datail">
           
         
-<form action="" method="POST">
+<form name="formViewOS">
 
 @csrf
 <input type="hidden" name="routeType" value="web">
@@ -39,7 +39,7 @@
               <div class="form-group">
               <i class="fa fa-address-card-o"></i></span>
                 <label>Cliente: </label>
-                <input type="text" class="form-control" id="receptor" name="receptor" placeholder="Nome Receptor" value="">
+                <input type="text" class="form-control" id="cliente_id" name="cliente_id">
 
               </div>
               </div>
@@ -58,22 +58,23 @@
 
   <div class="box-body">
     <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
 
               <div class="form-group">
               <i class="fa fa-address-card-o"></i></span>
                 <label >Receptor</label>
-                <input type="text" class="form-control" id="receptor" name="receptor" placeholder="Nome Receptor" value="" disabled>
+                
+                <input type="text" class="form-control" id="receptor" name="receptor">
 
               </div>
             </div>
 
-            <div class="col-xs-2">
+            <div class="col-xs-3">
             <i class="fa fa-phone"></i></span>
             <label for=""> Telefone:</label> <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefone:" value="">
             </div>
 
-            <div class="col-xs-2">
+            <div class="col-xs-3">
             <i class="fa fa-mobile"></i></span>
             <label for="">  Celular:</label> <input type="text" class="form-control" id="celular" name="celular" placeholder="celular" value="">
             </div>
@@ -82,11 +83,8 @@
             <i class="fa fa-female"></i>
             <i class="fa fa-male"></i>
                  <label for=""> Gênero:</label>
-                 <select class="form-control select2" id="genero" name="genero" style="width: 100%;">
-                    <option value="N/I" selected="selected">Nao Informar</option>
-                    <option value="F">Feminino</option>
-                    <option value="M">Masculino</option>
-                 </select>
+                 <input type="text" class="form-control" name="genero">
+        
             </div>
 
         </div>
@@ -98,11 +96,8 @@
               <i class="fa fa-shopping-bag"></i>
               <label>Serviços</label>
               <br>
-              <select name="servicos[]" class="form-control select2" multiple="multiple" data-placeholder="Selecione os Serviços"
-              style="width: 100%;" >
-         
+              <input type="text" class="form-control" name="servicos">
 
-              </select>
               </div>
             </div>
 
@@ -111,16 +106,8 @@
 
             <label>Mensagem</label>
               <br>
-              <select name="mensagem" class="form-control select2" multiple="multiple" data-placeholder="Selecione a Mensagem"
-                      style="width: 100%;">
-                <option>Alabama</option>
-                <option>Alaska</option>
-                <option>California</option>
-                <option>Delaware</option>
-                <option>Tennessee</option>
-                <option>Texas</option>
-                <option>Washington</option>
-              </select>
+              <input type="text" class="form-control" name="mensagem_id">
+
           </div>
 
         </div>
@@ -132,7 +119,7 @@
         <div class="form-group">
               <label>Data da OS:</label>
               <div class="input-group date">
-                <input type="date" class="form-control pull-right" name="dataos" id="dataos" value="">
+                <input type="text" class="form-control pull-right" name="dataos" id="dataos">
               </div>
 
 
@@ -145,7 +132,7 @@
                 <label>Horário OS:</label>
 
                 <div class="input-group">
-                  <input type="text" class="form-control timepicker" name="horarioos" id="horarioos">
+                  <input type="text" class="form-control" name="horarioos" id="horarioos">
 
                   <div class="input-group-addon">
                     <i class="fa fa-clock-o"></i>
@@ -159,12 +146,8 @@
             <div class="col-md-3">
             <div class="form-group">
                 <label>Status da OS</label>
-                <select name="status" class="form-control">
-                  <option value="Aberta"> Aberta </option>
-                  <option value="Realizada"> Realizada </option>
-                  <option value="Cancelada"> Cancelada </option>
+                <input type="text" class="form-control" name="status" id="status">
 
-                </select>
               </div>
               </div>
 
@@ -184,20 +167,12 @@
           <div class="col-md-6">
           <div class="form-group">
                 <label>Observação Cobrador</label>
-                <textarea name="obscobrador" class="form-control" rows="3"></textarea>
+                <input type="text" class="form-control" name="obscobrador">
+
               </div>
 
           </div>
           </div>
-
-                          <div class="box-footer with-footer">
-                            <h3 class="text-center">
-                            <input type="submit" class="btn btn-success" value="Editar" >
-                            <button type="submit" class="btn btn-danger">Cancelar</button>
-                          </h3>
-                          </div>
-
-
 
 
     </div>
