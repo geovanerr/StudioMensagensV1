@@ -58,20 +58,11 @@
                         
                           
                          
-                              
-                          <a href="/servicos/edit/{{ $servico->id }}" class="btn btn-warning"><i class="fa fa-edit"></i> Editar </a>
-                       
-                          <form action="/servicos/{{ $servico->id }}" onclick="return confirm('Deseja realmente remover o serviço?')" method="POST">
-                          
-                                @csrf
-                                @method('DELETE')
-                               <button type="submit" display="inline-block" class="btn btn-danger"> <i class="fa fa-trash"></i> Excluir </button>
-                           
-                          </form>
-                           
-                          
-                  
-                       
+                     
+                          <a href="/servicos/edit/{{ $servico->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+
+                          <a href="/servicos/{{ $servico->id }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                             
                             
                        </td>
                    </tr>

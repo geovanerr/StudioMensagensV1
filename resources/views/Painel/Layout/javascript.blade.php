@@ -267,18 +267,23 @@
         var formViewOS = $("form[name=formViewOS]");
         formViewOS.find("input[name=id]").val(response.id);
 
-        formViewOS.find("input[name=cliente_id]").val(response.cliente_id);
+        formViewOS.find("input[name=cliente_id]").val(response.cliente.nome);
         formViewOS.find("input[name=receptor]").val(response.receptor);
         formViewOS.find("input[name=phone]").val(response.phone);
         formViewOS.find("input[name=celular]").val(response.celular);
         formViewOS.find("input[name=genero]").val(response.genero);
         formViewOS.find("input[name=servicos]").val(response.servicos);
-        formViewOS.find("input[name=mensagem_id]").val(response.mensagem_id);
+        formViewOS.find("input[name=mensagem_id]").val(response.mensagem.mensagem);
         formViewOS.find("input[name=dataos]").val(response.dataos);
         formViewOS.find("input[name=horarioos]").val(response.horarioos);
         formViewOS.find("input[name=status]").val(response.status);
-        formViewOS.find("input[name=obs]").val(response.obs);
-        formViewOS.find("input[name=obscobrador]").val(response.obscobrador);
+     //   formViewOS.find("input[name=obs]").val(response.obs);
+        var obs = $('#obs').val(response.obs);
+        var obs2 = $('#obs2').val(response.obscobrador);
+
+      //  var obscobrador = $('#obscobrador').val(responde.obscobrador)
+
+      //  formViewOS.find("input[name=obscobrador]").val(response.obscobrador);
 
         console.log(response, "success");
       },
@@ -287,6 +292,68 @@
       },
     });
   }
+
+  function dataformViewfunc(id){
+    $.ajax({
+      url : "/usuarios/show/"+id,
+      method : "GET",
+      success : function (response){
+        var formViewfunc = $("form[name=formViewfunc]");
+        formViewfunc.find("input[name=id]").val(response.id);
+
+        formViewfunc.find("input[name=name]").val(response.name);
+        formViewfunc.find("input[name=cpf]").val(response.cpf);
+        formViewfunc.find("input[name=email]").val(response.email);
+        formViewfunc.find("input[name=logradouro]").val(response.logradouro);
+        formViewfunc.find("input[name=numero]").val(response.numero);
+        formViewfunc.find("input[name=phone]").val(response.phone);
+        formViewfunc.find("input[name=celular]").val(response.celular);
+        formViewfunc.find("input[name=genero]").val(response.genero);
+        formViewfunc.find("input[name=nascimento]").val(response.nascimento);
+        formViewfunc.find("input[name=funcao]").val(response.funcao);
+
+        var bairro = $('#bairro').val(response.bairro.bairro);
+       // var obs2 = $('#obs2').val(response.obscobrador);
+
+        console.log(response, "success");
+      },
+      error : function (response){
+        console.log(response, "error");
+      },
+    });
+  }
+
+
+  function dataformViewcliente(id){
+    $.ajax({
+      url : "/clientes/show/"+id,
+      method : "GET",
+      success : function (response){
+        var formViewcliente = $("form[name=formViewcliente]");
+        formViewcliente.find("input[name=id]").val(response.id);
+
+        formViewcliente.find("input[name=nome]").val(response.nome);
+        formViewcliente.find("input[name=logradouro]").val(response.logradouro);
+        formViewcliente.find("input[name=numero]").val(response.numero);
+        formViewcliente.find("input[name=phone]").val(response.phone);
+        formViewcliente.find("input[name=celular]").val(response.celular);
+        formViewcliente.find("input[name=genero]").val(response.genero);
+        formViewcliente.find("input[name=nascimento]").val(response.nascimento);
+
+        var referencia = $('#referencia').val(response.referencia);
+
+        var obs = $('#obs').val(response.obs);
+
+        var bairro = $('#bairro').val(response.bairro.bairro);
+
+        console.log(response, "success");
+      },
+      error : function (response){
+        console.log(response, "error");
+      },
+    });
+  }
+
 
 </script>
 

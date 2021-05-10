@@ -23,8 +23,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-          <li class="active"><a href="{{ route('Painel.Usuarios.index') }}"><i class="fa fa-user-o"></i>Painel de Funcionários </a></li>
-          <li class="active"><a href="{{ route('Painel.Usuarios.listaclientes') }}"><i class="fa fa-user"></i> Painel de Clientes </a></li>
+          <li class="active"><a href="{{ route('Painel.Usuarios.index') }}"><i class="fa fa-user-o"></i>Funcionários </a></li>
+          <li class="active"><a href="{{ route('Painel.Usuarios.listaclientes') }}"><i class="fa fa-user"></i>Clientes </a></li>
           </ul>
         </li>
 

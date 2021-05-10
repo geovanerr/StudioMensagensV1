@@ -32,8 +32,8 @@
                 <tr>
                   <th> ID </th>
                   <th> Nome </th>
-                  <th> Data Criação </th>
-                  <th> Usuário </th>
+                  <th> e-mail </th>
+                  <th> Nascimento </th>
                   <th> Ação </th>
                 </tr>
                 </thead>
@@ -43,9 +43,14 @@
                       <td> {{ $usuario->id }} </td>
                       <td> {{ $usuario->name }} </td>
                       <td> {{ $usuario->email }} </td>
+                      <td> {{ $usuario->nascimento }} </td>
+
                         <td> 
+                        <button type="button" class="btn btn-info"  data-toggle="modal" onclick="dataformViewfunc('{{ $usuario->id }}')" data-target="#view-func">
+                                    <i class="fa fa-eye"></i>
+                                </button>
                             <a class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                            <a href="javascript:;" class="btn btn-info"><i class="fa fa-edit"></i></a>
+
                             <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
                              
                         </td>
@@ -66,4 +71,4 @@
 
 
   @endsection
-
+  @includeIf("Painel.Modals.viewfunc")

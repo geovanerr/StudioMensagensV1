@@ -158,7 +158,7 @@
           <div class="col-md-6">
           <div class="form-group">
                 <label>Observação</label>
-                <textarea name="obs" class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                <textarea name="obs" class="form-control" id="obs" rows="3" placeholder="Enter ..."></textarea>
               </div>
 
           </div>
@@ -167,8 +167,7 @@
           <div class="col-md-6">
           <div class="form-group">
                 <label>Observação Cobrador</label>
-                <input type="text" class="form-control" name="obscobrador">
-
+                <textarea name="obs" class="form-control" id="obs2" rows="3" placeholder="Enter ..."></textarea>
               </div>
 
           </div>
@@ -189,8 +188,7 @@
         </div>
      
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
         </div>
       </div>
     </div>

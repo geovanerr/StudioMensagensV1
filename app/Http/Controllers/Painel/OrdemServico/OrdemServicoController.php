@@ -102,6 +102,10 @@ class OrdemServicoController extends Controller
     public function showos($id)
     {
         $ordem = OrdemServico::find($id);
+        $ordem['cliente'] = $ordem->cliente->nome;
+        $ordem['mensagem'] = $ordem->mensagem->mensagem;
+
+        
 
         return response()->json($ordem);      
     }

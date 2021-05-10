@@ -95,6 +95,15 @@ class UsuariosController extends Controller
 
     }
 
+    public function showfunc($id)
+    {
+        $funcionario = User::find($id);
+        $funcionario['bairro'] = $funcionario->bairro;
+
+        return response()->json($funcionario);      
+    }
+
+
 
     public function listaclientes()
     {
@@ -142,6 +151,14 @@ class UsuariosController extends Controller
 
         return redirect ('/painel/usuarios/listaclientes')->with('msg', 'Cliente cadastrado com sucesso.');
 
+    }
+
+    public function showcliente($id)
+    {
+        $cliente = Cliente::find($id);
+        $cliente['bairro'] = $cliente->bairro;
+
+        return response()->json($cliente);      
     }
 
 

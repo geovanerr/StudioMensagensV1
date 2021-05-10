@@ -26,6 +26,8 @@ Route::get('/painel', [PainelController::class, 'index'])->name('Painel.index');
 Route::get('/painel/usuarios', [UsuariosController::class, 'index'])->name('Painel.Usuarios.index');
 Route::get('/painel/usuarios/cadastrofuncionario', [UsuariosController::class, 'viewCadastro'])->name('Painel.Usuarios.viewCadastro');
 Route::post('/painel/usuario/create', [UsuariosController::class, 'storefunc'])->name('Painel.Usuarios.storefunc');
+Route::get('/usuarios/show/{id?}', [UsuariosController::class, 'showfunc'])->name('Painel.OrdemServico.showfunc');
+
 Route::match(['get', 'post'], '/logar', [FuncionariosController::class, 'logar'])
       ->name('logar');
 
@@ -35,13 +37,15 @@ Route::get('/painel/usuarios/listaclientes', [UsuariosController::class, 'listac
 
 Route::get('/painel/usuarios/cadastrocliente', [UsuariosController::class, 'viewCliente'])->name('Painel.Usuarios.viewCliente');
 Route::post('/clientes', [UsuariosController::class, 'clientestore']);
+Route::get('/clientes/show/{id?}', [UsuariosController::class, 'showcliente'])->name('Painel.OrdemServico.showcliente');
+
 
 
 
 Route::get('/painel/servicos/tiposServicos', [ServicosController::class, 'tipoServicos'])->name('Painel.Servicos.tipoServicos');
 Route::get('/painel/servicos/cadastrotipos', [ServicosController::class, 'cadastrotipoS'])->name('Painel.Servicos.cadastrotipoS');
 Route::post('/servicos', [ServicosController::class, 'cadastrotipostore'])->name('Painel.Servicos.cadastrotipostore');
-Route::delete('/servicos/{id}', [ServicosController::class, 'destroy'])->name('Painel.Servicos.destroy');
+Route::get('/servicos/{id}', [ServicosController::class, 'destroy'])->name('Painel.Servicos.destroy');
 Route::get('/servicos/edit/{id}', [ServicosController::class, 'edit'])->name('Painel.Servicos.edit');
 Route::put('/servicos/update/{id}', [ServicosController::class, 'update'])->name('Painel.Servicos.update');
 
