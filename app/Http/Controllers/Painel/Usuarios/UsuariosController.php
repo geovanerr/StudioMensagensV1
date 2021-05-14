@@ -103,6 +103,30 @@ class UsuariosController extends Controller
         return response()->json($funcionario);      
     }
 
+    
+    public function editfunc($id) {
+ 
+        $usuario = User::findOrFail($id);
+        $bairros = Bairro::all();
+
+      //  dd($usuario);
+        return view ('Painel.Usuarios.editfunc', ['usuario' => $usuario, 'bairros' => $bairros]);
+
+    }
+        public function updatefunc(Request $request) {
+
+
+        
+      $inputs = $request->all();
+
+      $funcionario = User::findOrFail($request->id);
+
+      $funcionario->update($inputs);
+
+      return redirect ('/painel/usuarios')->with('msg', 'Usuário alterado com sucesso.');
+
+
+    }
 
 
     public function listaclientes()

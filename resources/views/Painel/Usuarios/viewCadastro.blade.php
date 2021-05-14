@@ -97,9 +97,9 @@
                     <div class="form-group">
                     Gênero:
                     <select class="form-control select2" name="genero" style="width: 100%;">
-                       <option selected="selected">Nao Informar</option>
-                       <option>Feminino</option>
-                       <option>Masculino</option>
+                       <option selected="selected" value="Nao Informar">Nao Informar</option>
+                       <option value="Femino">Feminino</option>
+                       <option value="Masculino">Masculino</option>
                             
                     </select>                          
                     </div>
@@ -110,9 +110,9 @@
                     <div class="form-group">
                     Função:
                     <select class="form-control select2" name="funcao" style="width: 100%;">
-                       <option selected="selected"> Administrador </option>
-                       <option>Gerente</option>
-                       <option>Colaborador</option>
+                       <option selected="selected" value="Administrador"> Administrador </option>
+                       <option value="Gerente">Gerente</option>
+                       <option value="Colaborador">Colaborador</option>
                     </select>                          
                     </div>
                     </div>

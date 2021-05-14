@@ -26,7 +26,10 @@ Route::get('/painel', [PainelController::class, 'index'])->name('Painel.index');
 Route::get('/painel/usuarios', [UsuariosController::class, 'index'])->name('Painel.Usuarios.index');
 Route::get('/painel/usuarios/cadastrofuncionario', [UsuariosController::class, 'viewCadastro'])->name('Painel.Usuarios.viewCadastro');
 Route::post('/painel/usuario/create', [UsuariosController::class, 'storefunc'])->name('Painel.Usuarios.storefunc');
-Route::get('/usuarios/show/{id?}', [UsuariosController::class, 'showfunc'])->name('Painel.OrdemServico.showfunc');
+Route::get('/usuarios/show/{id?}', [UsuariosController::class, 'showfunc'])->name('Painel.Usuarios.showfunc');
+Route::get('/usuarios/editfunc/{id}', [UsuariosController::class, 'editfunc'])->name('Painel.Usuarios.editfunc');
+Route::put('/usuarios/updatefunc/{id}', [UsuariosController::class, 'updatefunc'])->name('Painel.usuarios.updatefunc');
+
 
 Route::match(['get', 'post'], '/logar', [FuncionariosController::class, 'logar'])
       ->name('logar');

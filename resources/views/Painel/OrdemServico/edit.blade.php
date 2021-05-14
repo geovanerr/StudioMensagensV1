@@ -1,7 +1,7 @@
 @extends ('Painel.Layout.index')
 
 
-@section('title', 'Cadastro OS')
+@section('title', 'Edit OS')
 
 @section('content')
 

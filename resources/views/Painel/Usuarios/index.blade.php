@@ -49,7 +49,7 @@
                         <button type="button" class="btn btn-info"  data-toggle="modal" onclick="dataformViewfunc('{{ $usuario->id }}')" data-target="#view-func">
                                     <i class="fa fa-eye"></i>
                                 </button>
-                            <a class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                        <a href="/usuarios/editfunc/{{ $usuario->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
 
                             <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
                              
