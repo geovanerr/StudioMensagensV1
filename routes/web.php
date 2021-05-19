@@ -28,7 +28,8 @@ Route::get('/painel/usuarios/cadastrofuncionario', [UsuariosController::class, '
 Route::post('/painel/usuario/create', [UsuariosController::class, 'storefunc'])->name('Painel.Usuarios.storefunc');
 Route::get('/usuarios/show/{id?}', [UsuariosController::class, 'showfunc'])->name('Painel.Usuarios.showfunc');
 Route::get('/usuarios/editfunc/{id}', [UsuariosController::class, 'editfunc'])->name('Painel.Usuarios.editfunc');
-Route::put('/usuarios/updatefunc/{id}', [UsuariosController::class, 'updatefunc'])->name('Painel.usuarios.updatefunc');
+Route::put('/usuarios/updatefunc/{id}', [UsuariosController::class, 'updatefunc'])->name('Painel.Usuarios.updatefunc');
+Route::get('/usuarios/{id}', [UsuariosController::class, 'destroyfunc'])->name('Painel.Usuarios.destroyfunc');
 
 
 Route::match(['get', 'post'], '/logar', [FuncionariosController::class, 'logar'])
@@ -41,6 +42,12 @@ Route::get('/painel/usuarios/listaclientes', [UsuariosController::class, 'listac
 Route::get('/painel/usuarios/cadastrocliente', [UsuariosController::class, 'viewCliente'])->name('Painel.Usuarios.viewCliente');
 Route::post('/clientes', [UsuariosController::class, 'clientestore']);
 Route::get('/clientes/show/{id?}', [UsuariosController::class, 'showcliente'])->name('Painel.OrdemServico.showcliente');
+Route::get('/usuarios/editcliente/{id}', [UsuariosController::class, 'editcliente'])->name('Painel.Usuarios.editcliente');
+Route::put('/usuarios/updatecliente/{id}', [UsuariosController::class, 'updatecliente'])->name('Painel.Usuarios.updatecliente');
+Route::get('/clientes/{id}', [UsuariosController::class, 'destroycliente'])->name('Painel.Usuarios.destroycliente');
+
+
+
 
 
 

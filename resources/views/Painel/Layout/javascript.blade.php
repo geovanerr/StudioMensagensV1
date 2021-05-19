@@ -39,6 +39,7 @@
 <script src="{{ asset('template/fastclick.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('template/adminlte.min.js') }}"></script>
+<script src="{{ asset('js/moment.min.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('template/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
@@ -245,7 +246,7 @@
         }
     },
     "decimal": ","
-} 
+}
     })
     $('#example2').DataTable({
       'paging'      : true,
@@ -309,7 +310,12 @@
         formViewfunc.find("input[name=phone]").val(response.phone);
         formViewfunc.find("input[name=celular]").val(response.celular);
         formViewfunc.find("input[name=genero]").val(response.genero);
-        formViewfunc.find("input[name=nascimento]").val(response.nascimento);
+
+
+        var nascimento = moment(response.nascimento).format('DD/MM/YYYY');
+        formViewfunc.find("input[name=nascimento]").val(nascimento);
+
+
         formViewfunc.find("input[name=funcao]").val(response.funcao);
 
         var bairro = $('#bairro').val(response.bairro.bairro);
@@ -338,7 +344,12 @@
         formViewcliente.find("input[name=phone]").val(response.phone);
         formViewcliente.find("input[name=celular]").val(response.celular);
         formViewcliente.find("input[name=genero]").val(response.genero);
-        formViewcliente.find("input[name=nascimento]").val(response.nascimento);
+      //  formViewcliente.find("input[name=nascimento]").val(response.nascimento);
+
+        var nascimento = moment(response.nascimento).format('DD/MM/YYYY');
+
+      //  console.log(nascimento);
+      formViewcliente.find("input[name=nascimento]").val(nascimento);
 
         var referencia = $('#referencia').val(response.referencia);
 

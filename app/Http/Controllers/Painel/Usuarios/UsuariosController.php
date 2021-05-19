@@ -32,7 +32,7 @@ class UsuariosController extends Controller
     public function index()
     {
 
-     
+
         $user = Auth()->User();
         $uri = $this->request->route()->uri();
         $exploder = explode('/', $uri);
@@ -77,14 +77,14 @@ class UsuariosController extends Controller
         $funcionario->bairro()->associate($bairro);
         $password = $request->password;
         $funcionario->password = \Hash::make($password);
-       
+
         $funcionario->phone = $request->phone;
         $funcionario->celular = $request->celular;
         $funcionario->nascimento = $request->nascimento;
         $funcionario->genero = $request->genero;
         $funcionario->funcao = $request->funcao;
 
-     
+
         $dbfuncionario = User::where("email", $funcionario->email)->first();
         if($dbfuncionario){
             return redirect ('/painel/usuarios')->with('err', 'email ja cadastrado no sistema.');
@@ -100,12 +100,16 @@ class UsuariosController extends Controller
         $funcionario = User::find($id);
         $funcionario['bairro'] = $funcionario->bairro;
 
-        return response()->json($funcionario);      
+      //  $funcionario['nascimento'] = $this->setFormatData($funcionario['nascimento']);
+
+        //dd($funcionario);
+
+        return response()->json($funcionario);
     }
 
-    
+
     public function editfunc($id) {
- 
+
         $usuario = User::findOrFail($id);
         $bairros = Bairro::all();
 
@@ -113,17 +117,26 @@ class UsuariosController extends Controller
         return view ('Painel.Usuarios.editfunc', ['usuario' => $usuario, 'bairros' => $bairros]);
 
     }
-        public function updatefunc(Request $request) {
+
+    public function updatefunc(Request $request) {
 
 
-        
+
       $inputs = $request->all();
 
       $funcionario = User::findOrFail($request->id);
 
       $funcionario->update($inputs);
 
-      return redirect ('/painel/usuarios')->with('msg', 'Usuário alterado com sucesso.');
+      return redirect ('/painel/usuarios')->with('msg', 'Funcionário alterado com sucesso.');
+
+
+    }
+
+    public function destroyfunc($id) {
+
+        User::findOrFail($id)->delete();
+        return redirect ('/painel/usuarios')->with('msg', 'Funcionário removido com sucesso.');
 
 
     }
@@ -163,7 +176,7 @@ class UsuariosController extends Controller
         $cliente->logradouro = $request->logradouro;
         $cliente->numero = $request->numero;
         $cliente->bairro()->associate($bairro);
-       
+
         $cliente->referencia = $request->referencia;
         $cliente->phone = $request->phone;
         $cliente->celular = $request->celular;
@@ -182,8 +195,41 @@ class UsuariosController extends Controller
         $cliente = Cliente::find($id);
         $cliente['bairro'] = $cliente->bairro;
 
-        return response()->json($cliente);      
+        return response()->json($cliente);
     }
+
+    public function editcliente($id) {
+
+        $cliente = Cliente::findOrFail($id);
+        $bairros = Bairro::all();
+
+       //dd($cliente);
+        return view ('Painel.Usuarios.editcliente', ['cliente' => $cliente, 'bairros' => $bairros]);
+
+    }
+
+    public function updatecliente(Request $request) {
+
+        $inputs = $request->all();
+
+      //  dd($inputs);
+        $cliente = Cliente::findOrFail($request->id);
+
+        $cliente->update($inputs);
+
+        return redirect ('/painel/usuarios/listaclientes')->with('msg', 'Cliente alterado com sucesso.');
+
+
+      }
+
+      public function destroycliente($id) {
+
+        Cliente::findOrFail($id)->delete();
+        return redirect ('/painel/usuarios/listaclientes')->with('msg', 'Cliente removido com sucesso.');
+
+
+    }
+
 
 
 

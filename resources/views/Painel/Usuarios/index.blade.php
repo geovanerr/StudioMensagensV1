@@ -5,13 +5,13 @@
   @section('content')
 
   <section class="content">
-     
+
       <div class="row">
-        <div class="col-xs-12"> 
+        <div class="col-xs-12">
         <div class="box">
 
               <div class="box-header">
-                  
+
                   @if(session('err'))
                   <div class="alert alert-danger">
                     <p class="msg"> {{ session('err')}} </p>
@@ -45,26 +45,28 @@
                       <td> {{ $usuario->email }} </td>
                       <td> {{ $usuario->nascimento }} </td>
 
-                        <td> 
+                        <td>
                         <button type="button" class="btn btn-info"  data-toggle="modal" onclick="dataformViewfunc('{{ $usuario->id }}')" data-target="#view-func">
                                     <i class="fa fa-eye"></i>
                                 </button>
                         <a href="/usuarios/editfunc/{{ $usuario->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
 
-                            <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                             
+
+                        <a href="/usuarios/{{ $usuario->id }}"   onclick="return confirm('Deseja realmente remover o Funcionário?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+
+
                         </td>
                     </tr>
                 @endforeach
-                
+
                 </tbody>
-               
+
               </table>
             </div>
-           
+
           </div>
           </div>
-   
+
       </div>
     </section>
 

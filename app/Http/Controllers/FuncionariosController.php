@@ -16,13 +16,13 @@ class FuncionariosController extends Controller
             $password = $request->input("password");
 
             $credencial = ['email' => $email, 'password' => $password];
-            
+
             if(Auth::attempt($credencial)){
-                return redirect()->route("Painel.index");   
+                return redirect()->route("Painel.index");
 
             }else{
                 $request->session()->flash("err", "Usuário ou Senha inválido");
-                return redirect()->route("logar");   
+                return redirect()->route("logar");
             }
         }
 

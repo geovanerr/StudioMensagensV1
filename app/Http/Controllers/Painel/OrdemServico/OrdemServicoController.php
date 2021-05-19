@@ -47,7 +47,7 @@ class OrdemServicoController extends Controller
         $cliente = Cliente::find($request->cliente_id);
         $servico = Servico::find($request->servico);
         $mensagem = Mensagem::find($request->mensagem_id);
-        
+
         if(!$cliente){
 
             return 'Erro ao selecionar cliente';
@@ -98,16 +98,16 @@ class OrdemServicoController extends Controller
     }
 
 
- 
+
     public function showos($id)
     {
         $ordem = OrdemServico::find($id);
         $ordem['cliente'] = $ordem->cliente->nome;
         $ordem['mensagem'] = $ordem->mensagem->mensagem;
 
-        
 
-        return response()->json($ordem);      
+
+        return response()->json($ordem);
     }
 
     public function edit($id)
@@ -118,6 +118,8 @@ class OrdemServicoController extends Controller
         $servicos = Servico::all();
 
         $ordem = OrdemServico::find($id);
+
+      //  dd($ordem);
 
         if(!$ordem) {
 
