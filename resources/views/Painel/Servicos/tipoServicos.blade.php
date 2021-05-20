@@ -6,15 +6,13 @@
 
   <section class="content">
 
-     
-     
      <div class="row">
-       
-     <div class="col-xs-12"> 
+
+     <div class="col-xs-12">
        <div class="box">
 
              <div class="box-header with-border">
-                  
+
                   @if (count($errors) > 0)
                     <div class="alert alert-danger">
                       <ul>
@@ -30,9 +28,9 @@
                     <p class="msg"> {{ session('msg')}} </p>
                   </div>
                   @endif
-        
-               <h3 id="box-title" class="text-center"> Tipos de Serviços <a href="{{ route('Painel.Servicos.cadastrotipoS') }}" class="btn btn-success"><i class="fa fa-plus"></i></a> </h3>
-               
+
+               <h3 id="box-title" class="text-center">Serviços <a href="{{ route('Painel.Servicos.cadastrotipoS') }}" class="btn btn-success">Novo Serviço</a> </h3>
+
              </div>
            <!-- /.box-header -->
            <div class="box-body">
@@ -42,7 +40,7 @@
                  <th> ID </th>
                  <th> <i class="fa fa-handshake-o"></i>  Serviço  </th>
                  <th> <i class="fa fa-money"></i> Preço  </th>
-                 
+
                  <th> <i class="fa fa-cog" aria-hidden="true"></i>  Ação </th>
                </tr>
                </thead>
@@ -52,29 +50,22 @@
                      <td> {{ $servico->id }} </td>
                      <td> {{ $servico->servico }} </td>
                      <td> {{ $servico->preco }} </td>
-                    
-                     
-                       <td> 
-                        
-                          
-                         
-                     
-                          <a href="/servicos/edit/{{ $servico->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
 
-                          <a href="/servicos/{{ $servico->id }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                                             
-                            
+
+                       <td>
+                          <a href="/servicos/edit/{{ $servico->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                          <a href="/servicos/{{ $servico->id }}"   onclick="return confirm('Deseja realmente remover o Serviço: {{$servico->servico}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                        </td>
                    </tr>
                @endforeach
-               
-            
+
+
              </table>
            </div>
-          
+
          </div>
          </div>
-  
+
      </div>
 
    </section>

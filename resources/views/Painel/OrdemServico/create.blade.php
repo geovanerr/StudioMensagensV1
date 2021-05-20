@@ -98,15 +98,15 @@
                 <i class="fa fa-shopping-bag"></i>
                 <label>Serviços</label>
                 <br>
-                <select name="servico[]" id="servico" class="form-control select2" multiple="multiple" data-placeholder="Selecione os Serviços"
+                <select name="servico[]" id="servico" class="form-control select2" onchange="soma()" multiple="multiple" data-placeholder="Selecione os Serviços"
                 style="width: 100%;">
-                @php $total = 0; 
+                @php $total = 0;
                 @endphp
                 @foreach ($servicos as $servico)
                   <option value="{{$servico->id}}">{{$servico->servico}}</option>
-                
+
                 @endforeach
-               
+
                 </select>
                 </div>
               </div>
@@ -121,9 +121,9 @@
 
                 @foreach ($mensagens as $mensagem)
                 <option value="{{$mensagem->id}}">{{$mensagem->mensagem}}</option>
-                
+
                 @endforeach
-            
+
                 </select>
             </div>
 
@@ -162,7 +162,7 @@
 
               <div class="col-md-3">
               <div class="form-group">
-                  <label>Status da OS</label>              
+                  <label>Status da OS</label>
                   <select id="status" name="status" class="form-control">
                     <option value="Aberta"> Aberta </option>
                     <option value="Realizada"> Realizada </option>
@@ -177,14 +177,14 @@
 
                 <label>Cobrador</label>
                 <br>
-                <select name="cobrador_id" class="form-control select2" data-placeholder="Selecione o Cobrador" style="width: 100%;">
+                <select name="cobrador_id" class="form-control select2" id="cobrador"  data-placeholder="Selecione o Cobrador" style="width: 100%;">
                 <option> Selecione o Cobrador </option>
 
                 @foreach ($cobradores as $cobrador)
                 <option value="{{$cobrador->id}}">{{$cobrador->cobrador}}</option>
-                
+
                 @endforeach
-            
+
                 </select>
             </div>
 
@@ -210,8 +210,10 @@
             </div>
             </div>
 
+<input type="text" readonly="readonly" id="valortotal" name="valortotal" disabled>
 <div>
-<h3>Total OS: R$ {{ $total }}</h3>
+
+
 </div>
 
                               <div class="box-footer with-footer">

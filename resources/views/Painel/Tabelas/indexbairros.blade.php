@@ -49,10 +49,10 @@
                    <tr>
                      <td> {{ $bairro->id }} </td>
                      <td> {{ $bairro->bairro }} </td>
-        
+
                      <td>
                          <a href="/painel/tabelas/bairro/edit/{{ $bairro->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                         <a href="/painel/tabelas/bairro/{{ $bairro->id }}"   onclick="return confirm('Deseja realmente remover o Bairro?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                         <a href="/painel/tabelas/bairro/{{ $bairro->id }}"   onclick="return confirm('Deseja realmente remover o Bairro: {{$bairro->bairro}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                        </td>
                    </tr>
                @endforeach

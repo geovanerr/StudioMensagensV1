@@ -30,7 +30,7 @@
                     <p class="msg"> {{ session('msg')}} </p>
                   </div>
                   @endif
-                  
+
                <h3 id="box-title" class="text-center"> Cobradores <a href="{{ route('Painel.Tabelas.createcobrador') }}" class="btn btn-success">Cadastrar Cobrador</a> </h3>
 
              </div>
@@ -41,6 +41,7 @@
                <tr>
                  <th> ID </th>
                  <th> <i class="fa fa-user"></i><i class="fa fa-usd"></i>  Cobrador  </th>
+                 <th> <i class="fa fa-money" aria-hidden="true"></i>  Valor </th>
                  <th> <i class="fa fa-cog" aria-hidden="true"></i>  Ação </th>
                </tr>
                </thead>
@@ -50,12 +51,12 @@
                      <td> {{ $cobrador->id }} </td>
                      <td> {{ $cobrador->cobrador }} </td>
                      <td> {{ $cobrador->preco }} </td>
-       
+
                      <td>
                          <a href="/painel/tabelas/cobrador/edit/{{ $cobrador->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                         <a href="/painel/tabelas/cobrador/{{ $cobrador->id }}"   onclick="return confirm('Deseja realmente remover o Cobrador?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                         <a href="/painel/tabelas/cobrador/{{ $cobrador->id }}"   onclick="return confirm('Deseja realmente remover o Cobrador: {{$cobrador->cobrador}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 
-                       </td>
+                     </td>
                    </tr>
                @endforeach
 

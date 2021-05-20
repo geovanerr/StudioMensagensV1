@@ -369,6 +369,15 @@
     });
   }
 
+$(function(){
+    $("#cobrador").change(function(){
+        var displayvalor = $("#cobrador option:selected").text();
+
+        $("valortotal").val(displayvalor);
+
+        console.log(displayvalor);
+    })
+});
 
 </script>
 

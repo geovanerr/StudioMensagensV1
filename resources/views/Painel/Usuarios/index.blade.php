@@ -52,7 +52,7 @@
                         <a href="/usuarios/editfunc/{{ $usuario->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
 
 
-                        <a href="/usuarios/{{ $usuario->id }}"   onclick="return confirm('Deseja realmente remover o Funcionário?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                        <a href="/usuarios/{{ $usuario->id }}"   onclick="return confirm('Deseja realmente remover o Funcionário: {{$usuario->name}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 
 
                         </td>

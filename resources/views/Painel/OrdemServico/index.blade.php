@@ -12,7 +12,7 @@
        <div class="box">
 
              <div class="box-header with-border">
-                  
+
                   @if (count($errors) > 0)
                     <div class="alert alert-danger">
                       <ul>
@@ -76,13 +76,13 @@
                                     <i class="fa fa-eye"></i>
                                 </button>
                                 <a class="btn btn-warning" href="{{ route('Painel.OrdemServico.edit', $ordem->id)}}"><i class="fa fa-edit"></i></a>
-                                <a href="/ordemservico/{{ $ordem->id }}"   onclick="return confirm('Deseja realmente remover o Funcionário?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                <a href="/ordemservico/{{ $ordem->id }}"   onclick="return confirm('Deseja realmente remover a OS:  {{$ordem->id}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 
 
                           </td>
                         </tr>
                     @endforeach
-                    
+
 
 
 
