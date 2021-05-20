@@ -28,6 +28,7 @@ class OrdemServico extends Model
         'dataos',
         'horarioos',
         'status',
+        'cobrador_id',
         'obs',
         'obscobrador'
     ];
@@ -44,6 +45,12 @@ class OrdemServico extends Model
     {
 
         return $this->belongsTo('App\Models\Mensagem', 'mensagem_id', 'id');
+
+    }
+    public function cobrador()
+    {
+
+        return $this->belongsTo('App\Models\Cobrador', 'cobrador_id', 'id');
 
     }
 

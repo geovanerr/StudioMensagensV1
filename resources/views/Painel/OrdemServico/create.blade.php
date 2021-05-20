@@ -70,12 +70,12 @@
 
               <div class="col-xs-2">
               <i class="fa fa-phone"></i></span>
-              <label for=""> Telefone:</label> <input type="text" class="form-control" id="phone" name="phone" placeholder="Rua:">
+              <label for=""> Telefone:</label> <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefone">
               </div>
 
               <div class="col-xs-2">
               <i class="fa fa-mobile"></i></span>
-              <label for="">  Celular:</label> <input type="text" class="form-control" id="celular" name="celular" placeholder="Nº">
+              <label for="">  Celular:</label> <input type="text" class="form-control" id="celular" name="celular" placeholder="Celular">
               </div>
 
               <div class="col-md-2">
@@ -83,9 +83,9 @@
               <i class="fa fa-male"></i>
                    <label for=""> Gênero:</label>
                    <select class="form-control select2" id="genero" name="genero" style="width: 100%;">
-                      <option value="N/I" selected="selected">Nao Informar</option>
-                      <option value="F">Feminino</option>
-                      <option value="M">Masculino</option>
+                      <option value="Nao Informar" selected="selected">Nao Informar</option>
+                      <option value="Feminino">Feminino</option>
+                      <option value="Masculino">Masculino</option>
                    </select>
               </div>
 
@@ -162,8 +162,8 @@
 
               <div class="col-md-3">
               <div class="form-group">
-                  <label>Status da OS</label>
-                  <select name="status" class="form-control">
+                  <label>Status da OS</label>              
+                  <select id="status" name="status" class="form-control">
                     <option value="Aberta"> Aberta </option>
                     <option value="Realizada"> Realizada </option>
                     <option value="Cancelada"> Cancelada </option>
@@ -171,6 +171,22 @@
                   </select>
                 </div>
                 </div>
+
+                <div class="col-md-3">
+                <i class="fa fa-money"></i></span>
+
+                <label>Cobrador</label>
+                <br>
+                <select name="cobrador_id" class="form-control select2" data-placeholder="Selecione o Cobrador" style="width: 100%;">
+                <option> Selecione o Cobrador </option>
+
+                @foreach ($cobradores as $cobrador)
+                <option value="{{$cobrador->id}}">{{$cobrador->cobrador}}</option>
+                
+                @endforeach
+            
+                </select>
+            </div>
 
             </div>
 

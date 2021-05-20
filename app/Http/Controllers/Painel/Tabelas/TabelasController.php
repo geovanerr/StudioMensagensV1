@@ -52,35 +52,23 @@ class TabelasController extends Controller
     }
 
     public function storebairro (Request $request)
-
     {
         $bairro = new Bairro;
         $bairro->bairro = $request->bairro;
-
         $bairro->save();
 
         return redirect ('/painel/tabelas/bairros')->with('msg', 'Bairro criado com sucesso.');
-
     }
 
     public function destroybairro($id) {
 
         Bairro::findOrFail($id)->delete();
         return redirect ('/painel/tabelas/bairros')->with('msg', 'Bairro removido com sucesso.');
-
-
     }
 
     public function editbairro($id) {
-
-
-
         $bairro = Bairro::findOrFail($id);
-
-
         return view ('Painel.Tabelas.editbairro', ['bairro' => $bairro]);
-
-
     }
 
     public function updatebairro(Request $request) {
@@ -164,6 +152,7 @@ class TabelasController extends Controller
     {
         $cobrador = new Cobrador;
         $cobrador->cobrador = $request->cobrador;
+        $cobrador->preco = $request->preco;
 
         $cobrador->save();
 

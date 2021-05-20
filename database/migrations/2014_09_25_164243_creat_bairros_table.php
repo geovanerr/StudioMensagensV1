@@ -16,8 +16,9 @@ class CreatBairrosTable extends Migration
         //
         Schema::create('bairros', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string("bairro");
+            $table->timestamps();
+            
         });
     }
 

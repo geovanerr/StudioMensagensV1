@@ -51,19 +51,8 @@
                      <td> {{ $bairro->bairro }} </td>
         
                      <td>
-                         <a href="/painel/tabelas/bairro/edit/{{ $bairro->id }}" class="btn btn-warning"><i class="fa fa-edit"></i> Editar </a>
-
-
-                          <form action="/painel/tabelas/bairro/{{ $bairro->id }}" onclick="return confirm('Deseja realmente remover o bairro?')"  method="POST">
-                                @csrf
-                                @method('DELETE')
-                               <button type="submit" display="inline-block" class="btn btn-danger"> <i class="fa fa-trash"></i> Excluir </button>
-                          </form>
-
-
-
-
-
+                         <a href="/painel/tabelas/bairro/edit/{{ $bairro->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                         <a href="/painel/tabelas/bairro/{{ $bairro->id }}"   onclick="return confirm('Deseja realmente remover o Bairro?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                        </td>
                    </tr>
                @endforeach

@@ -51,17 +51,8 @@
                      <td> {{ $mensagem->mensagem }} </td>
         
                      <td>
-                         <a href="/painel/tabelas/mensagem/edit/{{ $mensagem->id }}" class="btn btn-warning"><i class="fa fa-edit"></i> Editar </a>
-
-                          <form action="/painel/tabelas/mensagem/{{ $mensagem->id }}" onclick="return confirm('Deseja realmente remover a mensagem?')"  method="POST">
-                                @csrf
-                                @method('DELETE')
-                               <button type="submit" display="inline-block" class="btn btn-danger"> <i class="fa fa-trash"></i> Excluir </button>
-                          </form>
-
-
-
-
+                         <a href="/painel/tabelas/mensagem/edit/{{ $mensagem->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                         <a href="/painel/tabelas/mensagem/{{ $mensagem->id }}"   onclick="return confirm('Deseja realmente remover a mensagem?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 
                        </td>
                    </tr>

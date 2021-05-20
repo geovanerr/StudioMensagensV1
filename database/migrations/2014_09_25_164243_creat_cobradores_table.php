@@ -17,6 +17,7 @@ class CreatCobradoresTable extends Migration
         Schema::create('cobradores', function (Blueprint $table) {
             $table->id();
             $table->string("cobrador");
+            $table->decimal("preco", 10,2); 
             $table->timestamps();
            
         });

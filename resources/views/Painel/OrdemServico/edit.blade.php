@@ -89,9 +89,11 @@
               <i class="fa fa-male"></i>
                    <label for=""> Gênero:</label>
                    <select class="form-control select2" id="genero" name="genero" style="width: 100%;">
-                      <option value="N/I" selected="selected">Nao Informar</option>
-                      <option value="F">Feminino</option>
-                      <option value="M">Masculino</option>
+                    
+                   <option value="Nao Informar" {{($ordem->funcao ==='Nao Informar') ? 'selected' : ''}}> Nao Informar </option>
+                   <option value="Feminino" {{($ordem->genero ==='Feminino') ? 'selected' : ''}}> Feminino </option>
+                   <option value="Masculino" {{($ordem->genero ==='Masculino') ? 'selected' : ''}}> Masculino </option>
+
                    </select>
               </div>
 
@@ -119,15 +121,14 @@
 
               <label>Mensagem</label>
                 <br>
-                <select name="mensagem" class="form-control select2" multiple="multiple" data-placeholder="Selecione a Mensagem"
+                <select name="mensagem_id" class="form-control select2" data-placeholder="Selecione a Mensagem"
                         style="width: 100%;">
-                  <option>Alabama</option>
-                  <option>Alaska</option>
-                  <option>California</option>
-                  <option>Delaware</option>
-                  <option>Tennessee</option>
-                  <option>Texas</option>
-                  <option>Washington</option>
+
+                        @foreach ($mensagens as $mensagem)
+
+                        <option value="{{$mensagem->id}}" {{($mensagem->id === $ordem->mensagem_id) ? 'selected' : ''}}> {{$mensagem->mensagem}} </option>
+
+                        @endforeach
                 </select>
             </div>
 
@@ -167,13 +168,29 @@
               <div class="col-md-3">
               <div class="form-group">
                   <label>Status da OS</label>
-                  <select name="status" class="form-control">
-                    <option value="Aberta"> Aberta </option>
-                    <option value="Realizada"> Realizada </option>
-                    <option value="Cancelada"> Cancelada </option>
-
+                  <select name="status" id="status" class="form-control">
+        
+                   <option value="Aberta" {{($ordem->status ==='Aberta') ? 'selected' : ''}}> Aberta </option>
+                   <option value="Realizada" {{($ordem->status ==='Realizada') ? 'selected' : ''}}> Realizada </option>
+                   <option value="Cancelada" {{($ordem->status ==='Cancelada') ? 'selected' : ''}}> Cancelada </option>
                   </select>
                 </div>
+                </div>
+
+                <div class="col-md-3">
+                <i class="fa fa-file-audio-o"></i></span>
+
+                  <label>Cobrador</label>
+                    <br>
+                    <select name="cobrador_id" id="cobrador_id" class="form-control select2" data-placeholder="Selecione o Cobrador"
+                            style="width: 100%;">
+
+                            @foreach ($cobradores as $cobrador)
+
+                            <option value="{{$cobrador->id}}" {{($cobrador->id === $ordem->cobrador_id) ? 'selected' : ''}}> {{$cobrador->cobrador}} </option>
+
+                            @endforeach
+                    </select>
                 </div>
 
             </div>

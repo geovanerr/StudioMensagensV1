@@ -49,19 +49,11 @@
                    <tr>
                      <td> {{ $cobrador->id }} </td>
                      <td> {{ $cobrador->cobrador }} </td>
-        
+                     <td> {{ $cobrador->preco }} </td>
+       
                      <td>
-                         <a href="/painel/tabelas/cobrador/edit/{{ $cobrador->id }}" class="btn btn-warning"><i class="fa fa-edit"></i> Editar </a>
-
-                          <form action="/painel/tabelas/cobrador/{{ $cobrador->id }}" onclick="return confirm('Deseja realmente remover o cobrador?')" method="POST">
-                                @csrf
-                                @method('DELETE')
-                               <button type="submit" display="inline-block" class="btn btn-danger"> <i class="fa fa-trash"></i> Excluir </button>
-                          </form>
-
-
-
-
+                         <a href="/painel/tabelas/cobrador/edit/{{ $cobrador->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                         <a href="/painel/tabelas/cobrador/{{ $cobrador->id }}"   onclick="return confirm('Deseja realmente remover o Cobrador?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 
                        </td>
                    </tr>

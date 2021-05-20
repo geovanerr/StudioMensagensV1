@@ -57,12 +57,12 @@
                           <div class="row">
                               <div class="col-xs-2">
                               <i class="fa fa-phone"></i></span>
-                              <label for=""> Telefone:</label> <input type="text" class="form-control" id="phone" name="phone" placeholder="Rua:">
+                              <label for=""> Telefone:</label> <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefone">
                               </div>
 
                               <div class="col-xs-2">
                               <i class="fa fa-mobile"></i></span>
-                              <label for="">  Celular:</label> <input type="text" class="form-control" id="celular" name="celular" placeholder="Nº">
+                              <label for="">  Celular:</label> <input type="text" class="form-control" id="celular" name="celular" placeholder="Celular">
                               </div>
 
                               <div class="col-xs-3">
@@ -89,7 +89,7 @@
                           <div class="form-group">
                              <i class="fa fa-file-text-o"></i>
                              <label>Observação: </label>
-                             <textarea class="form-control" id="obs" name="obs" rows="3" placeholder="Enter ..."></textarea>
+                             <textarea class="form-control" id="obs" name="obs" rows="3" placeholder="Obs ..."></textarea>
                           </div>
 
 

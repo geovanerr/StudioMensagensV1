@@ -275,12 +275,16 @@
         formViewOS.find("input[name=genero]").val(response.genero);
         formViewOS.find("input[name=servicos]").val(response.servicos);
         formViewOS.find("input[name=mensagem_id]").val(response.mensagem.mensagem);
-        formViewOS.find("input[name=dataos]").val(response.dataos);
         formViewOS.find("input[name=horarioos]").val(response.horarioos);
         formViewOS.find("input[name=status]").val(response.status);
+        formViewOS.find("input[name=cobrador_id]").val(response.cobrador.cobrador);
+
      //   formViewOS.find("input[name=obs]").val(response.obs);
         var obs = $('#obs').val(response.obs);
         var obs2 = $('#obs2').val(response.obscobrador);
+
+        var dataos = moment(response.dataos).format('DD/MM/YYYY');
+        formViewOS.find("input[name=dataos]").val(dataos);
 
       //  var obscobrador = $('#obscobrador').val(responde.obscobrador)
 

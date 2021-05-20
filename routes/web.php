@@ -65,26 +65,27 @@ Route::get('/painel/ordemservico/create', [OrdemServicoController::class, 'creat
 Route::get('/painel/ordemservico/edit/{id}', [OrdemServicoController::class, 'edit'])->name('Painel.OrdemServico.edit');
 Route::post('/painel/ordemservico/create', [OrdemServicoController::class, 'store'])->name('Painel.OrdemServico.store');
 Route::put('/painel/ordemservico/update/{id}', [OrdemServicoController::class, 'update'])->name('Painel.OrdemServico.update');
+Route::get('/ordemservico/{id}', [OrdemServicoController::class, 'destroy'])->name('Painel.Usuarios.destroy');
 
 
 Route::get('/painel/tabelas/bairros', [TabelasController::class, 'indexbairros'])->name('Painel.Tabelas.indexbairros');
 Route::get('/painel/tabelas/createbairro', [TabelasController::class, 'createbairro'])->name('Painel.Tabelas.createbairro');
 Route::post('/painel/tabelas/createbairro', [TabelasController::class, 'storebairro'])->name('Painel.Tabelas.storebairro');
-Route::delete('/painel/tabelas/bairro/{id}', [TabelasController::class, 'destroybairro'])->name('Painel.Tabelas.destroybairro');
+Route::get('/painel/tabelas/bairro/{id}', [TabelasController::class, 'destroybairro'])->name('Painel.Tabelas.destroybairro');
 Route::get('/painel/tabelas/bairro/edit/{id}', [TabelasController::class, 'editbairro'])->name('Painel.Tabelas.editbairro');
 Route::put('/painel/tabelas/bairro/update/{id}', [TabelasController::class, 'updatebairro'])->name('Painel.Tabelas.updatebairro');
 
 Route::get('/painel/tabelas/msn', [TabelasController::class, 'indexmsn'])->name('Painel.Tabelas.indexmsn');
 Route::get('/painel/tabelas/createmsn', [TabelasController::class, 'createmsn'])->name('Painel.Tabelas.createmsn');
 Route::post('/painel/tabelas/createmsn', [TabelasController::class, 'storemsn'])->name('Painel.Tabelas.storemsn');
-Route::delete('/painel/tabelas/mensagem/{id}', [TabelasController::class, 'destroymsn'])->name('Painel.Tabelas.destroymsn');
+Route::get('/painel/tabelas/mensagem/{id}', [TabelasController::class, 'destroymsn'])->name('Painel.Tabelas.destroymsn');
 Route::get('/painel/tabelas/mensagem/edit/{id}', [TabelasController::class, 'editmsn'])->name('Painel.Tabelas.editmsn');
 Route::put('/painel/tabelas/mensagem/update/{id}', [TabelasController::class, 'updatemsn'])->name('Painel.Tabelas.updatemsn');
 
 Route::get('/painel/tabelas/cobradores', [TabelasController::class, 'indexcobradores'])->name('Painel.Tabelas.indexcobradores');
 Route::get('/painel/tabelas/createcobrador', [TabelasController::class, 'createcobrador'])->name('Painel.Tabelas.createcobrador');
 Route::post('/painel/tabelas/createcobrador', [TabelasController::class, 'storecobrador'])->name('Painel.Tabelas.storecobrador');
-Route::delete('/painel/tabelas/cobrador/{id}', [TabelasController::class, 'destroycobrador'])->name('Painel.Tabelas.destroycobrador');
+Route::get('/painel/tabelas/cobrador/{id}', [TabelasController::class, 'destroycobrador'])->name('Painel.Tabelas.destroycobrador');
 Route::get('/painel/tabelas/cobrador/edit/{id}', [TabelasController::class, 'editcobrador'])->name('Painel.Tabelas.editcobrador');
 Route::put('/painel/tabelas/cobrador/update/{id}', [TabelasController::class, 'updatecobrador'])->name('Painel.Tabelas.updatecobrador');
 

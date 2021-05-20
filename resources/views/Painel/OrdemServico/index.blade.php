@@ -71,12 +71,13 @@
 
                           <td>
 
-                                <a class="btn btn-warning" href="{{ route('Painel.OrdemServico.edit', $ordem->id)}}"><i class="fa fa-edit"></i></a>
-                                <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
 
                                 <button type="button" class="btn btn-info"  data-toggle="modal" onclick="dataformView('{{ $ordem->id }}')" data-target="#view-ordem">
                                     <i class="fa fa-eye"></i>
                                 </button>
+                                <a class="btn btn-warning" href="{{ route('Painel.OrdemServico.edit', $ordem->id)}}"><i class="fa fa-edit"></i></a>
+                                <a href="/ordemservico/{{ $ordem->id }}"   onclick="return confirm('Deseja realmente remover o Funcionário?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+
 
                           </td>
                         </tr>

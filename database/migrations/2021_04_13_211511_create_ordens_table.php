@@ -22,6 +22,9 @@ class CreateOrdensTable extends Migration
           
             $table->unsignedBigInteger('mensagem_id');
             $table->foreign('mensagem_id')->references('id')->on('mensagens');
+
+            $table->unsignedBigInteger('cobrador_id');
+            $table->foreign('cobrador_id')->references('id')->on('cobradores');
             
             $table->string('receptor');
             $table->string('phone');

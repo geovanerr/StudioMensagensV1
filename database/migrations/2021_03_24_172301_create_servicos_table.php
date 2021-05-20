@@ -15,9 +15,10 @@ class CreateServicosTable extends Migration
     {
         Schema::create('servicos', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string("servico");
             $table->decimal("preco", 10,2); 
+            $table->timestamps();
+           
         });
     }
 
