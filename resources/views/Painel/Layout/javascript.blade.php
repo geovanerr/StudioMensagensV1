@@ -369,15 +369,43 @@
     });
   }
 
-$(function(){
+/*$(function(){
     $("#cobrador").change(function(){
         var displayvalor = $("#cobrador option:selected").text();
 
         $("valortotal").val(displayvalor);
 
-        console.log(displayvalor);
+       console.log(displayvalor);
     })
+}); */
+
+
+//$('select').change(function(){
+  //var inputs=($(this).children('option:selected').data('preco'));
+//  console.log(inputs);
+//});
+
+//$('#servico').on("change",function(){
+   // var valor = $("#servico option:selected").attr('data-preco');
+
+//});
+
+$('select').change(function() {
+   
+
+    var temp = $(this).find(':selected').data('preco');
+   // var temp = $(this).data('preco');
+    var total = 0;
+    var quant = $(this).val();
+         
+      for (var i=0; i<quant.length; i++){
+      total = parseFloat(total) + parseFloat(temp);
+      
+     } 
+    console.log(quant);
+    console.log(total);
 });
+
 
 </script>
 

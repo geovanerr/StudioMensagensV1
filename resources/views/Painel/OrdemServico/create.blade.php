@@ -98,12 +98,12 @@
                 <i class="fa fa-shopping-bag"></i>
                 <label>Serviços</label>
                 <br>
-                <select name="servico[]" id="servico" class="form-control select2" onchange="soma()" multiple="multiple" data-placeholder="Selecione os Serviços"
+                <select name="servico[]" id="servico" class="form-control select2"  multiple="multiple" data-placeholder="Selecione os Serviços"
                 style="width: 100%;">
                 @php $total = 0;
                 @endphp
                 @foreach ($servicos as $servico)
-                  <option value="{{$servico->id}}">{{$servico->servico}}</option>
+                  <option value="{{$servico->id}}" data-preco="{{$servico->preco}}">{{$servico->servico}}</option>
 
                 @endforeach
 
