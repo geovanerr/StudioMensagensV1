@@ -84,6 +84,7 @@
           <ul class="treeview-menu">
            <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-user"></i> Clientes </a></li>
            <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-book"></i> Serviços </a></li>
+           <li class="active"><a href="{{ route('PDF.ordens') }}"><i class="fa fa-file-text-o"></i> Ordens Serviços </a></li>
            <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-calendar"></i> Aniversariantes </a></li>
 
           </ul>

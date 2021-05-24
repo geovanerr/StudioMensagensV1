@@ -369,43 +369,18 @@
     });
   }
 
-/*$(function(){
-    $("#cobrador").change(function(){
-        var displayvalor = $("#cobrador option:selected").text();
-
-        $("valortotal").val(displayvalor);
-
-       console.log(displayvalor);
-    })
-}); */
-
-
-//$('select').change(function(){
-  //var inputs=($(this).children('option:selected').data('preco'));
-//  console.log(inputs);
-//});
-
-//$('#servico').on("change",function(){
-   // var valor = $("#servico option:selected").attr('data-preco');
-
-//});
-
+var servicos=[];
+var total = 0;
 $('select').change(function() {
-   
 
-    var temp = $(this).find(':selected').data('preco');
-   // var temp = $(this).data('preco');
-    var total = 0;
-    var quant = $(this).val();
-         
-      for (var i=0; i<quant.length; i++){
-      total = parseFloat(total) + parseFloat(temp);
-      
-     } 
-    console.log(quant);
+ $('#servicos :selected').each(function(){
+  servicos[$(this).val()]=$(this).data('preco');
+  total = servicos.reduce((val, acc)=>{ acc = parseFloat(acc) + parseFloat(val); return acc},0)
+  });
     console.log(total);
-});
+    document.querySelector(".valortotal").innerHTML = total;
 
+ });
 
 </script>
 

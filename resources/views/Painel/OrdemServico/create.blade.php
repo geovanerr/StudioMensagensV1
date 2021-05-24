@@ -98,12 +98,11 @@
                 <i class="fa fa-shopping-bag"></i>
                 <label>Serviços</label>
                 <br>
-                <select name="servico[]" id="servico" class="form-control select2"  multiple="multiple" data-placeholder="Selecione os Serviços"
+                <select name="servico[]"  id="servicos" class="form-control select2"  multiple="multiple" data-placeholder="Selecione os Serviços"
                 style="width: 100%;">
-                @php $total = 0;
-                @endphp
+           
                 @foreach ($servicos as $servico)
-                  <option value="{{$servico->id}}" data-preco="{{$servico->preco}}">{{$servico->servico}}</option>
+                  <option value="{{$servico->id}}" class="servicos" data-preco="{{$servico->preco}}">{{$servico->servico}}</option>
 
                 @endforeach
 
@@ -210,7 +209,17 @@
             </div>
             </div>
 
-<input type="text" readonly="readonly" id="valortotal" name="valortotal" disabled>
+      
+          <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="fa fa-money"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Valor da Ordem de Serviço</span>
+              <h3>R$: <b><span class="valortotal"></span></b></h3>
+            </div>
+          </div>
+     
+
 <div>
 
 
@@ -236,6 +245,7 @@
 </section>
 
 </form>
+
 
 
 @endsection

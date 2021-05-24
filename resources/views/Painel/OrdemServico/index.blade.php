@@ -29,9 +29,14 @@
                   </div>
                   @endif
 
-               <h3 id="box-header" class="text-center"> Ordens de Serviços <a href="{{ route('Painel.OrdemServico.create') }}" class="btn btn-success">Cadastrar OS</a> </h3>
-
-             </div>
+               <h3 id="box-header" class="text-center"> Ordens de Serviços </h3>
+              <a class="btn btn-app bg-primary" href="{{ route('PDF.ordens') }}">
+                <i class="fa fa-file-pdf-o"></i> Gerar PDF
+              </a>
+              <a class="btn btn-app bg-teal" href="{{ route('Painel.OrdemServico.create') }}">
+                <i class="fa fa-plus"></i> Cadastrar OS
+              </a>
+              </div>
            <!-- /.box-header -->
            <div class="box-body">
              <table id="example1" class="table table-bordered table-striped">
