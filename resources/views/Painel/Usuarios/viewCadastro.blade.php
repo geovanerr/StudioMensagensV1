@@ -1,11 +1,5 @@
 @extends ('Painel.Layout.index')
 
-<script>
-  $(function() {
-    $("#cpf").mask("000.000.000-00")
-  })
-</script>
-
 @section('title', 'Cadastro Funcionário')
 
 @section('content')

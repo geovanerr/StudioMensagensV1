@@ -14,4 +14,8 @@ class PdfController extends Controller
 
         return $pdf->setPaper('a4')->stream('OrdensServicos.pdf');
     }
+
+    public function exporCsv(){
+        return 'exportacao';
+    }
 }

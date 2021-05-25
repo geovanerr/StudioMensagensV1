@@ -9,6 +9,8 @@ use App\Http\Controllers\Painel\OrdemServico\OrdemServicoController;
 use App\Http\Controllers\Painel\Tabelas\TabelasController;
 use App\Http\Controllers\FuncionariosController;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\RelatoriosController;
+
 
 
 
@@ -70,7 +72,7 @@ Route::get('/painel/ordemservico/create', [OrdemServicoController::class, 'creat
 Route::get('/painel/ordemservico/edit/{id}', [OrdemServicoController::class, 'edit'])->name('Painel.OrdemServico.edit');
 Route::post('/painel/ordemservico/create', [OrdemServicoController::class, 'store'])->name('Painel.OrdemServico.store');
 Route::put('/painel/ordemservico/update/{id}', [OrdemServicoController::class, 'update'])->name('Painel.OrdemServico.update');
-Route::get('/ordemservico/{id}', [OrdemServicoController::class, 'destroy'])->name('Painel.Usuarios.destroy');
+Route::get('/ordemservico/{id}', [OrdemServicoController::class, 'destroy'])->name('Painel.OrdemServico.destroy');
 
 
 Route::get('/painel/tabelas/bairros', [TabelasController::class, 'indexbairros'])->name('Painel.Tabelas.indexbairros');
@@ -102,20 +104,14 @@ Route::get('/painel/ordemservico/{id}/add-servicos', [OrdemServicoController::cl
 //Dados da ordem.
 Route::get('/ordens/show/{id?}', [OrdemServicoController::class, 'showos'])->name('Painel.OrdemServico.showos');
 
-
-///Route::post('/ordemservico/create', [OrdemServicoController::class, 'create']);
-//Route::delete('/servicos/{id}', [ServicosController::class, 'destroy']);
-//Route::get('/servicos/edit/{id}', [ServicosController::class, 'edit']);
-//Route::put('/servicos/update/{id}', [ServicosController::class, 'update']);
-
-
-
 Route::get('/painel/servicos', [App\Http\Controllers\Painel\PainelController::class, 'viewServicos'])->name('Painel.Servicos.index');
 
+//Rotas Relatorios
+Route::get('relatorios/funcionarios', [RelatoriosController::class, 'generateFuncReport'])->name('Relatorios.Funcionarios');
+Route::get('relatorios/clientes', [RelatoriosController::class, 'generateClientesReport'])->name('Relatorios.Clientes');
+Route::get('/usuarios/imprimir/{id}', [RelatoriosController::class, 'generateFuncionario'])->name('Relatorios.ImprimirFunc');
 
-//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//  return view('dashboard');
-//})->name('dashboard');
+
 
 ?>
 

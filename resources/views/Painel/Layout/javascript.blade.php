@@ -369,18 +369,18 @@
     });
   }
 
+/*
 var servicos=[];
 var total = 0;
 $('select').change(function() {
 
- $('#servicos :selected').each(function(){
+$('#servicos :selected').each(function(){
   servicos[$(this).val()]=$(this).data('preco');
   total = servicos.reduce((val, acc)=>{ acc = parseFloat(acc) + parseFloat(val); return acc},0)
   });
-    console.log(total);
-    document.querySelector(".valortotal").innerHTML = total;
+    // document.querySelector(".valortotal").innerHTML = total;
 
- });
+}); */
 
 </script>
 

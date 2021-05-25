@@ -3,16 +3,12 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
 
-        <div class="modal-header">
-          <h5 class="modal-title" id="view-func">Funcionário</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <div class="modal-header text-center">
+        <img src="{{ asset('template/stmlogo2.jpg') }}" alt="" height="100" width="150">  
+        <h3 class="pt-20em">Funcionário</h3>
         </div>
 
-
-<div class="modal-body" id="view-func">
-
+<div class="modal-body" padding="2" id="view-func">
 
 <form name="formViewfunc">
 
@@ -118,6 +114,7 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+
         </div>
       </div>
     </div>
