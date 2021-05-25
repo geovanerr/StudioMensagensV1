@@ -28,8 +28,15 @@
                     <p class="msg"> {{ session('msg')}} </p>
                   </div>
                   @endif
+                  <a class="btn btn-app bg-gray" href="{{ route('Relatorios.Servicos') }}">
 
-               <h3 id="box-title" class="text-center">Serviços <a href="{{ route('Painel.Servicos.cadastrotipoS') }}" class="btn btn-success">Novo Serviço</a> </h3>
+                    <i class="fa fa-file-pdf-o"></i> Gerar PDF
+                  </a>
+
+                  <a class="btn btn-app bg-teal" href="{{ route('Painel.Servicos.cadastrotipoS') }}">
+                    <i class="fa fa-plus"></i> Cadastrar Serviço
+                  </a>
+               <h3 id="box-title" class="text-center"><b>Serviços</b></h3>
 
              </div>
            <!-- /.box-header -->
@@ -37,7 +44,7 @@
              <table id="example1" class="table table-bordered table-striped">
                <thead>
                <tr>
-                 <th> ID </th>
+                 <th>ID</th>
                  <th> <i class="fa fa-handshake-o"></i>  Serviço  </th>
                  <th> <i class="fa fa-money"></i> Preço  </th>
 

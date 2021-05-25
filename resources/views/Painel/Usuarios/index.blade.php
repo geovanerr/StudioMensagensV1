@@ -6,7 +6,7 @@
 
   <section class="content">
 
-      
+
               <div class="box-header">
 
                   @if(session('err'))
@@ -21,8 +21,8 @@
                   </div>
                   @endif
                 <h3 id="box-title" class="text-center"> Funcionários <a href="{{ route('Painel.Usuarios.viewCadastro') }}" class="btn btn-success">Novo Funcionário</a> </h3>
-  
-                                      
+
+
               </div>
 
             <!-- /.box-header -->
@@ -50,23 +50,23 @@
                                     <i class="fa fa-eye"></i>
                                 </button>
                         <a href="/usuarios/editfunc/{{ $usuario->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                        
+
                         <a href="/usuarios/{{ $usuario->id }}"   onclick="return confirm('Deseja realmente remover o Funcionário: {{$usuario->name}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 
                         <a href="/usuarios/imprimir/{{ $usuario->id }}" class="btn bg-gray"><i class="fa fa-print"></i></a>
-                        
+
                         </td>
                     </tr>
 
-               
+
                 @endforeach
 
                 </tbody>
-                
+
 
               </table>
-      
-          
+
+
               <form action=" {{ route('Relatorios.Funcionarios')}}" method="GET">
                                           <div class="row align-items-end">
                                             <div class="col-xs-12 col-sm-2">
@@ -79,17 +79,17 @@
                                             </div>
                                             <div class="col-xs-12 col-sm-4 mt-2">
                                             <label for="">Gerar Relatório</label><br>
-                                              <button type="date" class="btn btn-success"> <i class="fa fa-print"></i> Imprimir</button>  
+                                              <button type="date" class="btn bg-gray"> <i class="fa fa-print"></i> Imprimir</button>
                                             </div>
                                           </div>
                                          </form>
 
 
       </div>
-      
+
     </section>
 
-  
+
 
   @endsection
   @includeIf("Painel.Modals.viewfunc")

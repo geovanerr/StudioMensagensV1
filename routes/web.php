@@ -27,7 +27,6 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('Home.index');
 
-Route::get('/pdf', [PdfController::class, 'geraPdf'])->name('PDF.ordens');
 
 Route::get('/painel', [PainelController::class, 'index'])->name('Painel.index');
 Route::get('/painel/usuarios', [UsuariosController::class, 'index'])->name('Painel.Usuarios.index');
@@ -108,8 +107,15 @@ Route::get('/painel/servicos', [App\Http\Controllers\Painel\PainelController::cl
 
 //Rotas Relatorios
 Route::get('relatorios/funcionarios', [RelatoriosController::class, 'generateFuncReport'])->name('Relatorios.Funcionarios');
-Route::get('relatorios/clientes', [RelatoriosController::class, 'generateClientesReport'])->name('Relatorios.Clientes');
 Route::get('/usuarios/imprimir/{id}', [RelatoriosController::class, 'generateFuncionario'])->name('Relatorios.ImprimirFunc');
+Route::get('/clientes/imprimir/{id}', [RelatoriosController::class, 'generateCliente'])->name('Relatorios.ImprimirCliente');
+Route::get('relatorios/servicos', [RelatoriosController::class, 'generatePdfservicos'])->name('Relatorios.Servicos');
+Route::get('relatorios/ordens', [RelatoriosController::class, 'generatePdfordens'])->name('Relatorios.Ordens');
+
+Route::get('/pdf', [PdfController::class, 'geraPdf'])->name('PDF.ordens');
+
+
+
 
 
 

@@ -12,13 +12,14 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 text-center">
-            <img src="{{ asset('template/stmlogo2.jpg') }}" alt="" height="100" width="150">
-
+            <div class="col-xs-12">
+            <p style="text-align: center">
+            <img src="{{ asset('template/stmlogo2.jpg') }}"  alt="" height="100" width="150">
+            </p>
                 <table id="example1" class="table table-bordered">
                 <thead>
                 <div class="box-header text-center">
-                <h3 class="box-title">Dados do Funcionário</h3>
+                <h3 class="box-title">Dados do Cliente</h3>
                 </div>
                 </thead>
 
@@ -31,24 +32,24 @@
               <table class="table table-striped">
                 <tbody>
                 <tr>
-                <td colspan="4" align="center"><b>{{ $user->name}}</b></td>
+                <td colspan="4" align="center"><b>{{ $cliente->nome}}</b></td>
                 </tr>
                 <tr>
-                  <td>CPF: {{ $user->cpf}}</td>
-                  <td>Nascimento: {{ date('d/m/Y', strtotime($user->nascimento)) }}</td>
-                  <td>Gênero: {{ $user->genero}}</td>
-                  <td>Função: {{ $user->funcao}}</td>
+                  <td>Endereço: {{ $cliente->logradouro}}</td>
+                  <td>Nº: {{ $cliente->numero}}</td>
+                  <td>Bairro: {{ $cliente->bairro->bairro}}</td>
                 </tr>
                 <tr>
-                  <td>E-mail: {{ $user->email}}</td>
-                  <td>Endereço: {{ $user->logradouro}}</td>
-                  <td>Número: {{ $user->numero}}</td>
-                  <td>Bairro: {{ $user->bairro->bairro}}</td>
+                  <td colspan="4">Referência: {{ $cliente->referencia}}</td>
                 </tr>
                 <tr>
-                  <td colspan="2">Telefone: {{ $user->phone}}</td>
-                  <td colspan="2">Celeular: {{ $user->celular}}</td>
-
+                  <td>Telefone: {{ $cliente->phone}}</td>
+                  <td>Celeular: {{ $cliente->celular}}</td>
+                  <td>Nascimento: {{ date('d/m/Y', strtotime($cliente->nascimento)) }}</td>
+                  <td>Gênero: {{ $cliente->genero}}</td>
+                </tr>
+                <tr>
+                  <td colspan="4">Observação: {{ $cliente->obs}}</td>
                 </tr>
 
               </tbody></table>

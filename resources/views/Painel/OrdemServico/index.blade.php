@@ -30,10 +30,10 @@
                   @endif
 
                <h3 id="box-header" class="text-center"> Ordens de Serviços </h3>
-              <a class="btn btn-app bg-gray" href="{{ route('PDF.ordens') }}">
+              <a class="btn btn-app bg-gray" href="{{ route('Relatorios.Ordens') }}">
                 <i class="fa fa-file-pdf-o"></i> Gerar PDF
               </a>
-             
+
               <a class="btn btn-app bg-teal" href="{{ route('Painel.OrdemServico.create') }}">
                 <i class="fa fa-plus"></i> Cadastrar OS
               </a>

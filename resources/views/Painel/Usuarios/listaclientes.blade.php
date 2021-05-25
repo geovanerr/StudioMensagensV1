@@ -31,8 +31,16 @@
                   </div>
                   @endif
 
-               <h3 id="box-title" class="text-center"> <b> Clientes </b><a href="{{ route('Painel.Usuarios.viewCliente') }}" class="btn btn-success">Novo Cliente</a> </h3>
 
+
+               <a class="btn btn-app bg-gray" href="{{ route('PDF.ordens') }}">
+                <i class="fa fa-file-pdf-o"></i> Gerar PDF
+              </a>
+
+              <a class="btn btn-app bg-teal" href="{{ route('Painel.Usuarios.viewCliente') }}">
+                <i class="fa fa-plus"></i> Cadastrar Cliente
+              </a>
+              <h3 id="box-title" class="text-center"> <b> Clientes </b></h3>
              </div>
            <!-- /.box-header -->
            <div class="box-body">
@@ -66,6 +74,7 @@
                            <a href="/usuarios/editcliente/{{ $cliente->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
 
                            <a href="/clientes/{{ $cliente->id }}"   onclick="return confirm('Deseja realmente remover o Cliente: {{$cliente->nome}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                           <a href="/clientes/imprimir/{{ $cliente->id }}" class="btn bg-gray"><i class="fa fa-print"></i></a>
 
                        </td>
                    </tr>
