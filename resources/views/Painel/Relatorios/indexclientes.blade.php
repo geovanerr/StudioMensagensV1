@@ -15,9 +15,9 @@
 
              <div class="box-header with-border">
 
- 
+
                   <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-yellow">
+                    <div class="info-box bg-primary">
                       <span class="info-box-icon"><i class="fa fa-user"></i></span>
 
                       <div class="info-box-content">
@@ -27,11 +27,13 @@
                         <div class="progress">
                           <div class="progress-bar" style="width: 100%"></div>
                         </div>
-                         
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i><i class="fa fa-line-chart" aria-hidden="true"></i>
+
+
                       </div>
                     </div>
             </div>
-         
+
 
            <div class="box-body">
                                         <form action=" {{ route('Relatorios.dataCliente')}}" method="GET">
@@ -90,12 +92,12 @@
            </div>
 
          </div>
-    
+
      </div>
-     
+
    </section>
 
-   
+
 
 
   @endsection

@@ -23,8 +23,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-          <li class="active"><a href="{{ route('Painel.Usuarios.index') }}"><i class="fa fa-user-o"></i>Funcionários </a></li>
           <li class="active"><a href="{{ route('Painel.Usuarios.listaclientes') }}"><i class="fa fa-user"></i>Clientes </a></li>
+          <li class="active"><a href="{{ route('Painel.Usuarios.index') }}"><i class="fa fa-user-o"></i>Funcionários </a></li>
           </ul>
         </li>
 
@@ -82,10 +82,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
+           <li class="active"><a href="{{ route('Relatorios.indexniver') }}"><i class="fa fa-calendar"></i> Aniversariantes </a></li>
            <li class="active"><a href="{{ route('Relatorios.indexclientes') }}"><i class="fa fa-user"></i> Clientes </a></li>
-           <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-book"></i> Serviços </a></li>
-           <li class="active"><a href="{{ route('PDF.ordens') }}"><i class="fa fa-file-text-o"></i> Ordens Serviços </a></li>
-           <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-calendar"></i> Aniversariantes </a></li>
+           <li class="active"><a href="{{ route('Relatorios.indexordens') }}"><i class="fa fa-file-text-o"></i> Ordens Serviços </a></li>
 
           </ul>
 
@@ -110,7 +109,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-           <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-info"></i> Sobre </a></li>
+           <li class="active"><a href="{{ route('Home.adminfo') }}"><i class="fa fa-info"></i> Sobre </a></li>
 
           </ul>
         </li>

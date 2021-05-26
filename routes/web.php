@@ -26,6 +26,8 @@ Auth::routes();
 
 
 Route::get('/', [HomeController::class, 'index'])->name('Home.index');
+Route::get('/adminfo', [HomeController::class, 'adminfo'])->name('Home.adminfo');
+
 
 
 Route::get('/painel', [PainelController::class, 'index'])->name('Painel.index');
@@ -116,6 +118,15 @@ Route::get('relatorios/ordens', [RelatoriosController::class, 'generatePdfordens
 Route::get('/relatorios/indexclientes', [RelatoriosController::class, 'indexclientes'])->name('Relatorios.indexclientes');
 Route::get('/cliente/historico/{id}', [RelatoriosController::class, 'historicoCliente'])->name('Relatorios.historicoCliente');
 Route::get('relatorios/dataclientes', [RelatoriosController::class, 'dataCliente'])->name('Relatorios.dataCliente');
+Route::get('/relatorios/indexordens', [RelatoriosController::class, 'indexordens'])->name('Relatorios.indexordens');
+Route::get('/relatorios/indexniver', [RelatoriosController::class, 'indexniver'])->name('Relatorios.indexniver');
+
+
+Route::get('relatorios/dataos', [RelatoriosController::class, 'dataOS'])->name('Relatorios.dataOS');
+Route::get('relatorios/dataniverclientes', [RelatoriosController::class, 'dataNiverClientes'])->name('Relatorios.dataNiverClientes');
+Route::get('relatorios/dataniverfuncionarios', [RelatoriosController::class, 'dataNiverFuncionarios'])->name('Relatorios.dataNiverFuncionarios');
+
+
 
 Route::get('/pdf', [PdfController::class, 'geraPdf'])->name('PDF.ordens');
 

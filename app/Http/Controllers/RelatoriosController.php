@@ -86,19 +86,80 @@ class RelatoriosController extends Controller
 
        public function dataCliente(Request $request){
            $clientes = new Cliente;
-   
+
            if($request->dateinicialreport != ''){
                $dateinicial = Carbon::parse($request->dateinicialreport)->startOfDay();
                $clientes = $clientes->where('created_at', '>=', $dateinicial);
-   
+
            }
-   
+
            if($request->datefinalreport != ''){
                $datefinal = Carbon::parse($request->datefinalreport)->endOfDay();
                $clientes = $clientes->where('created_at', '<=', $datefinal);
            }
-   
+
            $clientes = $clientes->get();
            return view('Painel.Relatorios.dataCliente', compact('clientes'));
        }
+
+
+       public function indexordens()
+       {
+           $ordens = OrdemServico::all();
+           return view('Painel.Relatorios.indexordens', [ 'ordens' => $ordens]);
+       }
+
+       public function dataOS(Request $request){
+        $ordens = new OrdemServico();
+
+        if($request->dateinicialreport != ''){
+            $dateinicial = Carbon::parse($request->dateinicialreport)->startOfDay();
+            $ordens = $ordens->where('created_at', '>=', $dateinicial);
+
+        }
+
+        if($request->datefinalreport != ''){
+            $datefinal = Carbon::parse($request->datefinalreport)->endOfDay();
+            $ordens = $ordens->where('created_at', '<=', $datefinal);
+        }
+
+        if($request->status != 'Todas'){
+            $status = $request->status;
+            $ordens = $ordens->where('status', '=', $status);
+        }
+
+        $ordens = $ordens->get();
+        return view('Painel.Relatorios.dataOS', compact('ordens'));
+    }
+
+    public function indexniver()
+    {
+        $clientes = OrdemServico::all();
+        $funcionarios = User::all();
+        return view('Painel.Relatorios.indexniver', [ 'clientes' => $clientes, 'funcionarios' => $funcionarios]);
+    }
+
+    public function dataNiverClientes(Request $request){
+        $clientes = new Cliente();
+        $bairros = Bairro::all();
+
+        if($request->has('mes')){
+            $clientes = $clientes->whereMonth('nascimento', '=', $request->mes);
+        }
+
+        $clientes = $clientes->get();
+        return view('Painel.Relatorios.dataNiverClientes', compact('clientes'));
+    }
+    public function dataNiverFuncionarios(Request $request){
+        $funcionarios = new User();
+        $bairros = Bairro::all();
+
+        if($request->has('mes')){
+            $funcionarios = $funcionarios->whereMonth('nascimento', '=', $request->mes);
+        }
+
+        $funcionarios = $funcionarios->get();
+        return view('Painel.Relatorios.dataNiverFuncionarios', compact('funcionarios'));
+    }
 }
+
