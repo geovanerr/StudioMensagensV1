@@ -74,7 +74,7 @@
                            <a href="/usuarios/editcliente/{{ $cliente->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
 
                            <a href="/clientes/{{ $cliente->id }}"   onclick="return confirm('Deseja realmente remover o Cliente: {{$cliente->nome}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                           <a href="/clientes/imprimir/{{ $cliente->id }}" class="btn bg-gray"><i class="fa fa-print"></i></a>
+                           <a href="/clientes/imprimir/{{ $cliente->id }}" class="btn bg-gray" target="_blank"><i class="fa fa-print"></i></a>
 
                        </td>
                    </tr>
