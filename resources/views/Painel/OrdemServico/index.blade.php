@@ -28,15 +28,15 @@
                     <p class="msg"> {{ session('msg')}} </p>
                   </div>
                   @endif
+                  <a class="btn btn-app bg-gray" href="{{ route('Relatorios.Ordens') }}">
+                    <i class="fa fa-file-pdf-o"></i> Gerar PDF
+                  </a>
 
+                  <a class="btn btn-app bg-teal" href="{{ route('Painel.OrdemServico.create') }}">
+                    <i class="fa fa-plus"></i> Cadastrar OS
+                  </a>
                <h3 id="box-header" class="text-center"> Ordens de Serviços </h3>
-              <a class="btn btn-app bg-gray" href="{{ route('Relatorios.Ordens') }}">
-                <i class="fa fa-file-pdf-o"></i> Gerar PDF
-              </a>
-
-              <a class="btn btn-app bg-teal" href="{{ route('Painel.OrdemServico.create') }}">
-                <i class="fa fa-plus"></i> Cadastrar OS
-              </a>
+              
               </div>
            <!-- /.box-header -->
            <div class="box-body">
@@ -83,6 +83,7 @@
                                 </button>
                                 <a class="btn btn-warning" href="{{ route('Painel.OrdemServico.edit', $ordem->id)}}"><i class="fa fa-edit"></i></a>
                                 <a href="/ordemservico/{{ $ordem->id }}"   onclick="return confirm('Deseja realmente remover a OS:  {{$ordem->id}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                <a href="/ordens/imprimir/{{ $ordem->id }}" class="btn bg-gray"><i class="fa fa-print"></i></a>
 
 
                           </td>

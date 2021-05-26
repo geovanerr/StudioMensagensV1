@@ -48,6 +48,12 @@ class RelatoriosController extends Controller
         return view('Painel.Relatorios.impcliente', ['cliente' => $cliente, 'bairros' => $bairros]);
 
     }
+    public function generateOrdens($id){
+
+        $ordem = OrdemServico::findOrFail($id);
+        return view('Painel.Relatorios.impordem', ['ordem' => $ordem]);
+
+    }
 
     public function generatePdfservicos(Request $request){
 
@@ -62,4 +68,37 @@ class RelatoriosController extends Controller
         return view('Painel.Relatorios.gerapdfordens', compact('ordens'));
 
     }
+
+    public function historicoCliente($id){
+
+        $cliente = Cliente::findOrFail($id);
+        $bairros = Bairro::all();
+        $ordens = $cliente->OrdensServicos()->get();
+
+        return view('Painel.Relatorios.historicocliente', ['cliente' => $cliente, 'bairros' => $bairros, 'ordens' => $ordens]);
+
+    }
+       public function indexclientes()
+       {
+           $clientes = Cliente::all();
+           return view('Painel.Relatorios.indexclientes', [ 'clientes' => $clientes]);
+       }
+
+       public function dataCliente(Request $request){
+           $clientes = new Cliente;
+   
+           if($request->dateinicialreport != ''){
+               $dateinicial = Carbon::parse($request->dateinicialreport)->startOfDay();
+               $clientes = $clientes->where('created_at', '>=', $dateinicial);
+   
+           }
+   
+           if($request->datefinalreport != ''){
+               $datefinal = Carbon::parse($request->datefinalreport)->endOfDay();
+               $clientes = $clientes->where('created_at', '<=', $datefinal);
+           }
+   
+           $clientes = $clientes->get();
+           return view('Painel.Relatorios.dataCliente', compact('clientes'));
+       }
 }
