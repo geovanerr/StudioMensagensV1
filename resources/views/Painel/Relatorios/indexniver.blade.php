@@ -29,6 +29,9 @@
                           <div class="progress-bar" style="width: 100%"></div>
                         </div>
                         <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                        <span>
+                          Aniversariantes
+                        </span>
 
                       </div>
                     </div>
@@ -37,10 +40,10 @@
 
 
            <div class="box-body">
-                                        <form action=" {{ route('Relatorios.dataNiverFuncionarios')}}" method="GET">
+                                        <form action=" {{ route('Relatorios.dataNiverFuncionarios')}}" target="_blank" method="GET">
                                           <div class="row align-items-end">
                                                 <div class="col-xs-12 col-sm-2">
-                                                <label>Status</label>
+                                                <label>Mês</label>
                                                 <select id="mes" name="mes" class="form-control">
                                                     <option selected disabled> Informe o Mês </option>
                                                     <option value="01"> Janeiro </option>
@@ -94,7 +97,9 @@
                              <div class="progress-bar" style="width: 100%"></div>
                            </div>
                            <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-
+                           <span>
+                            Aniversariantes
+                          </span>
                          </div>
                        </div>
                </div>
@@ -102,11 +107,11 @@
 
 
               <div class="box-body">
-                                           <form action=" {{ route('Relatorios.dataNiverClientes')}}" method="GET">
+                                           <form action=" {{ route('Relatorios.dataNiverClientes')}}" target="_blank" method="GET">
                                              <div class="row align-items-end">
 
                                                <div class="col-xs-12 col-sm-2">
-                                                   <label>Status</label>
+                                                   <label>Mês</label>
                                                    <select id="mes" name="mes" class="form-control">
                                                     <option selected disabled> Informe o Mês </option>
                                                     <option value="01"> Janeiro </option>

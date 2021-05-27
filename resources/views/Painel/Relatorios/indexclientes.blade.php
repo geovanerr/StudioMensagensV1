@@ -36,7 +36,7 @@
 
 
            <div class="box-body">
-                                        <form action=" {{ route('Relatorios.dataCliente')}}" method="GET">
+                                        <form action=" {{ route('Relatorios.dataCliente')}}" target="_blank" method="GET">
                                           <div class="row align-items-end">
                                             <div class="col-xs-12 col-sm-2">
                                               <label>Data Cadastro Cliente</label>
@@ -78,7 +78,7 @@
 
                        <td>
 
-                        <a href="/cliente/historico/{{ $cliente->id }}" class="btn bg-gray"><i class="fa fa-print"></i></a>
+                        <a href="/cliente/historico/{{ $cliente->id }}"  target="_blank" class="btn bg-gray"><i class="fa fa-print"></i></a>
 
                        </td>
                    </tr>

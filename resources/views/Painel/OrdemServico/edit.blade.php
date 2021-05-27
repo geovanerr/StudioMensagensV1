@@ -4,7 +4,12 @@
 @section('title', 'Edit OS')
 
 @section('content')
+@foreach ($errors->all() as $error)
+  <ul>
+  <li> <strong style="color: red">{{$error}}</strong></li>
+  </ul>
 
+@endforeach
 
             <div class="box-header with-border">
               <h3 class="text-center"> <a> Alterar <b> OS <strong>{{ $ordem->id }}</strong></b></a> </h3>
@@ -106,7 +111,7 @@
                 <i class="fa fa-shopping-bag"></i>
                 <label>Serviços</label>
                 <br>
-                <select name="servicos[]" class="form-control select2" multiple="multiple" data-placeholder="Selecione os Serviços"
+                <select name="servico[]" class="form-control select2" multiple="multiple" data-placeholder="Selecione os Serviços"
                 style="width: 100%;" >
                 @foreach ($servicos as $servico)
                   <option value="{{$servico->id}}" @if(in_array($servico->id, $ordem->servicos->pluck('id')->toArray())) selected="selected" @endif> {{$servico->servico}} </option>

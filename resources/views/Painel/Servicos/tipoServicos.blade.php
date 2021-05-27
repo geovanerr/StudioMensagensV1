@@ -1,6 +1,6 @@
 @extends ('Painel.Layout.index')
 
-@section('title', 'Painel de Usuários')
+@section('title', 'Painel de Servicos')
 
   @section('content')
 

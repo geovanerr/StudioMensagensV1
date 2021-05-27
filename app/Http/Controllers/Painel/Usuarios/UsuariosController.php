@@ -11,6 +11,10 @@ use App\Models\Bairro;
 use App\Models\Funcionario;
 use Illuminate\Http\Request;
 use App\Models\Roles\Roles;
+use App\Http\Requests\ClienteFormRequest;
+use App\Http\Requests\FuncFormRequest;
+
+
 
 
 class UsuariosController extends Controller
@@ -61,7 +65,7 @@ class UsuariosController extends Controller
 
     }
 
-    public function storefunc (Request $request)
+    public function storefunc (FuncFormRequest $request)
 
     {
         $userr = $request->all();
@@ -118,7 +122,7 @@ class UsuariosController extends Controller
 
     }
 
-    public function updatefunc(Request $request) {
+    public function updatefunc(FuncFormRequest $request) {
 
 
 
@@ -166,9 +170,10 @@ class UsuariosController extends Controller
     }
 
 
-    public function clientestore (Request $request)
+    public function clientestore (ClienteFormRequest $request)
 
     {
+  
         $cliente = new Cliente;
         $bairro = Bairro::find($request->bairro_id);
 
@@ -208,7 +213,7 @@ class UsuariosController extends Controller
 
     }
 
-    public function updatecliente(Request $request) {
+    public function updatecliente(ClienteFormRequest $request) {
 
         $inputs = $request->all();
 

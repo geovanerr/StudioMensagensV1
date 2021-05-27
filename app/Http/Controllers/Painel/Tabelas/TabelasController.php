@@ -11,6 +11,13 @@ use App\Models\Servico;
 use App\Models\Bairro;
 use App\Models\Mensagem;
 use App\Models\Cobrador;
+use App\Http\Requests\BairroFormRequest;
+use App\Http\Requests\MsnFormRequest;
+use App\Http\Requests\CobFormRequest;
+
+
+
+
 
 
 
@@ -51,7 +58,7 @@ class TabelasController extends Controller
 
     }
 
-    public function storebairro (Request $request)
+    public function storebairro (BairroFormRequest $request)
     {
         $bairro = new Bairro;
         $bairro->bairro = $request->bairro;
@@ -71,7 +78,7 @@ class TabelasController extends Controller
         return view ('Painel.Tabelas.editbairro', ['bairro' => $bairro]);
     }
 
-    public function updatebairro(Request $request) {
+    public function updatebairro(BairroFormRequest $request) {
         Bairro::findOrFail($request->id)->update($request->all());
         return redirect ('/painel/tabelas/bairros')->with('msg', 'Bairro alterado com sucesso.');
 
@@ -97,7 +104,7 @@ class TabelasController extends Controller
 
     }
 
-    public function storemsn (Request $request)
+    public function storemsn (MsnFormRequest $request)
 
     {
         $mensagem = new Mensagem;
@@ -123,7 +130,7 @@ class TabelasController extends Controller
 
     }
 
-    public function updatemsn(Request $request) {
+    public function updatemsn(MsnFormRequest $request) {
         Mensagem::findOrFail($request->id)->update($request->all());
         return redirect ('/painel/tabelas/msn')->with('msg', 'Mensagem alterada com sucesso.');
 
@@ -147,7 +154,7 @@ class TabelasController extends Controller
 
     }
 
-    public function storecobrador (Request $request)
+    public function storecobrador (CobFormRequest $request)
 
     {
         $cobrador = new Cobrador;
@@ -174,7 +181,7 @@ class TabelasController extends Controller
 
     }
 
-    public function updatecobrador(Request $request) {
+    public function updatecobrador(CobFormRequest $request) {
         Cobrador::findOrFail($request->id)->update($request->all());
         return redirect ('/painel/tabelas/cobradores')->with('msg', 'Cobrador alterado com sucesso.');
 

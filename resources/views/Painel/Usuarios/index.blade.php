@@ -67,7 +67,7 @@
               </table>
 
 
-              <form action=" {{ route('Relatorios.Funcionarios')}}" method="GET">
+              <form action=" {{ route('Relatorios.Funcionarios')}}" target="_blank" method="GET">
                                           <div class="row align-items-end">
                                             <div class="col-xs-12 col-sm-2">
                                               <label>Data Inicial</label>

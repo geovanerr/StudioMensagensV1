@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Servico;
+use App\Http\Requests\ServicosFormRequest;
+
 
 
 class ServicosController extends Controller
@@ -50,7 +52,7 @@ class ServicosController extends Controller
 
     }
 
-    public function cadastrotipostore (Request $request)
+    public function cadastrotipostore (ServicosFormRequest $request)
 
     {
         $servico = new Servico;
@@ -66,7 +68,7 @@ class ServicosController extends Controller
 
     
  
-    public function store (Request $request)
+    public function store (ServicosFormRequest $request)
     {
         $store = User::create ($request->all());
         if($store)
@@ -95,7 +97,7 @@ class ServicosController extends Controller
 
     }
 
-    public function update(Request $request) {
+    public function update(ServicosFormRequest $request) {
 
 
         

@@ -4,7 +4,12 @@
 
 @section('content')
 
+@foreach ($errors->all() as $error)
+  <ul>
+  <li> <strong style="color: red">{{$error}}</strong></li>
+  </ul>
 
+@endforeach
             <div class="col-xs-12">
               <h3 class="text-center"> <a>Cadastro <b>Funcionário</b></a> </h3>
             </div>
@@ -18,32 +23,32 @@
                           
                     <div class="col-xs-6">
                     <div class="form-group">
-                    Nome: <input type="text" id="name" name="name" class="form-control" placeholder="Nome">
+                    Nome: <input type="text" id="name" name="name" class="form-control" placeholder="Nome" value="{{old('name')}}">
                     </div>
                     </div>
                     
 
                     <div class="col-xs-6">
                     <div class="form-group">
-                    CPF: <input type="text" id="cpf" name="cpf" class="form-control" placeholder="CPF">
+                    CPF: <input type="text" id="cpf" name="cpf" class="form-control" placeholder="CPF" value="{{old('cpf')}}">
                     </div>
                     </div>
 
                     <div class="col-xs-6">
                     <div class="form-group">
-                    e-mail: <input type="text" name="email" class="form-control" placeholder="Nome">
+                    e-mail: <input type="text" name="email" class="form-control" placeholder="Nome" value="{{old('email')}}">
                     </div>
                     </div>
 
                     <div class="col-xs-6">
                     <div class="form-group">
-                    Endereço: <input type="text" name="logradouro" class="form-control" placeholder="Rua...">
+                    Endereço: <input type="text" name="logradouro" class="form-control" placeholder="Rua..." value="{{old('logradouro')}}">
                     </div>
                     </div>
 
                     <div class="col-xs-3">
                     <div class="form-group">
-                    Número: <input type="text" name="numero" class="form-control" placeholder="N°">
+                    Número: <input type="text" name="numero" class="form-control" placeholder="N°" value="{{old('numero')}}">
                     </div>
                     </div>
 
@@ -71,13 +76,13 @@
                              
                     <div class="col-xs-3">
                     <div class="form-group">
-                    Telefone: <input type="text" id="phone" name="phone" class="form-control" placeholder="Telefone">
+                    Telefone: <input type="text" id="phone" name="phone" class="form-control" placeholder="Telefone" value="{{old('phone')}}">
                     </div>
                     </div>
                             
                     <div class="col-xs-3">
                     <div class="form-group">
-                    Celular: <input type="text" id="celular" name="celular" class="form-control" placeholder="Celular:">
+                    Celular: <input type="text" id="celular" name="celular" class="form-control" placeholder="Celular:" value="{{old('celular')}}">
                     </div>
                     </div>     
                               

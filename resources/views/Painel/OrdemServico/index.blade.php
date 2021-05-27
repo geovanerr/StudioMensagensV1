@@ -82,7 +82,7 @@
                                 </button>
                                 <a class="btn btn-warning" href="{{ route('Painel.OrdemServico.edit', $ordem->id)}}"><i class="fa fa-edit"></i></a>
                                 <a href="/ordemservico/{{ $ordem->id }}"   onclick="return confirm('Deseja realmente remover a OS:  {{$ordem->id}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                                <a href="/ordens/imprimir/{{ $ordem->id }}" class="btn bg-gray"><i class="fa fa-print"></i></a>
+                                <a href="/ordens/imprimir/{{ $ordem->id }}" class="btn bg-gray" target="_blank"><i class="fa fa-print"></i></a>
 
                             </td>
                             </tr>

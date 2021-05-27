@@ -5,8 +5,12 @@
 
 @section('content')
 
-<br>
-<br>
+@foreach ($errors->all() as $error)
+  <ul>
+  <li> <strong style="color: red">{{$error}}</strong></li>
+  </ul>
+
+@endforeach
 
 <div class="box box-info">
   <div class="container">

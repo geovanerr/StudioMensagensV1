@@ -36,10 +36,10 @@
 
 
            <div class="box-body">
-                                        <form action=" {{ route('Relatorios.dataOS')}}" method="GET">
+                                        <form action=" {{ route('Relatorios.dataOS')}}" target="_blank" method="GET">
                                           <div class="row align-items-end">
                                             <div class="col-xs-12 col-sm-2">
-                                              <label>Data Cadastro Cliente</label>
+                                              <label>Data Cadastro OS</label>
                                               <input type="date" name="dateinicialreport" class="form-control pull-right">
                                             </div>
                                             <div class="col-xs-12 col-sm-2">
@@ -101,7 +101,7 @@
                   <td> {{ $ordem->horarioos }} </td>
 
                   <td>
-                      <a href="/ordens/imprimir/{{ $ordem->id }}" class="btn bg-gray"><i class="fa fa-print"></i> Imprimir</a>
+                      <a href="/ordens/imprimir/{{ $ordem->id }}"  target="_blank" class="btn bg-gray"><i class="fa fa-print"></i> Imprimir</a>
                   </td>
                 </tr>
             @endforeach

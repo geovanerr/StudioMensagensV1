@@ -7,6 +7,8 @@ use App\Models\Servico;
 use App\Models\OrdemServico;
 use App\Models\Mensagem;
 use App\Models\Cobrador;
+use App\Http\Requests\OSFormRequest;
+
 
 
 
@@ -44,7 +46,7 @@ class OrdemServicoController extends Controller
         return view('Painel.OrdemServico.create', ['clientes' => $clientes, 'servicos' => $servicos, "mensagens" => $mensagens, 'cobradores' => $cobradores]);
     }
 
-    public function store(Request $request)
+    public function store(OSFormRequest $request)
     {
 
         $cliente = Cliente::find($request->cliente_id);
@@ -130,13 +132,13 @@ class OrdemServicoController extends Controller
           return view('Painel.OrdemServico.edit', ['clientes' => $clientes, 'servicos' => $servicos, 'ordem' => $ordem, "mensagens" => $mensagens, "cobradores" => $cobradores]);
     }
 
-    public function update(Request $request) {
+    public function update(OSFormRequest $request) {
       $inputs = $request->all();
     //    dd($inputs);
       $ordem = OrdemServico::findOrFail($request->id);
     
       $ordem->update($inputs);
-      $ordem->servicos()->sync($inputs['servicos']);
+      $ordem->servicos()->sync($inputs['servico']);
         return redirect ('/painel/ordemservico')->with('msg', 'Ordem de Serviço alterada com sucesso.');
 
     }

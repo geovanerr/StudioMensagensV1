@@ -5,9 +5,12 @@
 
 @section('content')
 
-<br>
-<br>
+@foreach ($errors->all() as $error)
+  <ul>
+  <li> <strong style="color: red">{{$error}}</strong></li>
+  </ul>
 
+@endforeach
 <div class="box box-info">
   <div class="container">
 
@@ -29,7 +32,7 @@
                               <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i> 
                                 </span>
-                                <div><input type="text" class="form-control" id="mensagem" name="mensagem" placeholder="Digite a Mensagem..."> </div>
+                                <div><input type="text" class="form-control" id="mensagem" name="mensagem" placeholder="Digite a Mensagem..." value="{{old('mensagem')}}"> </div>
                               </div>
                               </div>
 

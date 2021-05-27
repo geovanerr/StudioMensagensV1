@@ -5,8 +5,12 @@
 
 @section('content')
 
-<br>
-<br>
+@foreach ($errors->all() as $error)
+  <ul>
+  <li> <strong style="color: red">{{$error}}</strong></li>
+  </ul>
+
+@endforeach
 
 <div class="box box-info">
   <div class="container">
@@ -21,23 +25,23 @@
             <div class="box-body">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-address-card-o"></i></span>
-                      <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+                      <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="{{old('nome')}}">
                     </div><br>
 
 
                         <div class="row">
                           <div class="col-xs-8">
-                           <label for=""> Endereço:</label> <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Rua:">
+                           <label for=""> Endereço:</label> <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Rua:" value="{{old('logradouro')}}">
                           </div>
 
                           <div class="col-xs-2">
-                          <label for=""> Número:</label> <input type="text" class="form-control" id="numero" name="numero" placeholder="Nº">
+                          <label for=""> Número:</label> <input type="text" class="form-control" id="numero" name="numero" placeholder="Nº" value="{{old('numero')}}">
                           </div>
 
                           <div class="col-xs-2">
                           <label for=""> Bairro:</label>
                           <select name="bairro_id" class="form-control select2" data-placeholder="Selecione o Bairro" style="width: 100%;">
-                          <option> Bairro </option>
+                          <option disabled selected>Informe o Bairro</option>
 
                           @foreach ($bairros as $bairro)
                           <option value="{{$bairro->id}}">{{$bairro->bairro}}</option>
@@ -50,19 +54,19 @@
 
                           <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-street-view"></i></span>
-                            <div><input type="text" class="form-control" id="referencia" name="referencia" placeholder="Referência"> </div>
+                            <div><input type="text" class="form-control" id="referencia" name="referencia" placeholder="Referência" value="{{old('referencia')}}"> </div>
                           </div><br>
 
 
                           <div class="row">
                               <div class="col-xs-2">
                               <i class="fa fa-phone"></i></span>
-                              <label for=""> Telefone:</label> <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefone">
+                              <label for=""> Telefone:</label> <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefone" value="{{old('phone')}}">
                               </div>
 
                               <div class="col-xs-2">
                               <i class="fa fa-mobile"></i></span>
-                              <label for="">  Celular:</label> <input type="text" class="form-control" id="celular" name="celular" placeholder="Celular">
+                              <label for="">  Celular:</label> <input type="text" class="form-control" id="celular" name="celular" placeholder="Celular" value="{{old('celular')}}">
                               </div>
 
                               <div class="col-xs-3">
@@ -89,7 +93,7 @@
                           <div class="form-group">
                              <i class="fa fa-file-text-o"></i>
                              <label>Observação: </label>
-                             <textarea class="form-control" id="obs" name="obs" rows="3" placeholder="Obs ..."></textarea>
+                             <textarea class="form-control" id="obs" name="obs" rows="3" placeholder="Obs ...">{{old('obs')}}</textarea>
                           </div>
 
 

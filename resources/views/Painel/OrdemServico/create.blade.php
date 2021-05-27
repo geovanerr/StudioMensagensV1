@@ -5,7 +5,11 @@
 
 @section('content')
 
-
+@foreach ($errors->all() as $error)
+  <ul>
+  <li> <strong style="color: red">{{$error}}</strong></li>
+  </ul>
+@endforeach
             <div class="box-header with-border">
               <h3 class="text-center"> <a> Cadastro <b> OS</b></a> </h3>
             </div>
@@ -32,7 +36,7 @@
                       <i class="fa fa-id-badge"></i></span>
                         <label>Cliente</label>
                         <select name="cliente_id" class="form-control select2">
-                        <option> Selecione um Cliente </option>
+                        <option disabled selected> Selecione um Cliente </option>
 
                         @foreach ($clientes as $cliente)
 
@@ -63,19 +67,19 @@
                 <div class="form-group">
                 <i class="fa fa-address-card-o"></i></span>
                   <label>Receptor</label>
-                  <input type="text" class="form-control" id="receptor" name="receptor" placeholder="Nome Receptor">
+                  <input type="text" class="form-control" id="receptor" name="receptor" placeholder="Nome Receptor" value="{{old('receptor')}}">
 
                 </div>
               </div>
 
               <div class="col-xs-2">
               <i class="fa fa-phone"></i></span>
-              <label for=""> Telefone:</label> <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefone">
+              <label for=""> Telefone:</label> <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefone" value="{{old('phone')}}">
               </div>
 
               <div class="col-xs-2">
               <i class="fa fa-mobile"></i></span>
-              <label for="">  Celular:</label> <input type="text" class="form-control" id="celular" name="celular" placeholder="Celular">
+              <label for="">  Celular:</label> <input type="text" class="form-control" id="celular" name="celular" placeholder="Celular" value="{{old('celular')}}">
               </div>
 
               <div class="col-md-2">
@@ -116,7 +120,7 @@
               <label>Mensagem</label>
                 <br>
                 <select name="mensagem_id" class="form-control select2" data-placeholder="Selecione a Mensagem" style="width: 100%;">
-                <option> Selecione uma Mensagem </option>
+                <option disabled selected> Selecione uma Mensagem </option>
 
                 @foreach ($mensagens as $mensagem)
                 <option value="{{$mensagem->id}}">{{$mensagem->mensagem}}</option>
@@ -177,7 +181,7 @@
                 <label>Cobrador</label>
                 <br>
                 <select name="cobrador_id" class="form-control select2" id="cobrador"  data-placeholder="Selecione o Cobrador" style="width: 100%;">
-                <option> Selecione o Cobrador </option>
+                <option disabled selected> Selecione o Cobrador </option>
 
                 @foreach ($cobradores as $cobrador)
                 <option value="{{$cobrador->id}}">{{$cobrador->cobrador}}</option>
@@ -194,7 +198,7 @@
             <div class="col-md-6">
             <div class="form-group">
                   <label>Observação</label>
-                  <textarea name="obs" class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                  <textarea name="obs" class="form-control" rows="3" placeholder="Enter ...">{{old('obs')}}</textarea>
                 </div>
 
             </div>
@@ -203,7 +207,7 @@
             <div class="col-md-6">
             <div class="form-group">
                   <label>Observação Cobrador</label>
-                  <textarea name="obscobrador" class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                  <textarea name="obscobrador" class="form-control" rows="3" placeholder="Enter ...">{{old('obscobrador')}}</textarea>
                 </div>
 
             </div>
