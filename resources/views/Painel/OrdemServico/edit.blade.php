@@ -94,7 +94,7 @@
               <i class="fa fa-male"></i>
                    <label for=""> Gênero:</label>
                    <select class="form-control select2" id="genero" name="genero" style="width: 100%;">
-                    
+
                    <option value="Nao Informar" {{($ordem->funcao ==='Nao Informar') ? 'selected' : ''}}> Nao Informar </option>
                    <option value="Feminino" {{($ordem->genero ==='Feminino') ? 'selected' : ''}}> Feminino </option>
                    <option value="Masculino" {{($ordem->genero ==='Masculino') ? 'selected' : ''}}> Masculino </option>
@@ -174,7 +174,7 @@
               <div class="form-group">
                   <label>Status da OS</label>
                   <select name="status" id="status" class="form-control">
-        
+
                    <option value="Aberta" {{($ordem->status ==='Aberta') ? 'selected' : ''}}> Aberta </option>
                    <option value="Realizada" {{($ordem->status ==='Realizada') ? 'selected' : ''}}> Realizada </option>
                    <option value="Cancelada" {{($ordem->status ==='Cancelada') ? 'selected' : ''}}> Cancelada </option>
@@ -223,7 +223,7 @@
                             <div class="box-footer with-footer">
                               <h3 class="text-center">
                               <input type="submit" class="btn btn-success" value="Editar" >
-                              <button type="submit" class="btn btn-danger">Cancelar</button>
+                              <a href="{{url()->previous()}}" class="btn btn-danger">Cancelar</a>
                             </h3>
                             </div>
 

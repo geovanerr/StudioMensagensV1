@@ -20,7 +20,11 @@
                     <p class="msg"> {{ session('msg')}} </p>
                   </div>
                   @endif
-                <h3 id="box-title" class="text-center"> Funcionários <a href="{{ route('Painel.Usuarios.viewCadastro') }}" class="btn btn-success">Novo Funcionário</a> </h3>
+
+                  <a class="btn btn-app bg-teal" href="{{ route('Painel.Usuarios.viewCadastro') }}">
+                    <i class="fa fa-plus"></i> Cadastrar Funcionário
+                  </a>
+                <h3 id="box-title" class="text-center">Funcionários</h3>
 
 
               </div>
@@ -53,7 +57,7 @@
 
                         <a href="/usuarios/{{ $usuario->id }}"   onclick="return confirm('Deseja realmente remover o Funcionário: {{$usuario->name}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 
-                        <a href="/usuarios/imprimir/{{ $usuario->id }}" class="btn bg-gray"><i class="fa fa-print"></i></a>
+                        <a href="/usuarios/imprimir/{{ $usuario->id }}" class="btn bg-gray" target="_blank"><i class="fa fa-print"></i></a>
 
                         </td>
                     </tr>
@@ -70,7 +74,7 @@
               <form action=" {{ route('Relatorios.Funcionarios')}}" target="_blank" method="GET">
                                           <div class="row align-items-end">
                                             <div class="col-xs-12 col-sm-2">
-                                              <label>Data Inicial</label>
+                                              <label>Data Cadastro Inicial</label>
                                               <input type="date" name="dateinicialreport" class="form-control pull-right">
                                             </div>
                                             <div class="col-xs-12 col-sm-2">
@@ -79,7 +83,7 @@
                                             </div>
                                             <div class="col-xs-12 col-sm-4 mt-2">
                                             <label for="">Gerar Relatório</label><br>
-                                              <button type="date" class="btn bg-gray"> <i class="fa fa-print"></i> Imprimir</button>
+                                              <button type="date" class="btn bg-gray"> <i class="fa fa-print" target="_blank"></i> Imprimir</button>
                                             </div>
                                           </div>
                                          </form>

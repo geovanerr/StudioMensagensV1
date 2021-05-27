@@ -31,7 +31,10 @@
                   </div>
                   @endif
 
-               <h3 id="box-title" class="text-center"> Cobradores <a href="{{ route('Painel.Tabelas.createcobrador') }}" class="btn btn-success">Cadastrar Cobrador</a> </h3>
+                  <a class="btn btn-app bg-teal" href="{{ route('Painel.Tabelas.createcobrador') }}">
+                    <i class="fa fa-plus"></i> Cadastrar Cobrador
+                  </a>
+               <h3 id="box-title" class="text-center">Cobradores</h3>
 
              </div>
            <!-- /.box-header -->

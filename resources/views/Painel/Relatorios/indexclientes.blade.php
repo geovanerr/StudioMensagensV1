@@ -78,7 +78,7 @@
 
                        <td>
 
-                        <a href="/cliente/historico/{{ $cliente->id }}"  target="_blank" class="btn bg-gray"><i class="fa fa-print"></i></a>
+                        <a href="/cliente/historico/{{ $cliente->id }}"  target="_blank" class="btn bg-gray"><i class="fa fa-print"></i> Imprimir</a>
 
                        </td>
                    </tr>

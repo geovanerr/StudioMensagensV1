@@ -31,7 +31,11 @@
                   </div>
                   @endif
 
-               <h3 id="box-title" class="text-center"> Bairros <a href="{{ route('Painel.Tabelas.createbairro') }}" class="btn btn-success">Cadastrar Bairro</a> </h3>
+                  <a class="btn btn-app bg-teal" href="{{ route('Painel.Tabelas.createbairro') }}">
+                    <i class="fa fa-plus"></i> Cadastrar Bairro
+                  </a>
+
+               <h3 id="box-title" class="text-center">Bairros</h3>
 
              </div>
            <!-- /.box-header -->

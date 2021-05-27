@@ -40,15 +40,15 @@
                               <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-money"></i></span>
                                 <div><input type="number" class="form-control" id="preco" name ="preco" placeholder="preco" step="0.01" min="0" value="{{old('preco')}}"> </div>
-                                                       
+
                               </div>
-                              </div>         
+                              </div>
                         </div> <br>
 
                             <div class="box-footer with-footer">
                               <h3 class="text-center">
                               <input type="submit" class="btn btn-success" value="Cadastrar" >
-                              <button type="submit" class="btn btn-danger">Cancelar</button>
+                              <a href="{{url()->previous()}}" class="btn btn-danger">Cancelar</a>
                             </h3>
                             </div>
 

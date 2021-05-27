@@ -20,13 +20,13 @@
       <form action="{{ route('Painel.Usuarios.storefunc') }}" method="post">
       @csrf
       <div class="row">
-                          
+
                     <div class="col-xs-6">
                     <div class="form-group">
                     Nome: <input type="text" id="name" name="name" class="form-control" placeholder="Nome" value="{{old('name')}}">
                     </div>
                     </div>
-                    
+
 
                     <div class="col-xs-6">
                     <div class="form-group">
@@ -52,7 +52,7 @@
                     </div>
                     </div>
 
-  
+
                     <div class="col-xs-3">
                     Bairro:
                     <select name="bairro_id" class="form-control select2" data-placeholder="Selecione o Bairro" style="width: 100%;">
@@ -60,32 +60,32 @@
 
                     @foreach ($bairros as $bairro)
                     <option value="{{$bairro->id}}">{{$bairro->bairro}}</option>
-                          
-                    @endforeach
-                      
-                    </select>                        
-                    </div>
-                   
 
-           
+                    @endforeach
+
+                    </select>
+                    </div>
+
+
+
                     <div class="col-xs-6">
                     <div class="form-group">
                     Senha: <input type="password" name="password" class="form-control" placeholder="Senha">
                     </div>
                     </div>
-                             
+
                     <div class="col-xs-3">
                     <div class="form-group">
                     Telefone: <input type="text" id="phone" name="phone" class="form-control" placeholder="Telefone" value="{{old('phone')}}">
                     </div>
                     </div>
-                            
+
                     <div class="col-xs-3">
                     <div class="form-group">
                     Celular: <input type="text" id="celular" name="celular" class="form-control" placeholder="Celular:" value="{{old('celular')}}">
                     </div>
-                    </div>     
-                              
+                    </div>
+
                     <div class="col-xs-2">
                     <div class="form-group">
                     Nascimento: <input type="date" name="nascimento" class="form-control pull-right">
@@ -99,8 +99,8 @@
                        <option selected="selected" value="Nao Informar">Nao Informar</option>
                        <option value="Femino">Feminino</option>
                        <option value="Masculino">Masculino</option>
-                            
-                    </select>                          
+
+                    </select>
                     </div>
                     </div>
 
@@ -112,29 +112,29 @@
                        <option selected="selected" value="Administrador"> Administrador </option>
                        <option value="Gerente">Gerente</option>
                        <option value="Colaborador">Colaborador</option>
-                    </select>                          
+                    </select>
                     </div>
                     </div>
 
-  </div>                      
+  </div>
                     <div class="col-xs-12">
                     <div class="form-group">
-                    <h3 class="text-center">                               
+                    <h3 class="text-center">
                     <button type="submit" class="btn btn-success">Cadastrar</button>
-                    <button type="submit" class="btn btn-danger">Cancelar</button>
-                    </h3>
-                    </div>   
-                    </div>   
+                    <a href="{{url()->previous()}}" class="btn btn-danger">Cancelar</a>
+                </h3>
+                    </div>
+                    </div>
 
-                        
 
-            
+
+
             </div>
-          
 
 
-</form>  
-            
+
+</form>
+
 </div>
 </div>
 

@@ -41,7 +41,7 @@
                             <div class="box-footer with-footer">
                               <h3 class="text-center">
                               <input type="submit" class="btn btn-success" value="Cadastrar" >
-                              <button type="submit" class="btn btn-danger">Cancelar</button>
+                              <a href="{{url()->previous()}}" class="btn btn-danger">Cancelar</a>
                             </h3>
                             </div>
 

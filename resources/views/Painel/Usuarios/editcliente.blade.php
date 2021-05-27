@@ -102,8 +102,7 @@
                             <div class="box-footer with-footer">
                               <h3 class="text-center">
                               <button type="submit" class="btn btn-success">Editar</button>
-
-                              <button type="submit" class="btn btn-danger">Cancelar</button>
+                              <a href="{{url()->previous()}}" class="btn btn-danger">Cancelar</a>
                             </h3>
                             </div>
 

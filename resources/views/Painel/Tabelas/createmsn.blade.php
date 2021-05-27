@@ -30,7 +30,7 @@
                         </div>
                               <div class="col-xs-4">
                               <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i> 
+                                <span class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i>
                                 </span>
                                 <div><input type="text" class="form-control" id="mensagem" name="mensagem" placeholder="Digite a Mensagem..." value="{{old('mensagem')}}"> </div>
                               </div>
@@ -41,7 +41,7 @@
                             <div class="box-footer with-footer">
                               <h3 class="text-center">
                               <input type="submit" class="btn btn-success" value="Cadastrar" >
-                              <button type="submit" class="btn btn-danger">Cancelar</button>
+                              <a href="{{url()->previous()}}" class="btn btn-danger">Cancelar</a>
                             </h3>
                             </div>
 

@@ -104,7 +104,7 @@
                 <br>
                 <select name="servico[]"  id="servicos" class="form-control select2"  multiple="multiple" data-placeholder="Selecione os Serviços"
                 style="width: 100%;">
-           
+
                 @foreach ($servicos as $servico)
                   <option value="{{$servico->id}}" class="servicos" data-preco="{{$servico->preco}}">{{$servico->servico}}</option>
 
@@ -213,7 +213,7 @@
             </div>
             </div>
 
-      
+
           <div class="info-box">
             <span class="info-box-icon bg-aqua"><i class="fa fa-money"></i></span>
 
@@ -222,7 +222,7 @@
               <h3>R$: <b><span class="valortotal"></span></b></h3>
             </div>
           </div>
-     
+
 
 <div>
 
@@ -234,7 +234,7 @@
 
                               <button type="submit" class="btn btn-success">Cadastrar</button>
 
-                              <button type="submit" class="btn btn-danger">Cancelar</button>
+                              <a href="{{url()->previous()}}" class="btn btn-danger">Cancelar</a>
                             </h3>
                             </div>
 

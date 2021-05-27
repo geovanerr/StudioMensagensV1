@@ -31,7 +31,10 @@
                   </div>
                   @endif
 
-               <h3 id="box-title" class="text-center"> Mensagens <a href="{{ route('Painel.Tabelas.createmsn') }}" class="btn btn-success">Cadastrar Mensagem</a> </h3>
+                  <a class="btn btn-app bg-teal" href="{{ route('Painel.Tabelas.createmsn') }}">
+                    <i class="fa fa-plus"></i> Cadastrar Mensagem
+                  </a>
+               <h3 id="box-title" class="text-center">Mensagens</h3>
 
              </div>
            <!-- /.box-header -->

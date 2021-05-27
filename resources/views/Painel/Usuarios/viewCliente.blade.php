@@ -101,8 +101,9 @@
                             <div class="box-footer with-footer">
                               <h3 class="text-center">
                               <button type="submit" class="btn btn-success">Cadastrar</button>
+                              <a href="{{url()->previous()}}" class="btn btn-danger">Cancelar</a>
 
-                              <button type="submit" class="btn btn-danger">Cancelar</button>
+
                             </h3>
                             </div>
 
