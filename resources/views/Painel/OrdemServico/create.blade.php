@@ -152,7 +152,7 @@
                   <label>Horário OS:</label>
 
                   <div class="input-group">
-                    <input type="text" class="form-control timepicker" name="horarioos" id="horarioos">
+                    <input type="text" class="form-control timepicker" name="horarioos" id="horarioos" value="{{old('receptor')}}">
 
                     <div class="input-group-addon">
                       <i class="fa fa-clock-o"></i>

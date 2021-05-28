@@ -2,7 +2,7 @@
 <div class="modal fade" id="view-ordem" style="z-index: 10000" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
-      
+
         <div class="modal-header">
           <h5 class="modal-title" id="view-ordem">Ordem de Serviço</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -10,10 +10,10 @@
           </button>
         </div>
 
-     
+
         <div class="modal-body" id="change_datail">
-          
-        
+
+
 <form name="formViewOS">
 
 @csrf
@@ -62,7 +62,7 @@
               <div class="form-group">
               <i class="fa fa-address-card-o"></i></span>
                 <label >Receptor</label>
-                
+
                 <input type="text" class="form-control" id="receptor" name="receptor" disabled>
 
               </div>
@@ -83,7 +83,7 @@
             <i class="fa fa-male"></i>
                  <label for=""> Gênero:</label>
                  <input type="text" class="form-control" name="genero" disabled>
-        
+
             </div>
 
         </div>
@@ -190,7 +190,7 @@
 
 
         </div>
-     
+
         <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
         </div>

@@ -266,6 +266,16 @@
       method : "GET",
       success : function (response){
         var formViewOS = $("form[name=formViewOS]");
+
+        var servs = [];
+
+        const serv = (response.servicos);
+        serv.forEach(function(servico, i) {
+            servs.push(servico.servico);
+        });
+
+        formViewOS.find("input[name=servicos]").val(servs);
+
         formViewOS.find("input[name=id]").val(response.id);
 
         formViewOS.find("input[name=cliente_id]").val(response.cliente.nome);
@@ -273,7 +283,6 @@
         formViewOS.find("input[name=phone]").val(response.phone);
         formViewOS.find("input[name=celular]").val(response.celular);
         formViewOS.find("input[name=genero]").val(response.genero);
-        formViewOS.find("input[name=servicos]").val(response.servicos);
         formViewOS.find("input[name=mensagem_id]").val(response.mensagem.mensagem);
         formViewOS.find("input[name=horarioos]").val(response.horarioos);
         formViewOS.find("input[name=status]").val(response.status);

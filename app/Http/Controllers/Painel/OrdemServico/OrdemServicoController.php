@@ -113,7 +113,9 @@ class OrdemServicoController extends Controller
         $ordem['cliente'] = $ordem->cliente->nome;
         $ordem['mensagem'] = $ordem->mensagem->mensagem;
         $ordem['cobrador'] = $ordem->cobrador->cobrador;
-        
+        $ordem['servicos'] = $ordem->servicos;
+    //    dd($ordem->servicos);
+
         return response()->json($ordem);
     }
 
@@ -136,7 +138,7 @@ class OrdemServicoController extends Controller
       $inputs = $request->all();
     //    dd($inputs);
       $ordem = OrdemServico::findOrFail($request->id);
-    
+
       $ordem->update($inputs);
       $ordem->servicos()->sync($inputs['servico']);
         return redirect ('/painel/ordemservico')->with('msg', 'Ordem de Serviço alterada com sucesso.');

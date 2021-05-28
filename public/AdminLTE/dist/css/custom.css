@@ -1,3 +1,10 @@
 .modal-footer{
     background-color: white !important;
 }
+
+.select2-selection__choice {
+    background-color: rgb(84, 82, 202) !important;
+    border-color: white  !important;
+    padding: 4px 10px  !important;
+    color:white !important;
+  }
