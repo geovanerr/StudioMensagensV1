@@ -1,5 +1,5 @@
 .modal-footer{
-    background-color: white !important;
+    background-color: rgb(218, 212, 212) !important;
 }
 
 .select2-selection__choice {
@@ -7,4 +7,11 @@
     border-color: white  !important;
     padding: 4px 10px  !important;
     color:white !important;
+  }
+
+  .modalos {
+    background-color: rgb(219, 219, 219) !important;
+    border-color: white  !important;
+    padding: 5px 10px  !important;
+    color: black !important;
   }

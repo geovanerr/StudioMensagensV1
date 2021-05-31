@@ -268,13 +268,17 @@
         var formViewOS = $("form[name=formViewOS]");
 
         var servs = [];
-
+        var servicototal = 0;
         const serv = (response.servicos);
         serv.forEach(function(servico, i) {
+          servicototal += parseFloat(servico.preco); 
             servs.push(servico.servico);
         });
 
+
         formViewOS.find("input[name=servicos]").val(servs);
+        formViewOS.find("input[name=servicototal]").val(servicototal);
+
 
         formViewOS.find("input[name=id]").val(response.id);
 

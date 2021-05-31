@@ -38,11 +38,17 @@
               <div class="form-group">
               <i class="fa fa-address-card-o"></i></span>
                 <label>Cliente: </label>
-                <input type="text" class="form-control" id="cliente_id" name="cliente_id" disabled>
+                <input type="text" class="form-control modalos" id="cliente_id" name="cliente_id" disabled>
 
               </div>
               </div>
 
+              <div class="col-md-6">
+              <i class="fa fa-file-audio-o"></i></span>
+              <label>VALOR OS</label>
+                <br>
+                <input type="text" class="form-control modalos" name="servicototal" disabled>
+              </div>
 
               </div>
       </div>
@@ -63,26 +69,26 @@
               <i class="fa fa-address-card-o"></i></span>
                 <label >Receptor</label>
 
-                <input type="text" class="form-control" id="receptor" name="receptor" disabled>
+                <input type="text" class="form-control modalos" id="receptor" name="receptor" disabled>
 
               </div>
             </div>
 
             <div class="col-xs-3">
             <i class="fa fa-phone"></i></span>
-            <label for=""> Telefone:</label> <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefone:" disabled>
+            <label for=""> Telefone:</label> <input type="text" class="form-control modalos" id="phone" name="phone" placeholder="Telefone:" disabled>
             </div>
 
             <div class="col-xs-3">
             <i class="fa fa-mobile"></i></span>
-            <label for="">  Celular:</label> <input type="text" class="form-control" id="celular" name="celular" placeholder="celular" disabled>
+            <label for="">  Celular:</label> <input type="text" class="form-control modalos" id="celular" name="celular" placeholder="celular" disabled>
             </div>
 
             <div class="col-md-2">
             <i class="fa fa-female"></i>
             <i class="fa fa-male"></i>
                  <label for=""> Gênero:</label>
-                 <input type="text" class="form-control" name="genero" disabled>
+                 <input type="text" class="form-control modalos" name="genero" disabled>
 
             </div>
 
@@ -95,7 +101,7 @@
               <i class="fa fa-shopping-bag"></i>
               <label>Serviços</label>
               <br>
-              <input type="text" class="form-control" name="servicos" disabled>
+              <input type="text" class="form-control modalos" name="servicos" disabled>
 
               </div>
             </div>
@@ -104,7 +110,7 @@
             <i class="fa fa-file-audio-o"></i></span>
             <label>Mensagem</label>
               <br>
-              <input type="text" class="form-control" name="mensagem_id" disabled>
+              <input type="text" class="form-control modalos" name="mensagem_id" disabled>
             </div>
 
         </div>
@@ -116,7 +122,7 @@
         <div class="form-group">
               <label>Data da OS:</label>
               <div class="input-group date">
-                <input type="text" class="form-control pull-right" name="dataos" id="dataos" disabled>
+                <input type="text" class="form-control pull-right modalos" name="dataos" id="dataos" disabled>
               </div>
 
 
@@ -129,7 +135,7 @@
                 <label>Horário OS:</label>
 
                 <div class="input-group">
-                  <input type="text" class="form-control" name="horarioos" id="horarioos" disabled>
+                  <input type="text" class="form-control modalos" name="horarioos" id="horarioos" disabled>
 
                   <div class="input-group-addon">
                     <i class="fa fa-clock-o"></i>
@@ -143,7 +149,7 @@
             <div class="col-md-3">
             <div class="form-group">
                 <label>Status da OS</label>
-                <input type="text" class="form-control" name="status" id="status" disabled>
+                <input type="text" class="form-control modalos" name="status" id="status" disabled>
 
               </div>
               </div>
@@ -152,7 +158,7 @@
               <i class="fa fa-money"></i></span>
               <label>Cobrador</label>
               <br>
-              <input type="text" class="form-control" name="cobrador_id" disabled>
+              <input type="text" class="form-control modalos" name="cobrador_id" disabled>
               </div>
 
           </div>
@@ -162,7 +168,7 @@
           <div class="col-md-6">
           <div class="form-group">
                 <label>Observação</label>
-                <textarea name="obs" class="form-control" id="obs" rows="3" placeholder="Enter ..." disabled></textarea>
+                <textarea name="obs" class="form-control modalos" id="obs" rows="3" placeholder="Enter ..." disabled></textarea>
               </div>
 
           </div>
@@ -171,7 +177,7 @@
           <div class="col-md-6">
           <div class="form-group">
                 <label>Observação Cobrador</label>
-                <textarea name="obs" class="form-control" id="obs2" rows="3" placeholder="Enter ..." disabled></textarea>
+                <textarea name="obs" class="form-control modalos" id="obs2" rows="3" placeholder="Enter ..." disabled></textarea>
               </div>
 
           </div>
