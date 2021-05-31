@@ -27,6 +27,7 @@ class CreateOrdensTable extends Migration
             $table->foreign('cobrador_id')->references('id')->on('cobradores');
             
             $table->string('receptor');
+            $table->decimal("valoros", 10,2);
             $table->string('phone')->nullable();
             $table->string('celular');
             $table->text('genero');              

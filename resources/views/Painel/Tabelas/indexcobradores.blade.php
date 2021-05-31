@@ -57,7 +57,7 @@
 
                      <td>
                          <a href="/painel/tabelas/cobrador/edit/{{ $cobrador->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                         <a href="/painel/tabelas/cobrador/{{ $cobrador->id }}"   onclick="return confirm('Deseja realmente remover o Cobrador: {{$cobrador->cobrador}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                         <!--a href="/painel/tabelas/cobrador/{{ $cobrador->id }}"   onclick="return confirm('Deseja realmente remover o Cobrador: {{$cobrador->cobrador}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a-->
 
                      </td>
                    </tr>

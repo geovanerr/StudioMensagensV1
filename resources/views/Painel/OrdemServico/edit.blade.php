@@ -220,6 +220,17 @@
             </div>
             </div>
 
+            <div class="info-box2 col-md-4">
+                <span class="info-box-icon2 bg-aqua"><i class="fa fa-money"></i></span>
+
+                <div class="info-box-content2">
+                  <h4>R$: <input type="number" id="valoros" name ="valoros" placeholder="00,00" step="0.01" min="0" value="{{ $ordem->valoros}}"></h4>
+
+                </div>
+              </div>
+
+              </div>
+
                             <div class="box-footer with-footer">
                               <h3 class="text-center">
                               <input type="submit" class="btn btn-success" value="Editar" >

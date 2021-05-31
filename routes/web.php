@@ -74,6 +74,7 @@ Route::get('/painel/ordemservico/edit/{id}', [OrdemServicoController::class, 'ed
 Route::post('/painel/ordemservico/create', [OrdemServicoController::class, 'store'])->name('Painel.OrdemServico.store');
 Route::put('/painel/ordemservico/update/{id}', [OrdemServicoController::class, 'update'])->name('Painel.OrdemServico.update');
 Route::get('/ordemservico/{id}', [OrdemServicoController::class, 'destroy'])->name('Painel.OrdemServico.destroy');
+Route::get('/ordemservico/processar/{id}', [OrdemServicoController::class, 'processaros'])->name('Painel.OrdemServico.processaros');
 
 
 Route::get('/painel/tabelas/bairros', [TabelasController::class, 'indexbairros'])->name('Painel.Tabelas.indexbairros');
@@ -125,7 +126,11 @@ Route::get('/relatorios/indexniver', [RelatoriosController::class, 'indexniver']
 Route::get('relatorios/dataos', [RelatoriosController::class, 'dataOS'])->name('Relatorios.dataOS');
 Route::get('relatorios/dataniverclientes', [RelatoriosController::class, 'dataNiverClientes'])->name('Relatorios.dataNiverClientes');
 Route::get('relatorios/dataniverfuncionarios', [RelatoriosController::class, 'dataNiverFuncionarios'])->name('Relatorios.dataNiverFuncionarios');
+Route::get('relatorios/oscont', [RelatoriosController::class, 'contosrealizada'])->name('contosrealizada');
 
+
+Route::get('/painel/indexaberta', [OrdemServicoController::class, 'indexaberta'])->name('Painel.OrdemServico.indexaberta');
+Route::get('/painel/indexrealizada', [OrdemServicoController::class, 'indexrealizada'])->name('Painel.OrdemServico.indexrealizada');
 
 
 Route::get('/pdf', [PdfController::class, 'geraPdf'])->name('PDF.ordens');

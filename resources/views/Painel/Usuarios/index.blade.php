@@ -22,7 +22,7 @@
                   @endif
 
                   <a class="btn btn-app bg-teal" href="{{ route('Painel.Usuarios.viewCadastro') }}">
-                    <i class="fa fa-plus"></i> Cadastrar Funcionário
+                    <i class="fa fa-plus"></i> Funcionário
                   </a>
                 <h3 id="box-title" class="text-center">Funcionários</h3>
 

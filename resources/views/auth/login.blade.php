@@ -40,7 +40,7 @@
 
                 
                 <x-jet-button class="ml-4">
-                <a href="{{ route('register') }}">Cadastrar</a>
+                <a href="{{ route('Home.index') }}">Inicio</a>
                 </x-jet-button>
             </div>
         </form>

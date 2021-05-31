@@ -65,6 +65,7 @@ class OrdemServicoController extends Controller
         $os->cliente()->associate($cliente);
         $os->receptor = $request->receptor;
         $os->phone = $request->phone;
+        $os->valoros = $request->valoros;
         $os->celular = $request->celular;
         $os->genero = $request->genero;
 
@@ -79,7 +80,7 @@ class OrdemServicoController extends Controller
         $os->save();
 
         $os->servicos()->attach($servico);
-        return redirect ('/painel/ordemservico')->with('msg', 'Ordem de Serviço criada com sucesso.');
+        return redirect ('/painel/indexaberta')->with('msg', 'Ordem de Serviço criada com sucesso.');
 
 
     }
@@ -141,9 +142,25 @@ class OrdemServicoController extends Controller
 
       $ordem->update($inputs);
       $ordem->servicos()->sync($inputs['servico']);
-        return redirect ('/painel/ordemservico')->with('msg', 'Ordem de Serviço alterada com sucesso.');
+        return redirect ('/painel/indexaberta')->with('msg', 'Ordem de Serviço alterada com sucesso.');
 
     }
+
+    public function processaros ($id) {
+      //  $ordem = $request->all();
+      $ordem = OrdemServico::find($id);
+
+       //   dd($inputs);
+      if($ordem->status == 'Aberta') {
+        $ordem->update(['status' => 'Realizada']);
+        return redirect()->back();
+      } else {
+          $ordem->update(['status' => 'Aberta']);
+          return redirect()->back();
+
+      }
+
+      }
 
     public function destroy($id) {
 
@@ -152,6 +169,26 @@ class OrdemServicoController extends Controller
 
 
     }
+
+    public function indexaberta (Request $request){
+        $osaberta = OrdemServico::all();
+
+        $osaberta = $osaberta->where('status', '=', 'Aberta');
+    
+        return view('Painel.OrdemServico.indexaberta', compact('osaberta'));
+
+    }
+
+    public function indexrealizada (Request $request){
+        $osrealizada = OrdemServico::all();
+
+        $osrealizada = $osrealizada->where('status', '=', 'Realizada');
+    
+        return view('Painel.OrdemServico.indexrealizada', compact('osrealizada'));
+
+    }
+
+
 
 
 

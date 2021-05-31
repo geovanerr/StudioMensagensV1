@@ -28,10 +28,9 @@
                         <th>Serviços</th>
                         <th>Data OS</th>
                         <th>Hora OS</th>
+                        <th>Valor</th>
                         <th>Status</th>
-
-
-                      </tr>
+                    </tr>
                 </thead>
                 <tbody>
 
@@ -50,6 +49,7 @@
                      </td>
                       <td> {{ date('d/m/Y', strtotime($ordem->dataos))  }} </td>
                       <td> {{ $ordem->horarioos }} </td>
+                      <td> {{ $ordem->valoros }} </td>
                       <td> {{ $ordem->status }} </td>
 
 

@@ -55,7 +55,7 @@
 
                      <td>
                          <a href="/painel/tabelas/mensagem/edit/{{ $mensagem->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                         <a href="/painel/tabelas/mensagem/{{ $mensagem->id }}"   onclick="return confirm('Deseja realmente remover a mensagem: {{$mensagem->mensagem}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                         <!--a href="/painel/tabelas/mensagem/{{ $mensagem->id }}"   onclick="return confirm('Deseja realmente remover a mensagem: {{$mensagem->mensagem}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a-->
 
                        </td>
                    </tr>

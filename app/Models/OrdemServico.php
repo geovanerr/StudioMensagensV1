@@ -30,7 +30,8 @@ class OrdemServico extends Model
         'status',
         'cobrador_id',
         'obs',
-        'obscobrador'
+        'obscobrador',
+        'valoros'
     ];
 
 

@@ -50,7 +50,7 @@
                      Receptor  </th>
 
                  <th> <i class="fa fa-tablet" aria-hidden="true"></i>  Celular </th>
-                 <th> <i class="fa fa-shopping-bag" aria-hidden="true"></i>  Serviços </th>
+                 <th> <i class="fa fa-check-square-o" aria-hidden="true"></i> Status </th>
                  <th> <i class="fa fa-calendar-check-o" aria-hidden="true"></i>  Data OS </th>
                  <th> <i class="fa fa-clock-o" aria-hidden="true"></i>  Hora OS </th>
                  <th> <i class="fa fa-cog" aria-hidden="true"></i>  Ação </th>
@@ -58,19 +58,13 @@
                </tr>
                </thead>
                <tbody>
-                    @foreach ($ordens as $ordem)
+                    @foreach ($osrealizada as $ordem)
                         <tr>
                           <td> {{ $ordem->id }} </td>
                           <td> {{ $ordem->cliente->nome }} </td>
                           <td> {{ $ordem->receptor }} </td>
                           <td> {{ $ordem->celular }} </td>
-                          <td>
-                             <ul>
-                          @foreach ($ordem->servicos as $servico)
-                                <li> {{ $servico->servico }}</li>
-                          @endforeach
-                            </ul>
-                          </td>
+                          <td> {{ $ordem->status }}</td>
                           <td> {{ date('d/m/Y', strtotime($ordem->dataos))  }} </td>
                           <td> {{ $ordem->horarioos }} </td>
 
@@ -81,11 +75,7 @@
                                     <i class="fa fa-eye"></i>
                                 </button>
                                 <a class="btn btn-warning" href="{{ route('Painel.OrdemServico.edit', $ordem->id)}}"><i class="fa fa-edit"></i></a>
-                                
                                 <!--a href="/ordemservico/{{ $ordem->id }}"   onclick="return confirm('Deseja realmente remover a OS:  {{$ordem->id}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a-->
-                                @if($ordem->status == 'Aberta')
-                                <a href="{{route('Painel.OrdemServico.processaros', $ordem->id)}}" onclick="return confirm('Deseja realmente Finalizar a OS:  {{$ordem->id}}?')" class="btn btn-success"><i class="fa fa-database" aria-hidden="true"></i></a>
-                                @endif
                                 <a href="/ordens/imprimir/{{ $ordem->id }}" class="btn bg-gray" target="_blank"><i class="fa fa-print"></i></a>
 
                             </td>

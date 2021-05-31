@@ -58,7 +58,7 @@
                </tr>
                </thead>
                <tbody>
-                    @foreach ($ordens as $ordem)
+                    @foreach ($osaberta as $ordem)
                         <tr>
                           <td> {{ $ordem->id }} </td>
                           <td> {{ $ordem->cliente->nome }} </td>
@@ -81,11 +81,10 @@
                                     <i class="fa fa-eye"></i>
                                 </button>
                                 <a class="btn btn-warning" href="{{ route('Painel.OrdemServico.edit', $ordem->id)}}"><i class="fa fa-edit"></i></a>
-                                
-                                <!--a href="/ordemservico/{{ $ordem->id }}"   onclick="return confirm('Deseja realmente remover a OS:  {{$ordem->id}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a-->
                                 @if($ordem->status == 'Aberta')
                                 <a href="{{route('Painel.OrdemServico.processaros', $ordem->id)}}" onclick="return confirm('Deseja realmente Finalizar a OS:  {{$ordem->id}}?')" class="btn btn-success"><i class="fa fa-database" aria-hidden="true"></i></a>
                                 @endif
+                                <!--a href="/ordemservico/{{ $ordem->id }}"   onclick="return confirm('Deseja realmente remover a OS:  {{$ordem->id}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a-->
                                 <a href="/ordens/imprimir/{{ $ordem->id }}" class="btn bg-gray" target="_blank"><i class="fa fa-print"></i></a>
 
                             </td>

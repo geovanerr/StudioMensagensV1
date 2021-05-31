@@ -32,14 +32,14 @@
 
             @inject('ordens', 'App\Models\OrdemServico')
             
-              <h3> {{ $ordens->count() }} </h3>
+            <h3>  {{ $ordens->where('status', 'Aberta')->count()}}</h3>
 
               <p> <b> Ordens de Serviços Abertas </b></p>
               </div>
               <div class="icon">
               <i class="fa fa-folder-open-o"></i>
               </div>
-            <a href="{{ route('Painel.OrdemServico.index') }}" class="small-box-footer"> Gerênciar OS <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('Painel.OrdemServico.indexaberta') }}" class="small-box-footer"> Gerênciar OS <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 
@@ -50,14 +50,14 @@
 
            @inject('ordens', 'App\Models\OrdemServico')
            
-             <h3> {{ $ordens->count() }} </h3>
+           <h3>  {{ $ordens->where('status', 'Realizada')->count()}}</h3>
 
              <p> <b> Ordens de Serviços Concluídas </b></p>
              </div>
              <div class="icon">
              <i class="fa fa-envelope-o"></i>
              </div>
-           <a href="{{ route('Painel.OrdemServico.index') }}" class="small-box-footer"> Ver OS Concluídas <i class="fa fa-arrow-circle-right"></i></a>
+           <a href="{{ route('Painel.OrdemServico.indexrealizada') }}" class="small-box-footer"> Ver OS Concluídas <i class="fa fa-arrow-circle-right"></i></a>
          </div>
        </div>
 
@@ -75,7 +75,7 @@
               <div class="icon">
               <i class="fa fa-line-chart"></i>
               </div>
-            <a href="{{ route('Painel.Servicos.index') }}" class="small-box-footer"> Ver Relatórios <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('Relatorios.indexordens') }}" class="small-box-footer"> Ver Relatórios <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
       </div>

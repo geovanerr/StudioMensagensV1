@@ -61,7 +61,7 @@
 
                        <td>
                           <a href="/servicos/edit/{{ $servico->id }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                          <a href="/servicos/{{ $servico->id }}"   onclick="return confirm('Deseja realmente remover o Serviço: {{$servico->servico}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                          <!--a href="/servicos/{{ $servico->id }}"   onclick="return confirm('Deseja realmente remover o Serviço: {{$servico->servico}}?')" class="btn btn-danger"><i class="fa fa-trash"></i></a-->
                        </td>
                    </tr>
                @endforeach

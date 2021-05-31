@@ -161,5 +161,16 @@ class RelatoriosController extends Controller
         $funcionarios = $funcionarios->get();
         return view('Painel.Relatorios.dataNiverFuncionarios', compact('funcionarios'));
     }
+
+    public function contosrealizada (Request $request){
+        $osrealizadas = OrdemServico::all();
+
+        $osrealizadas = $osrealizadas->where('status', '=', 'Realizada');
+
+        $osrealizadas = $osrealizadas->get();
+      //  dd($osrealizadas);
+      return view('dashboard', compact('osrealizadas'));
+
+    }
 }
 

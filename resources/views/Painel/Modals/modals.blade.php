@@ -43,12 +43,11 @@
               </div>
               </div>
 
-              <div class="col-md-6">
-              <i class="fa fa-file-audio-o"></i></span>
-              <label>VALOR OS</label>
-                <br>
-                <input type="text" class="form-control modalos" name="servicototal" disabled>
-              </div>
+                <div class="col-md-4">
+                <label>VALOR <b>R$:</b></label>
+                <input type="text" class="form-control modalos" id="valoros" name="valoros" disabled>
+                </div>
+            
 
               </div>
       </div>

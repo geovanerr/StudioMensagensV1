@@ -283,6 +283,8 @@
         formViewOS.find("input[name=id]").val(response.id);
 
         formViewOS.find("input[name=cliente_id]").val(response.cliente.nome);
+        formViewOS.find("input[name=valoros]").val(response.valoros);
+
         formViewOS.find("input[name=receptor]").val(response.receptor);
         formViewOS.find("input[name=phone]").val(response.phone);
         formViewOS.find("input[name=celular]").val(response.celular);

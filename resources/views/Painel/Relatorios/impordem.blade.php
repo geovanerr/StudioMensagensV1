@@ -32,7 +32,8 @@
               <table class="table table-striped">
                 <tbody>
                 <tr>
-                <td colspan="4" align="center"><b>Ordem de Servico N°: {{ $ordem->id}}</b></td>
+                <td><b> N° OS: {{ $ordem->id}}</b></td>
+                <td colspan="2"><b> VALOR: {{ $ordem->valoros }}</b></td>
                 </tr>
                 <tr>
                   <td colspan="4">Cliente: {{ $ordem->cliente->nome}}</td>
