@@ -208,20 +208,27 @@
             <div class="form-group">
                   <label>Observação Cobrador</label>
                   <textarea name="obscobrador" class="form-control" rows="3" placeholder="Enter ...">{{old('obscobrador')}}</textarea>
+            </div>
+
+            </div>
+            </div>
+
+            <div class="info-box col-md-4">
+                <span class="info-box-icon bg-aqua"><i class="fa fa-money"></i></span>
+
+                <div class="info-box-content">
+                  <h4>R$: <input type="number" id="valoros" name ="valoros" placeholder="00,00" step="0.01" min="0" value="{{old('valoros')}}"></h4>
+
                 </div>
-
-            </div>
-            </div>
+              </div>
 
 
-          <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="fa fa-money"></i></span>
+              </div>
 
-            <div class="info-box-content">
-              <span class="info-box-text">Valor da Ordem de Serviço</span>
-              <h3>R$: <b><span class="valortotal"></span></b></h3>
-            </div>
-          </div>
+
+
+
+
 
 
 <div>
