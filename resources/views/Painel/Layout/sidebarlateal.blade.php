@@ -97,7 +97,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-           <li class="active"><a href="{{ route('Painel.Servicos.index') }}"><i class="fa fa-book"></i> Cobrança </a></li>
+           <li class="active"><a href="{{ route('Painel.Backup.backup') }}"><i class="fa fa-book"></i> Backup </a></li>
 
           </ul>
 

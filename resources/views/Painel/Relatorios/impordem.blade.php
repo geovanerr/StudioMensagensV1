@@ -13,9 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-            <p style="text-align: center">
-            <img src="{{ asset('template/stmlogo2.jpg') }}"  alt="" height="100" width="150">
-            </p>
+        
                 <table id="example1" class="table table-bordered">
                 <thead>
                 <div class="box-header text-center">

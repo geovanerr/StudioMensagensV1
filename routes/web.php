@@ -134,6 +134,7 @@ Route::get('/painel/indexrealizada', [OrdemServicoController::class, 'indexreali
 
 
 Route::get('/pdf', [PdfController::class, 'geraPdf'])->name('PDF.ordens');
+Route::get('/backup', [HomeController::class, 'backup'])->name('Painel.Backup.backup');
 
 
 

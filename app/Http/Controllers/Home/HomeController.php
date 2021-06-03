@@ -27,4 +27,10 @@ class HomeController extends Controller
 
        return view('adminfo');
    }
+
+   public function backup()
+   {
+
+       return view('Painel.Backup.backup');
+   }
 }
