@@ -120,10 +120,8 @@
               <label>Mensagem</label>
                 <br>
                 <select name="mensagem_id" class="form-control select2" data-placeholder="Selecione a Mensagem" style="width: 100%;">
-                <option disabled selected> Selecione uma Mensagem </option>
-
-                @foreach ($mensagens as $mensagem)
-                <option value="{{$mensagem->id}}">{{$mensagem->mensagem}}</option>
+                    @foreach ($mensagens as $mensagem)
+                <option value="{{$mensagem->id}}" {{($mensagem->id === 3) ? 'selected' : ''}}> {{$mensagem->mensagem}} </option>
 
                 @endforeach
 

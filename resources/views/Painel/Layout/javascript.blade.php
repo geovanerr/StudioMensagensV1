@@ -271,7 +271,7 @@
         var servicototal = 0;
         const serv = (response.servicos);
         serv.forEach(function(servico, i) {
-          servicototal += parseFloat(servico.preco); 
+          servicototal += parseFloat(servico.preco);
             servs.push(servico.servico);
         });
 

@@ -2,10 +2,10 @@
     <!-- Logo -->
     <a href=" {{ route('dashboard') }} " class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      
-      <span class="logo-mini"><b>ST</b>M</span>   
-      
-      <span class="logo-lg"><b>Studio</b> Mensagens</span>          
+
+      <span class="logo-mini"><b>ST</b>M</span>
+
+      <span class="logo-lg"><b>Studio</b> Mensagens</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -16,11 +16,11 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          
+
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{ asset('AdminLTE/dist/img/usuario.png') }}" class="user-image" alt="User Image">
-              <span class="hidden-xs">  Usuario </span>
+              <span class="hidden-xs">  {{ Auth()->User()->name}} </span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -28,10 +28,10 @@
                 <img src="{{ asset('AdminLTE/dist/img/usuario.png') }}" class="img-circle" alt="User Image">
               </li>
               <!-- Menu Body -->
-             
+
               <!-- Menu Footer-->
               <li class="user-footer">
-              
+
                 <!--div class="pull-right">
                   <a href="#" class="btn btn-danger btn-flat" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> Sair </a>
                  </div>
