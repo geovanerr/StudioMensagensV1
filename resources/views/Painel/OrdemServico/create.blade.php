@@ -43,7 +43,7 @@
                         @if (old('cliente_id') == $cliente->id)
                         <option value="{{ $cliente->id }}" selected>{{ $cliente->nome }}</option>
                             @else
-                            <option value="{{ $cliente->id }}">{{ $cliente->nome }}</option>
+                            <option value="{{ $cliente->id }}">{{ $cliente->nome}} - Contato: {{$cliente->celular}}</option>
                         @endif
 
                         @endforeach

@@ -46,7 +46,7 @@
 
                         @foreach ($clientes as $cliente)
 
-                        <option value="{{$cliente->id}}" {{($cliente->id === $ordem->cliente_id) ? 'selected' : ''}}> {{$cliente->nome}} </option>
+                        <option value="{{$cliente->id}}" {{($cliente->id === $ordem->cliente_id) ? 'selected' : ''}}> {{$cliente->nome}} - Contato: {{$cliente->celular}}</option>
 
                         @endforeach
 
