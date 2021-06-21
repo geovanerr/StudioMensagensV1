@@ -27,11 +27,12 @@ class OSFormRequest extends FormRequest
             'cliente_id' => 'required',
             'receptor' => 'required',
             'celular' => 'required',
-            'servico' => ['required', 'array'],      
+            'servico' => ['required', 'array'],
             'mensagem_id' => 'required',
-            'dataos' => 'required',            
-            'horarioos' => 'required',  
-            'cobrador_id' => 'required',                        
+            'dataos' => 'required',
+            'horarioos' => 'required',
+            'cobrador_id' => 'required',
+            'valoros' => 'required',
         ];
     }
 
@@ -46,6 +47,7 @@ class OSFormRequest extends FormRequest
             'dataos.required' => 'A data da OS é obrigatória!',
             'horarioos.required' => 'O Horário da OS é obrigatório!',
             'cobrador_id.required' => 'O Cobrador é obrigatório!',
-        ]; 
+            'valoros.required' => 'É preciso informar o VALOR da OS',
+        ];
     }
 }

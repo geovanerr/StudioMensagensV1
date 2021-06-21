@@ -40,7 +40,11 @@
 
                         @foreach ($clientes as $cliente)
 
-                        <option value="{{$cliente->id}}"> {{$cliente->nome}} </option>
+                        @if (old('cliente_id') == $cliente->id)
+                        <option value="{{ $cliente->id }}" selected>{{ $cliente->nome }}</option>
+                            @else
+                            <option value="{{ $cliente->id }}">{{ $cliente->nome }}</option>
+                        @endif
 
                         @endforeach
                         </select>
@@ -87,9 +91,10 @@
               <i class="fa fa-male"></i>
                    <label for=""> Gênero:</label>
                    <select class="form-control select2" id="genero" name="genero" style="width: 100%;">
-                      <option value="Nao Informar" selected="selected">Nao Informar</option>
-                      <option value="Feminino">Feminino</option>
-                      <option value="Masculino">Masculino</option>
+
+                      <option {{ old('genero') == 'Nao Informar' ? 'selected' : '' }}  value="Nao Informar">Nao Informar</option>
+                      <option {{ old('genero') == 'Feminino' ? 'selected' : '' }}  value="Feminino">Feminino</option>
+                      <option {{ old('genero') == 'Masculino' ? 'selected' : '' }}  value="Masculino">Masculino</option>
                    </select>
               </div>
 
@@ -106,7 +111,9 @@
                 style="width: 100%;">
 
                 @foreach ($servicos as $servico)
-                  <option value="{{$servico->id}}" class="servicos" data-preco="{{$servico->preco}}">{{$servico->servico}}</option>
+                  <option value="{{$servico->id}}"  @if (old("servico")){{ (in_array($servico->id, old("servico")) ? "selected":"") }}@endif> {{$servico->servico}} </option>
+
+
 
                 @endforeach
 
@@ -137,7 +144,8 @@
           <div class="form-group">
                 <label>Data da OS:</label>
                 <div class="input-group date">
-                  <input type="date" class="form-control pull-right" name="dataos" id="dataos">
+                  <input type="date" class="form-control pull-right" name="dataos" id="dataos" value="{{ old('dataos', date('Y-m-d')) }}">
+
                 </div>
 
 
@@ -150,7 +158,7 @@
                   <label>Horário OS:</label>
 
                   <div class="input-group">
-                    <input type="text" class="form-control timepicker" name="horarioos" id="horarioos" value="{{old('receptor')}}">
+                    <input type="text" class="form-control timepicker" name="horarioos" id="horarioos" value="{{old('horarioos')}}">
 
                     <div class="input-group-addon">
                       <i class="fa fa-clock-o"></i>
@@ -182,7 +190,11 @@
                 <option disabled selected> Selecione o Cobrador </option>
 
                 @foreach ($cobradores as $cobrador)
-                <option value="{{$cobrador->id}}">{{$cobrador->cobrador}}</option>
+                @if (old('cobrador_id') == $cobrador->id)
+                <option value="{{ $cobrador->id }}" selected>{{ $cobrador->cobrador }}</option>
+                    @else
+                    <option value="{{ $cobrador->id }}">{{ $cobrador->cobrador }}</option>
+                @endif
 
                 @endforeach
 
