@@ -54,13 +54,6 @@
                       </div>
                     </div>
 
-                    <div class="col-md-3">
-                        <div class="form-group">
-                        <i class="fa fa-tablet"></i></span>
-                          <label>Celular: </label>
-                        <div class="contato infoctt"></div>
-                        </div>
-                        </div>
                     </div>
 
 
