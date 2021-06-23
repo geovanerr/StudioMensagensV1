@@ -46,3 +46,10 @@
     padding: 5px 5px !important;
     margin-left: 60px !important;
   }
+
+  .infoctt {
+      position: absolute;
+      text-align: center;
+      padding: 4px;
+      background-color: rgba(0, 0, 0, 0.5);
+  }

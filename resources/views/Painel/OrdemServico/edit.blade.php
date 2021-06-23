@@ -41,18 +41,26 @@
                         <label>Cliente</label>
 
 
-                        <select name="cliente_id" class="form-control select2">
+                        <select name="cliente_id" id="cliente" class="form-control select2">
                         <option></option>
 
                         @foreach ($clientes as $cliente)
 
-                        <option value="{{$cliente->id}}" {{($cliente->id === $ordem->cliente_id) ? 'selected' : ''}}> {{$cliente->nome}} - Contato: {{$cliente->celular}}</option>
+                        <option data-contato="{{ $cliente->celular }}" value="{{$cliente->id}}" {{($cliente->id === $ordem->cliente_id) ? 'selected' : ''}}> {{$cliente->nome}} - Contato: {{$cliente->celular}}</option>
 
                         @endforeach
 
                         </select>
                       </div>
                     </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                        <i class="fa fa-tablet"></i></span>
+                          <label>Celular: </label>
+                        <div class="contato infoctt"></div>
+                        </div>
+                        </div>
                     </div>
 
 
